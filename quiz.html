@@ -880,10 +880,10 @@
                     console.log('timer = '+timer+'; timer < 11  = '+score)
                     score = 10;
                 } else {
-				    score = 10 - Math.ceil((timer - 10) / score_reducer_rate);
-				    if (score < 1) {
-				        score = 1;
-				    }
+                    score = 10 - Math.ceil((timer - 10) / score_reducer_rate);
+                    if (score < 1) {
+                        score = 1;
+                    }
                     console.log('timer = '+timer+'; else = '+score)
                 }
                 //let score = 10 - Math.max(1, Math.floor((timer - 10) / 1));
