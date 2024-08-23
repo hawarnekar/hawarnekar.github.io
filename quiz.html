@@ -175,41 +175,27 @@
 
     <script>
         const questions = [
-			// The code-block in each "question" will be embedded between [CODE] and [STOPCODE]. 
-			// The code block will be provided as multiple strings in starting with'@' and ending with '@,@',
-			// and all the strings will be embedded in one set of curly brackets. Each string needs to be
-			// displayed in new line. If the string needs to have a '@' character, an escape character '\' will
-			// be preset to it.
-			{
-				"type": "paragraph-fill-in-blank",
-				"question": 'For the code to print the output as shown below fill in the blank.[CODE]{ \
-				@for k in  !srange!e( !s10!e, 66, !s5!e):@,@ \
-				@    !sprint(k)!e@,@ \
-				@@,@ \
-				@@,@ \
-				@OUTPUT:@,@ \
-				@10@,@ \
-				@15@,@ \
-				@20@,@ \
-				@...@,@ \
-				@60@,@ \
-				@65@,@ \
-				}[STOPCODE]'
-			},
-			{
-			  "type": "paragraph-fill-in-blank",
-			  "question": 'Consider the following Python function that calculates the factorial of a number. What is the missing part in the code? [CODE]{ \
-				@!sdef!e factorial(!sn!e):@,@ \
-				@    if n == 0 or n == 1:@,@ \
-				@        !sreturn!e 1@,@ \
-				@    else:@,@ \
-				@        !sreturn!e n * !sfactorial(n - 1)!e@,@ \
-				@@,@ \
-				@# Example usage@,@ \
-				@result = factorial(5)@,@ \
-				@print(f\"The factorial of 5 is {result}\")@,@ \
-			  }[STOPCODE]'
-			},
+            // The code-block in each "question" will be embedded between [CODE] and [STOPCODE]. 
+            // The code block will be provided as multiple strings in starting with'@' and ending with '@,@',
+            // and all the strings will be embedded in one set of curly brackets. Each string needs to be
+            // displayed in new line. If the string needs to have a '@' character, an escape character '\' will
+            // be preset to it.
+            {
+                "type": "paragraph-fill-in-blank",
+                "question": 'For the code to print the output as shown below fill in the blank.[CODE]{ \
+                @for k in  !srange!e( !s10!e, 66, !s5!e):@,@ \
+                @    !sprint(k)!e@,@ \
+                @@,@ \
+                @@,@ \
+                @OUTPUT:@,@ \
+                @10@,@ \
+                @15@,@ \
+                @20@,@ \
+                @...@,@ \
+                @60@,@ \
+                @65@,@ \
+                }[STOPCODE]'
+            },
             {
                 type: "multiple-choice",
                 question: "123 ka binary value kya hai?",
@@ -243,14 +229,19 @@
                 question: "172 ka hexadecimal value [BLANK] hai.",
                 correctAnswer: "AC"
             },
-			{
-				"type": "paragraph-fill-in-blank",
-				"question": 'Fill in the blank in the code below, so that the block of code will print "Hello World!"[CODE]print(" %delimiter% Hello  %delimiter% World! %delimiter% ")'
-			},
-			{
-				"type": "paragraph-fill-in-blank",
-				"question": 'Fill in the blank in the code below, so that the block of code will print multiples of 5 between 10 and 67.[CODE]for k in  %delimiter% range( %delimiter% 10, 67, 5 %delimiter% ):<br>   print(k)'
-			},
+            {
+                "type": "paragraph-fill-in-blank",
+                "question": 'Fill in the blank in the code below, so that the block of code will print "Hello World!"[CODE]{ \
+			@!sprint!e("!sHello!e !sWorld!!e")@,@ \
+			}[STOPCODE]'
+            },
+            {
+                "type": "paragraph-fill-in-blank",
+                "question": 'Fill in the blank in the code below, so that the block of code will print multiples of 5 from 10 to 65.[CODE]{ \
+			@for k in !srange!e(!s10!e, !s66!e, !s5!e):@,@ \
+			@    print(k)@,@ \
+			}[STOPCODE]'
+            },
             {
                 type: "fill-in-blank",
                 question: "64 % 9 * 2 = [BLANK]",
@@ -422,11 +413,6 @@
 						stopTimer();
 						nextBtn.style.display = "block";
 					};
-				} else {
-					const codeHtml = codeLines.join('<br>');
-					questionEl.innerHTML = `${textBeforeCode}<br><div class="code-block">${codeHtml}</div>`;
-					resultEl.textContent = "No parts to hide in this code block.";
-					nextBtn.style.display = "block";
 				}
 			}
 
