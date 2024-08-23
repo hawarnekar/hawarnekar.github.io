@@ -5,122 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz: Multiple Choice and Inline Fill in the Blank</title>
     <style>
-		body {
-		  font-family: 'Roboto', Arial, sans-serif;
-		  margin: 0;
-		  padding: 0;
-		  display: flex;
-		  flex-direction: column;
-		  min-height: 100vh;
-		}
-		header, footer {
-		  background-color: #4CAF50;
-		  margin: 1rem;
-		  color: white;
-		  padding: 1rem;
-		  text-align: center;
-		}
-		main {
-		  flex-grow: 1;
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: center;
-		  align-items: center;
-		  padding: 2rem;
-		}
-		#timer-score {
-		  display: none;
-		  justify-content: space-between;
-		  width: 100%;
-		  max-width: 600px;
-		  margin: 1rem;
-		  padding: 0.5rem 1rem;
-		  background-color: #f0f0f0;
-		  border-radius: 5px;
-		  font-size: 1.2rem;
-		}
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: #4CAF50;
+            margin: 1rem;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #timer-score {
+            display: none;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
         #timer, #score {
             font-weight: bold;
         }
         #quiz-container {
-		    background-color: #f0f0f0;
+            background-color: #f0f0f0;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             margin: 2rem;
             border-radius: 10px;
-			width: 100%;
-			max-width: 600px;
-			display: flex; flex-direction: column; align-items: center;
+            width: 100%;
+            max-width: 600px;
+            display: flex; flex-direction: column; align-items: center;
         }
-		.option {
-		  margin: 0.5rem 0;
-		  padding: 1rem;
-		  background-color: #fff;
-		  border: 1px solid #ddd;
-		  border-radius: 5px;
-		  cursor: pointer;
-		  width: 100%; max-width: 400px;
-		  font-size: 1.1rem;
-		}
-		.option:hover {
-		  background-color: #e0e0e0;
-		}
-		#result {
-		  margin-top: 1rem;
-		  font-weight: bold;
-		  font-size: 1.2rem;
-		}
-		#next-btn, #submit-btn, #restart-btn {
-		  display: none;
-		  margin: 1rem;
-		  padding: 0.75rem 1.5rem;
-		  background-color: #4CAF50;
-		  color: white;
-		  border: none;
-		  border-radius: 10px;
-		  cursor: pointer;
-		  width: 100%; max-width: 300px;
-		  font-size: 1rem;
-		}
-		#final-result {
-		    display: none;
-		    margin: 1rem;
-		    background-color: #f0f0f0;
-			font-weight: bold;
+        .option {
+            margin: 0.5rem 0;
+            padding: 1rem;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%; max-width: 400px;
+            font-size: 1.1rem;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        #result {
+            margin-top: 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        #next-btn, #submit-btn, #restart-btn {
+            display: none;
+            margin: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%; max-width: 300px;
+            font-size: 1rem;
+        }
+        #final-result {
+            display: none;
+            margin: 1rem;
+            background-color: #f0f0f0;
+            font-weight: bold;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             border-radius: 10px;
-			width: 100%;
-			max-width: 600px;
-			display: flex; flex-direction: column; align-items: center;
-		}
-		input[type="text"] {
-		  width: 100px;
-		  padding: 0.5rem;
-		  margin: 0 0.5rem;
-		  border: 1px solid #ddd;
-		  border-radius: 5px;
-		  font-size: 1rem;
-		}
+            width: 100%;
+            max-width: 600px;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 0.5rem;
+            margin: 0 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
         #progress-bar {
-			width: 100%;
-			height: 20px;
-			margin: 10px 0;
-			background-color: #f0f0f0;
-			border-radius: 5px;
-		}
-		#progress-bar-inner {
-			height: 100%;
-			background-color: #4C50AF;
-			width: 0%; /* Initially, the progress is 0% */
-			transition: width 0.5s ease;
-		}
-		#subject-selection {
-			display: block;
-			margin: 1rem;
-			width: 100%;
-			max-width: 600px;
-		}
+            width: 100%;
+            height: 20px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        #progress-bar-inner {
+            height: 100%;
+            background-color: #4C50AF;
+            width: 0%; /* Initially, the progress is 0% */
+            transition: width 0.5s ease;
+        }
+        #subject-selection {
+            display: block;
+            margin: 1rem;
+            width: 100%;
+            max-width: 600px;
+        }
         .code-block {
             background-color: #f0f0f0;
             padding: 1rem;
@@ -130,33 +130,33 @@
             word-wrap: break-word;
         }
     </style>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<header>
-	  <h1>Quiz</h1>
-	</header>
-	<div id="subject-selection">
-		<label for="subject">Select Subject:</label>
-		<select id="subject">
-			<option value="history">Python</option>
-		</select>
-		<label for="level">Select Level:</label>
-		<select id="level">
-			<option value="easy">Level 1</option>
-		</select>
+    <header>
+        <h1>QUIZ</h1>
+    </header>
+    <div id="subject-selection">
+        <label for="subject">Select Subject:</label>
+        <select id="subject">
+            <option value="history">Python</option>
+        </select>
+        <label for="level">Select Level:</label>
+        <select id="level">
+            <option value="easy">Level 1</option>
+        </select>
 
-		<button id="start-btn">Start Quiz</button>
-	</div>
+        <button id="start-btn">Start Quiz</button>
+    </div>
 
     <div id="timer-score">
         <div>Score: <span id="score">0</span></div>
         <div>Time: <span id="timer">0</span> seconds</div>
         <div>Total Time: <span id="total-time">0</span> seconds</div>
     </div>
-	<div id="quiz-container" style="display: none;">
+    <div id="quiz-container" style="display: none;">
         <div id="question"></div>
         <div id="options"></div>
         <div id="result"></div>
@@ -166,12 +166,12 @@
             <div id="progress-bar-inner"></div>
         </div>
     </div>
-	<div id="final-result"></div>
-	<button id="restart-btn">Restart Quiz</button>
+    <div id="final-result"></div>
+    <button id="restart-btn">Restart Quiz</button>
 
-	<footer>
-	  <p>&copy; 2023 Your Quiz App. All rights reserved.</p>
-	</footer>
+    <footer>
+        <p>&copy; 2024 - My Quiz App. All rights reserved.</p>
+    </footer>
 
     <script>
         const questions = [
@@ -183,17 +183,17 @@
             {
                 "type": "paragraph-fill-in-blank",
                 "question": 'For the code to print the output as shown below fill in the blank.[CODE]{ \
-                @for k in  !srange!e( !s10!e, 66, !s5!e):@,@ \
-                @    !sprint(k)!e@,@ \
-                @@,@ \
-                @@,@ \
-                @OUTPUT:@,@ \
-                @10@,@ \
-                @15@,@ \
-                @20@,@ \
-                @...@,@ \
-                @60@,@ \
-                @65@,@ \
+                    @for k in  !srange!e( !s10!e, 66, !s5!e):@,@ \
+                    @    !sprint(k)!e@,@ \
+                    @@,@ \
+                    @@,@ \
+                    @OUTPUT:@,@ \
+                    @10@,@ \
+                    @15@,@ \
+                    @20@,@ \
+                    @...@,@ \
+                    @60@,@ \
+                    @65@,@ \
                 }[STOPCODE]'
             },
             {
@@ -232,15 +232,15 @@
             {
                 "type": "paragraph-fill-in-blank",
                 "question": 'Fill in the blank in the code below, so that the block of code will print "Hello World!"[CODE]{ \
-			@!sprint!e("!sHello!e !sWorld!!e")@,@ \
-			}[STOPCODE]'
+                    @!sprint!e("!sHello!e !sWorld!!e")@,@ \
+                }[STOPCODE]'
             },
             {
                 "type": "paragraph-fill-in-blank",
                 "question": 'Fill in the blank in the code below, so that the block of code will print multiples of 5 from 10 to 65.[CODE]{ \
-			@for k in !srange!e(!s10!e, !s66!e, !s5!e):@,@ \
-			@    print(k)@,@ \
-			}[STOPCODE]'
+                    @for k in !srange!e(!s10!e, !s66!e, !s5!e):@,@ \
+                    @    print(k)@,@ \
+                }[STOPCODE]'
             },
             {
                 type: "fill-in-blank",
@@ -294,7 +294,6 @@
         const quizContainerEl = document.getElementById("quiz-container");
         const restartBtn = document.getElementById("restart-btn");
 
-
         function startTimer() {
             timerInterval = setInterval(() => {
                 timer++;
@@ -304,9 +303,9 @@
 
         function stopTimer() {
             clearInterval(timerInterval);
-			// Update progress bar
-			const progressPercentage = (currentQuestion + 1) / randomQuestions.length * 100;
-			document.getElementById("progress-bar-inner").style.width = progressPercentage + "%";
+            // Update progress bar
+            const progressPercentage = (currentQuestion + 1) / randomQuestions.length * 100;
+            document.getElementById("progress-bar-inner").style.width = progressPercentage + "%";
         }
 
         function updateTimer() {
@@ -327,11 +326,11 @@
         }
 
         function loadQuestion() {
-			const subject = document.getElementById("subject").value;
-			const level = document.getElementById("level").value;
-			//const questionsFile = `questions-${subject}-${level}.json`; // Adjust the file naming convention as needed
+            const subject = document.getElementById("subject").value;
+            const level = document.getElementById("level").value;
+            //const questionsFile = `questions-${subject}-${level}.json`; // Adjust the file naming convention as needed
 
-			const question = randomQuestions[currentQuestion];
+            const question = randomQuestions[currentQuestion];
 
             optionsEl.innerHTML = "";
             resultEl.textContent = "";
@@ -353,73 +352,73 @@
                 submitBtn.style.display = "block";
                 submitBtn.onclick = checkFillInBlankAnswer;
             } else if (question.type === "paragraph-fill-in-blank") {
-				const paragraph = question.question;
-				const parts = paragraph.split("[CODE]");
-				const textBeforeCode = parts[0];
-				const codeBlockParts = parts[1].split("[STOPCODE]");
-				let codeBlock = codeBlockParts[0];
-				let hiddenText;
+                const paragraph = question.question;
+                const parts = paragraph.split("[CODE]");
+                const textBeforeCode = parts[0];
+                const codeBlockParts = parts[1].split("[STOPCODE]");
+                let codeBlock = codeBlockParts[0];
+                let hiddenText;
 
-				// Parse the code block
-				codeBlock = codeBlock.trim().slice(1, -1); // Remove curly braces
-				console.log("codeBlock="+codeBlock)
+                // Parse the code block
+                codeBlock = codeBlock.trim().slice(1, -1); // Remove curly braces
+                console.log("codeBlock="+codeBlock)
 
-				// Find all parts between !s and !e
-				const hiddenParts = [];
-				const regex = /!s(.*?)!e/g;
-				const matches = [...codeBlock.matchAll(regex)];
-				console.log("matches="+matches+",\n    length = "+matches.length);
-				if (matches.length > 0) {
-					// Randomly select one of the hidden parts
-					const randomIndex = Math.floor(Math.random() * matches.length);
-					hiddenText = matches[randomIndex][1];
-					console.log("randomIndex="+randomIndex)
-					codeBlock = codeBlock.replace(matches[randomIndex][0], "[BLANK]");
-					console.log("hiddenText="+hiddenText)
-				}
-				matches.forEach(match => {
-					codeBlock = codeBlock.replace(match[0],match[1])
-				});
-				console.log("codeBlock="+codeBlock)
-				const blankParts = codeBlock.split("[BLANK]");
-				codeBlock = blankParts[0] + '<input type="text" id="fill-in-answer">' + blankParts[1];
+                // Find all parts between !s and !e
+                const hiddenParts = [];
+                const regex = /!s(.*?)!e/g;
+                const matches = [...codeBlock.matchAll(regex)];
+                console.log("matches="+matches+",\n    length = "+matches.length);
+                if (matches.length > 0) {
+                    // Randomly select one of the hidden parts
+                    const randomIndex = Math.floor(Math.random() * matches.length);
+                    hiddenText = matches[randomIndex][1];
+                    console.log("randomIndex="+randomIndex)
+                    codeBlock = codeBlock.replace(matches[randomIndex][0], "[BLANK]");
+                    console.log("hiddenText="+hiddenText)
+                }
+                matches.forEach(match => {
+                    codeBlock = codeBlock.replace(match[0],match[1])
+                });
+                console.log("codeBlock="+codeBlock)
+                const blankParts = codeBlock.split("[BLANK]");
+                codeBlock = blankParts[0] + '<input type="text" id="fill-in-answer">' + blankParts[1];
 
-				const modifiedCodeLines = codeBlock.split('@,@').map(line => {
-					return line.trim().replace(/^@|@$/g, '').replace(/\\@/g, '@');
-				});
-				console.log("modifiedCodeLines="+modifiedCodeLines)
+                const modifiedCodeLines = codeBlock.split('@,@').map(line => {
+                    return line.trim().replace(/^@|@$/g, '').replace(/\\@/g, '@');
+                });
+                console.log("modifiedCodeLines="+modifiedCodeLines)
 
-				if (matches.length > 0) {
-					const codeHtml = modifiedCodeLines.join('<br>');
+                if (matches.length > 0) {
+                    const codeHtml = modifiedCodeLines.join('<br>');
 
-					questionEl.innerHTML = `${textBeforeCode}<br><div class="code-block">${codeHtml}</div>`;
-					submitBtn.style.display = "block";
+                    questionEl.innerHTML = `${textBeforeCode}<br><div class="code-block">${codeHtml}</div>`;
+                    submitBtn.style.display = "block";
 
-					submitBtn.onclick = () => {
-						const userAnswer = document.getElementById("fill-in-answer").value.trim();
-						const correctAnswer = hiddenText.trim();
+                    submitBtn.onclick = () => {
+                        const userAnswer = document.getElementById("fill-in-answer").value.trim();
+                        const correctAnswer = hiddenText.trim();
 
-						if (userAnswer === correctAnswer) {
-							resultEl.textContent = "Correct!";
-						} else {
-							resultEl.textContent = `Incorrect. The correct answer is: ${hiddenText}`;
-						}
+                        if (userAnswer === correctAnswer) {
+                            resultEl.textContent = "Correct!";
+                        } else {
+                            resultEl.textContent = `Incorrect. The correct answer is: ${hiddenText}`;
+                        }
 
-						document.getElementById("fill-in-answer").disabled = true;
-						submitBtn.style.display = "none";
+                        document.getElementById("fill-in-answer").disabled = true;
+                        submitBtn.style.display = "none";
 
-						const isCorrect = userAnswer === correctAnswer;
-						updateScore(isCorrect);
-						stopTimer();
-						nextBtn.style.display = "block";
-					};
-				}
-			}
+                        const isCorrect = userAnswer === correctAnswer;
+                        updateScore(isCorrect);
+                        stopTimer();
+                        nextBtn.style.display = "block";
+                    };
+                }
+            }
 
             if (currentQuestion < randomQuestions.length) {
-				// Add the "active" class to trigger the animation
-				quizContainerEl.classList.add("active");
-			}
+                // Add the "active" class to trigger the animation
+                quizContainerEl.classList.add("active");
+            }
 
             startTimer();
         }
@@ -469,60 +468,60 @@
             nextBtn.style.display = "block";
         }
 
-		function shuffleArray(array) {
-		  for (let i = array.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			[array[i], array[j]] = [array[j], array[i]];
-		  }
-		}
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
 
         nextBtn.onclick = () => {
-			// Remove the "active" class before loading the next question
-			quizContainerEl.classList.remove("active");
+            // Remove the "active" class before loading the next question
+            quizContainerEl.classList.remove("active");
 
             currentQuestion++;
             timer = 0;
             if (currentQuestion < numQuestions) {
                 loadQuestion();
             } else {
-				clearInterval(totalTimerInterval);
+                clearInterval(totalTimerInterval);
                 questionEl.textContent = "Quiz completed!";
                 optionsEl.innerHTML = "";
                 document.getElementById("final-result").textContent = `Your final score is ${totalScore} out of ${randomQuestions.length * 10}. It took you ${totalTime} seconds to complete the quiz.`;
                 document.getElementById("final-result").style.display = "block";
-				nextBtn.style.display = "none";
+                nextBtn.style.display = "none";
                 submitBtn.style.display = "none";
-				quizContainerEl.style.display = "none";
+                quizContainerEl.style.display = "none";
 
-				restartBtn.style.display = "block";
-				restartBtn.onclick = restartQuiz;
+                restartBtn.style.display = "block";
+                restartBtn.onclick = restartQuiz;
             }
         };
 
-		function restartQuiz() {
-			totalScore = 0;
-			totalTime = 0;
-			shuffleArray(questions);
-			// Select the first 'numQuestions' questions of the shuffled Questions.
-			randomQuestions = questions.slice(0, numQuestions);
-			document.getElementById("subject-selection").style.display = "block";
-			document.getElementById("final-result").style.display = "none";
-			restartBtn.style.display = "none";
-			currentQuestion = 0;
-			stopTimer();
-			document.getElementById("timer-score").style.display = "none";
-		}
+        function restartQuiz() {
+            totalScore = 0;
+            totalTime = 0;
+            shuffleArray(questions);
+            // Select the first 'numQuestions' questions of the shuffled Questions.
+            randomQuestions = questions.slice(0, numQuestions);
+            document.getElementById("subject-selection").style.display = "block";
+            document.getElementById("final-result").style.display = "none";
+            restartBtn.style.display = "none";
+            currentQuestion = 0;
+            stopTimer();
+            document.getElementById("timer-score").style.display = "none";
+        }
 
         document.getElementById("start-btn").addEventListener("click", () => {
-			document.getElementById("timer-score").style.display = "flex";
-			document.getElementById("subject-selection").style.display = "none";
-			quizContainerEl.style.display = "block";
+            document.getElementById("timer-score").style.display = "flex";
+            document.getElementById("subject-selection").style.display = "none";
+            quizContainerEl.style.display = "block";
             totalTimerInterval = setInterval(() => {
-				totalTime++;
+                totalTime++;
                 updateTimer();
             }, 1000);
-			loadQuestion();
-		});
+            loadQuestion();
+        });
 
         restartQuiz();
     </script>
