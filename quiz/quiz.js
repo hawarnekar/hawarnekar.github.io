@@ -96,7 +96,7 @@ function updateScore(correct) {
 
 function loadQuestion() {
     const subject = document.getElementById("subject").value;
-    const level = document.getElementById("level").value;
+    const level = document.getElementById("sub-topic").value;
 
     const question = randomQuestions[currentQuestion];
 
