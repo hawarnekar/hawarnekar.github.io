@@ -613,5 +613,5 @@
         "type": "fill-in-blank",
         "question": "1 // 9 - 1 // 4 ** 6 = [BLANK]",
         "correctAnswer": "0"
-    },
+    }
 ]
