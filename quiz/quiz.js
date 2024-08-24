@@ -18,6 +18,40 @@ const scoreEl = document.getElementById("score");
 const quizContainerEl = document.getElementById("quiz-container");
 const restartBtn = document.getElementById("restart-btn");
 
+function updateSubTopics() {
+    const subject = document.getElementById("subject").value;
+    const subTopicSelect = document.getElementById("sub-topic");
+    subTopicSelect.innerHTML = ""; // Clear existing options
+
+    let subTopics;
+    switch(subject) {
+        case "python":
+            subTopics = ["ganit",
+                         // "if-else",
+                         // "while-loop",
+                         // "for-loop",
+                         // "list",
+                         // "functions"
+                        ];
+            break;
+        // case "javascript":
+        //     subTopics = ["basics", "dom-manipulation", "events", "async", "es6-features"];
+        //     break;
+        // case "html":
+        //     subTopics = ["tags", "forms", "semantics", "accessibility", "html5-features"];
+        //     break;
+        default:
+            subTopics = [];
+    }
+
+    subTopics.forEach(topic => {
+        const option = document.createElement("option");
+        option.value = topic;
+        option.textContent = topic.charAt(0).toUpperCase() + topic.slice(1).replace("-", " ");
+        subTopicSelect.appendChild(option);
+    });
+}
+
 function startTimer() {
     timerInterval = setInterval(() => {
         timer++;
@@ -247,8 +281,8 @@ function restartQuiz() {
 document.getElementById("start-btn").addEventListener("click", () => {
     const urlPrefix = './questions/questions';
     const subject = document.getElementById("subject").value;
-    const level = document.getElementById("level").value;
-    const questionsFile = `${urlPrefix}-${subject}-${level}.json`;
+    const subTopic = document.getElementById("sub-topic").value;
+    const questionsFile = `${urlPrefix}-${subject}-${subTopic}.json`;
     console.log(questionsFile);
 
     fetch(questionsFile)
@@ -272,5 +306,8 @@ document.getElementById("start-btn").addEventListener("click", () => {
         updateTimer();
     }, 1000);
 });
+
+// Call this function once when the page loads to populate the initial sub-topics
+document.addEventListener("DOMContentLoaded", updateSubTopics);
 
 restartQuiz();
