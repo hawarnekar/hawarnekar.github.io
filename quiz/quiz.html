@@ -154,7 +154,12 @@
             </select>
             <label for="level" style="margin-left: 1rem;"><B>Select Level:</B></label>
             <select id="level">
-                <option value="level-ganit">Ganit</option>
+                <option value="level-ganit">Ganit </option>
+                <option value="level-if-else">if-else </option>
+                <option value="level-while-loop">while-loop </option>
+                <option value="level-for-loop">for-loop </option>
+                <option value="level-lists">lists </option>
+                <option value="level-functions">functions </option>
             </select>
 
         <button id="start-btn" style="margin-left: 1rem;"><B>Start Quiz</B></button>
@@ -183,664 +188,7 @@
     </footer>
 
     <script>
-        const questions = [
-            // The code-block in each "question" will be embedded between [CODE] and [STOPCODE]. 
-            // The code block will be provided as multiple strings in starting with'@' and ending with '@,@',
-            // and all the strings will be embedded in one set of curly brackets. Each string needs to be
-            // displayed in new line. If the string needs to have a '@' character, an escape character '\' will
-            // be preset to it.
-            {
-                type: "fill-in-blank",
-                question: "83 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "53"
-            },
-            {
-                type: "fill-in-blank",
-                question: "75 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "4b"
-            },
-            {
-                type: "fill-in-blank",
-                question: "225 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "e1"
-            },
-            {
-                type: "fill-in-blank",
-                question: "74 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "4a"
-            },
-            {
-                type: "fill-in-blank",
-                question: "190 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "be"
-            },
-            {
-                type: "fill-in-blank",
-                question: "131 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "83"
-            },
-            {
-                type: "fill-in-blank",
-                question: "193 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "c1"
-            },
-            {
-                type: "fill-in-blank",
-                question: "207 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "cf"
-            },
-            {
-                type: "fill-in-blank",
-                question: "93 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "5d"
-            },
-            {
-                type: "fill-in-blank",
-                question: "109 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "6d"
-            },
-            {
-                type: "fill-in-blank",
-                question: "220 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "dc"
-            },
-            {
-                type: "fill-in-blank",
-                question: "250 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "fa"
-            },
-            {
-                type: "fill-in-blank",
-                question: "155 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "9b"
-            },
-            {
-                type: "fill-in-blank",
-                question: "67 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "43"
-            },
-            {
-                type: "fill-in-blank",
-                question: "86 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "56"
-            },
-            {
-                type: "fill-in-blank",
-                question: "79 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "4f"
-            },
-            {
-                type: "fill-in-blank",
-                question: "226 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "e2"
-            },
-            {
-                type: "fill-in-blank",
-                question: "242 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "f2"
-            },
-            {
-                type: "fill-in-blank",
-                question: "64 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "40"
-            },
-            {
-                type: "fill-in-blank",
-                question: "52 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "34"
-            },
-            {
-                type: "fill-in-blank",
-                question: "159 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "9f"
-            },
-            {
-                type: "fill-in-blank",
-                question: "82 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "52"
-            },
-            {
-                type: "fill-in-blank",
-                question: "95 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "5f"
-            },
-            {
-                type: "fill-in-blank",
-                question: "162 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "a2"
-            },
-            {
-                type: "fill-in-blank",
-                question: "91 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "5b"
-            },
-            {
-                type: "fill-in-blank",
-                question: "243 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "f3"
-            },
-            {
-                type: "fill-in-blank",
-                question: "50 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "32"
-            },
-            {
-                type: "fill-in-blank",
-                question: "168 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "a8"
-            },
-            {
-                type: "fill-in-blank",
-                question: "121 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "79"
-            },
-            {
-                type: "fill-in-blank",
-                question: "80 ka hexadecimal value [BLANK] hai.",
-                correctAnswer: "50"
-            },
-            {
-                type: "fill-in-blank",
-                question: "166 ka binary value [BLANK] hai.",
-                correctAnswer: "10100110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "32 ka binary value [BLANK] hai.",
-                correctAnswer: "100000"
-            },
-            {
-                type: "fill-in-blank",
-                question: "140 ka binary value [BLANK] hai.",
-                correctAnswer: "10001100"
-            },
-            {
-                type: "fill-in-blank",
-                question: "145 ka binary value [BLANK] hai.",
-                correctAnswer: "10010001"
-            },
-            {
-                type: "fill-in-blank",
-                question: "94 ka binary value [BLANK] hai.",
-                correctAnswer: "1011110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "62 ka binary value [BLANK] hai.",
-                correctAnswer: "111110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "115 ka binary value [BLANK] hai.",
-                correctAnswer: "1110011"
-            },
-            {
-                type: "fill-in-blank",
-                question: "85 ka binary value [BLANK] hai.",
-                correctAnswer: "1010101"
-            },
-            {
-                type: "fill-in-blank",
-                question: "114 ka binary value [BLANK] hai.",
-                correctAnswer: "1110010"
-            },
-            {
-                type: "fill-in-blank",
-                question: "138 ka binary value [BLANK] hai.",
-                correctAnswer: "10001010"
-            },
-            {
-                type: "fill-in-blank",
-                question: "49 ka binary value [BLANK] hai.",
-                correctAnswer: "110001"
-            },
-            {
-                type: "fill-in-blank",
-                question: "143 ka binary value [BLANK] hai.",
-                correctAnswer: "10001111"
-            },
-            {
-                type: "fill-in-blank",
-                question: "86 ka binary value [BLANK] hai.",
-                correctAnswer: "1010110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "107 ka binary value [BLANK] hai.",
-                correctAnswer: "1101011"
-            },
-            {
-                type: "fill-in-blank",
-                question: "123 ka binary value [BLANK] hai.",
-                correctAnswer: "1111011"
-            },
-            {
-                type: "fill-in-blank",
-                question: "160 ka binary value [BLANK] hai.",
-                correctAnswer: "10100000"
-            },
-            {
-                type: "fill-in-blank",
-                question: "67 ka binary value [BLANK] hai.",
-                correctAnswer: "1000011"
-            },
-            {
-                type: "fill-in-blank",
-                question: "175 ka binary value [BLANK] hai.",
-                correctAnswer: "10101111"
-            },
-            {
-                type: "fill-in-blank",
-                question: "133 ka binary value [BLANK] hai.",
-                correctAnswer: "10000101"
-            },
-            {
-                type: "fill-in-blank",
-                question: "172 ka binary value [BLANK] hai.",
-                correctAnswer: "10101100"
-            },
-            {
-                type: "fill-in-blank",
-                question: "157 ka binary value [BLANK] hai.",
-                correctAnswer: "10011101"
-            },
-            {
-                type: "fill-in-blank",
-                question: "139 ka binary value [BLANK] hai.",
-                correctAnswer: "10001011"
-            },
-            {
-                type: "fill-in-blank",
-                question: "177 ka binary value [BLANK] hai.",
-                correctAnswer: "10110001"
-            },
-            {
-                type: "fill-in-blank",
-                question: "54 ka binary value [BLANK] hai.",
-                correctAnswer: "110110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "169 ka binary value [BLANK] hai.",
-                correctAnswer: "10101001"
-            },
-            {
-                type: "fill-in-blank",
-                question: "43 ka binary value [BLANK] hai.",
-                correctAnswer: "101011"
-            },
-            {
-                type: "fill-in-blank",
-                question: "98 ka binary value [BLANK] hai.",
-                correctAnswer: "1100010"
-            },
-            {
-                type: "fill-in-blank",
-                question: "46 ka binary value [BLANK] hai.",
-                correctAnswer: "101110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "74 ka binary value [BLANK] hai.",
-                correctAnswer: "1001010"
-            },
-            {
-                type: "fill-in-blank",
-                question: "48 ka binary value [BLANK] hai.",
-                correctAnswer: "110000"
-            },
-            {
-                type: "fill-in-blank",
-                question: "37 ka binary value [BLANK] hai.",
-                correctAnswer: "100101"
-            },
-            {
-                type: "fill-in-blank",
-                question: "41 ka binary value [BLANK] hai.",
-                correctAnswer: "101001"
-            },
-            {
-                type: "fill-in-blank",
-                question: "44 ka binary value [BLANK] hai.",
-                correctAnswer: "101100"
-            },
-            {
-                type: "fill-in-blank",
-                question: "171 ka binary value [BLANK] hai.",
-                correctAnswer: "10101011"
-            },
-            {
-                type: "fill-in-blank",
-                question: "129 ka binary value [BLANK] hai.",
-                correctAnswer: "10000001"
-            },
-            {
-                type: "fill-in-blank",
-                question: "126 ka binary value [BLANK] hai.",
-                correctAnswer: "1111110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "63 ka binary value [BLANK] hai.",
-                correctAnswer: "111111"
-            },
-            {
-                type: "fill-in-blank",
-                question: "179 ka binary value [BLANK] hai.",
-                correctAnswer: "10110011"
-            },
-            {
-                type: "fill-in-blank",
-                question: "150 ka binary value [BLANK] hai.",
-                correctAnswer: "10010110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "117 ka binary value [BLANK] hai.",
-                correctAnswer: "1110101"
-            },
-            {
-                type: "fill-in-blank",
-                question: "125 ka binary value [BLANK] hai.",
-                correctAnswer: "1111101"
-            },
-            {
-                type: "fill-in-blank",
-                question: "104 ka binary value [BLANK] hai.",
-                correctAnswer: "1101000"
-            },
-            {
-                type: "fill-in-blank",
-                question: "36 ka binary value [BLANK] hai.",
-                correctAnswer: "100100"
-            },
-            {
-                type: "fill-in-blank",
-                question: "95 ka binary value [BLANK] hai.",
-                correctAnswer: "1011111"
-            },
-            {
-                type: "fill-in-blank",
-                question: "80 ka binary value [BLANK] hai.",
-                correctAnswer: "1010000"
-            },
-            {
-                type: "fill-in-blank",
-                question: "70 ka binary value [BLANK] hai.",
-                correctAnswer: "1000110"
-            },
-            {
-                type: "fill-in-blank",
-                question: "82 ka binary value [BLANK] hai.",
-                correctAnswer: "1010010"
-            },
-            {
-                type: "fill-in-blank",
-                question: "119 ka binary value [BLANK] hai.",
-                correctAnswer: "1110111"
-            },
-            {
-                type: "fill-in-blank",
-                question: "170 ka binary value [BLANK] hai.",
-                correctAnswer: "10101010"
-            },
-            {
-                type: "fill-in-blank",
-                question: "87 ka binary value [BLANK] hai.",
-                correctAnswer: "1010111"
-            },
-            {
-                type: "fill-in-blank",
-                question: "64 % 9 * 2 = [BLANK]",
-                correctAnswer: "2"
-            },
-            {
-                type: "fill-in-blank",
-                question: "18 // 7 * 18 - 7 = [BLANK]",
-                correctAnswer: "29"
-            },
-            {
-                type: "fill-in-blank",
-                question: "49 % 8 - 2 = [BLANK]",
-                correctAnswer: "-1"
-            },
-            {
-                type: "fill-in-blank",
-                question: "80 - 6 * 7 = [BLANK]",
-                correctAnswer: "38"
-            },
-            {
-                type: "fill-in-blank",
-                question: "13 + 3 * 5 - 6 = [BLANK]",
-                correctAnswer: "22"
-            },
-            {
-                type: "fill-in-blank",
-                question: "6 / 4 - 5 * 1 + 6 = [BLANK]",
-                correctAnswer: "2.5"
-            },
-            {
-                type: "fill-in-blank",
-                question: "9 % 1 - 2 / 5 = [BLANK]",
-                correctAnswer: "-0.4"
-            },
-            {
-                type: "fill-in-blank",
-                question: "7 - 7 % 9 // 2 - 9 = [BLANK]",
-                correctAnswer: "-5"
-            },
-            {
-                type: "fill-in-blank",
-                question: "9 + 1 // 4 + 4 = [BLANK]",
-                correctAnswer: "13"
-            },
-            {
-                type: "fill-in-blank",
-                question: "2 % 1 / 3 - 1 - 1 = [BLANK]",
-                correctAnswer: "-2.0"
-            },
-            {
-                type: "fill-in-blank",
-                question: "10 - 4 // 4 ** 8 = [BLANK]",
-                correctAnswer: "10"
-            },
-            {
-                type: "fill-in-blank",
-                question: "10 // 1 ** 1 // 9 = [BLANK]",
-                correctAnswer: "1"
-            },
-            {
-                type: "fill-in-blank",
-                question: "7 / 7 + 5 / 8 = [BLANK]",
-                correctAnswer: "1.625"
-            },
-            {
-                type: "fill-in-blank",
-                question: "4 + 8 + 4 - 8 * 1 = [BLANK]",
-                correctAnswer: "8"
-            },
-            {
-                type: "fill-in-blank",
-                question: "8 / 4 % 5 * 2 = [BLANK]",
-                correctAnswer: "4.0"
-            },
-            {
-                type: "fill-in-blank",
-                question: "10 // 1 // 3 + 1 = [BLANK]",
-                correctAnswer: "4"
-            },
-            {
-                type: "fill-in-blank",
-                question: "2 + 6 * 5 / 8 = [BLANK]",
-                correctAnswer: "5.75"
-            },
-            {
-                type: "fill-in-blank",
-                question: "8 - 7 ** 4 // 10 - 7 = [BLANK]",
-                correctAnswer: "-239"
-            },
-            {
-                type: "fill-in-blank",
-                question: "7 - 4 // 5 + 6 = [BLANK]",
-                correctAnswer: "13"
-            },
-            {
-                type: "fill-in-blank",
-                question: "1 // 4 / 9 % 3 - 1 = [BLANK]",
-                correctAnswer: "-1.0"
-            },
-            {
-                type: "fill-in-blank",
-                question: "4 // 5 * 8 - 1 = [BLANK]",
-                correctAnswer: "-1"
-            },
-            {
-                type: "fill-in-blank",
-                question: "1 + 6 % 10 * 4 = [BLANK]",
-                correctAnswer: "25"
-            },
-            {
-                type: "fill-in-blank",
-                question: "5 % 1 - 3 + 1 = [BLANK]",
-                correctAnswer: "-2"
-            },
-            {
-                type: "fill-in-blank",
-                question: "6 / 10 % 1 % 8 = [BLANK]",
-                correctAnswer: "0.6"
-            },
-            {
-                type: "fill-in-blank",
-                question: "4 + 7 / 2 ** 1 = [BLANK]",
-                correctAnswer: "7.5"
-            },
-            {
-                type: "fill-in-blank",
-                question: "4 + 2 - 6 + 2 = [BLANK]",
-                correctAnswer: "2"
-            },
-            {
-                type: "fill-in-blank",
-                question: "10 * 3 - 8 + 6 % 10 = [BLANK]",
-                correctAnswer: "28"
-            },
-            {
-                type: "fill-in-blank",
-                question: "4 + 1 + 1 % 2 + 6 = [BLANK]",
-                correctAnswer: "12"
-            },
-            {
-                type: "fill-in-blank",
-                question: "7 - 9 // 2 ** 1 + 4 = [BLANK]",
-                correctAnswer: "7"
-            },
-            {
-                type: "fill-in-blank",
-                question: "7 ** 1 // 2 * 3 = [BLANK]",
-                correctAnswer: "9"
-            },
-            {
-                type: "fill-in-blank",
-                question: "10 / 9 ** 9 // 1 = [BLANK]",
-                correctAnswer: "0.0"
-            },
-            {
-                type: "fill-in-blank",
-                question: "2 / 4 / 1 * 1 = [BLANK]",
-                correctAnswer: "0.5"
-            },
-            {
-                type: "fill-in-blank",
-                question: "1 * 5 / 10 % 8 % 3 = [BLANK]",
-                correctAnswer: "0.5"
-            },
-            {
-                type: "fill-in-blank",
-                question: "1 ** 3 + 6 ** 2 // 6 = [BLANK]",
-                correctAnswer: "7"
-            },
-            {
-                type: "fill-in-blank",
-                question: "7 - 6 + 5 * 6 // 2 = [BLANK]",
-                correctAnswer: "16"
-            },
-            {
-                type: "fill-in-blank",
-                question: "7 // 4 + 6 // 3 - 10 = [BLANK]",
-                correctAnswer: "-7"
-            },
-            {
-                type: "fill-in-blank",
-                question: "4 % 6 - 1 * 10 = [BLANK]",
-                correctAnswer: "-6"
-            },
-            {
-                type: "fill-in-blank",
-                question: "1 // 8 // 6 + 3 % 6 = [BLANK]",
-                correctAnswer: "3"
-            },
-            {
-                type: "fill-in-blank",
-                question: "8 * 1 // 3 + 2 = [BLANK]",
-                correctAnswer: "4"
-            },
-            {
-                type: "fill-in-blank",
-                question: "10 * 8 // 4 // 9 + 1 = [BLANK]",
-                correctAnswer: "3"
-            },
-            {
-                type: "fill-in-blank",
-                question: "7 - 2 - 5 + 2 / 8 = [BLANK]",
-                correctAnswer: "0.25"
-            },
-            {
-                type: "fill-in-blank",
-                question: "2 - 9 // 4 / 2 % 5 = [BLANK]",
-                correctAnswer: "1.0"
-            },
-            {
-                type: "fill-in-blank",
-                question: "1 // 9 - 1 // 4 ** 6 = [BLANK]",
-                correctAnswer: "0"
-            },
-            // {
-            //     "type": "paragraph-fill-in-blank",
-            //     "question": 'For the code to print the output as shown below fill in the blank.[CODE]{ \
-            //         @for k in  !srange!e( !s10!e, 66, !s5!e):@,@ \
-            //         @    !sprint(k)!e@,@ \
-            //         @@,@ \
-            //         @@,@ \
-            //         @OUTPUT:@,@ \
-            //         @10@,@ \
-            //         @15@,@ \
-            //         @20@,@ \
-            //         @...@,@ \
-            //         @60@,@ \
-            //         @65@,@ \
-            //     }[STOPCODE]'
-            // },
-            // {
-            //     type: "multiple-choice",
-            //     question: "123 ka binary value kya hai?",
-            //     options: ["1111011", "1110111", "1111111", "1111101"],
-            //     correctAnswer: 0
-            // },
-            // {
-            //     "type": "paragraph-fill-in-blank",
-            //     "question": 'Fill in the blank in the code below, so that the block of code will print "Hello World!"[CODE]{ \
-            //         @!sprint!e("!sHello!e !sWorld!!e")@,@ \
-            //     }[STOPCODE]'
-            // },
-            // {
-            //     "type": "paragraph-fill-in-blank",
-            //     "question": 'Fill in the blank in the code below, so that the block of code will print multiples of 5 from 10 to 65.[CODE]{ \
-            //         @for k in !srange!e(!s10!e, 66, !s5!e):@,@ \
-            //         @    print(k)@,@ \
-            //     }[STOPCODE]'
-            // },
-        ];
-
+        let questions = [];
         let currentQuestion = -1;
         let totalScore = 0;
         let totalTime = 0;
@@ -870,7 +218,7 @@
         function stopTimer() {
             clearInterval(timerInterval);
             // Update progress bar
-            const progressPercentage = (currentQuestion + 1) / randomQuestions.length * 100;
+            const progressPercentage = (currentQuestion + 1) / numQuestions * 100;
             document.getElementById("progress-bar-inner").style.width = progressPercentage + "%";
         }
 
@@ -889,10 +237,10 @@
                     console.log('timer = '+timer+'; timer < 11  = '+score)
                     score = 10;
                 } else {
-                    score = 10 - Math.ceil((timer - 10) / score_reducer_rate);
-                    if (score < 1) {
-                        score = 1;
-                    }
+				    score = 10 - Math.ceil((timer - 10) / score_reducer_rate);
+				    if (score < 1) {
+				        score = 1;
+				    }
                     console.log('timer = '+timer+'; else = '+score)
                 }
                 //let score = 10 - Math.max(1, Math.floor((timer - 10) / 1));
@@ -914,6 +262,7 @@
             resultEl.textContent = "";
             nextBtn.style.display = "none";
             submitBtn.style.display = "none";
+            console.log(question);
 
             if (question.type === "multiple-choice") {
                 questionEl.textContent = question.question;
@@ -1080,8 +429,6 @@
             totalScore = 0;
             totalTime = 0;
             shuffleArray(questions);
-            // Select the first 'numQuestions' questions of the shuffled Questions.
-            randomQuestions = questions.slice(0, numQuestions);
             document.getElementById("subject-selection").style.display = "block";
             document.getElementById("final-result").style.display = "none";
             restartBtn.style.display = "none";
@@ -1091,6 +438,18 @@
         }
 
         document.getElementById("start-btn").addEventListener("click", () => {
+            fetch('https://hawarnekar.github.io/quiz/questions/questions-python-ganit.json')
+            .then(response => response.json())
+            .then(data => {
+                questions = data;
+                // Select the first 'numQuestions' questions of the shuffled Questions.
+                randomQuestions = questions.slice(0, numQuestions);
+                loadQuestion();
+            })
+            .catch(error => {
+                console.error('Error fetching questions:', error);
+                // Use a fallback set of questions or handle the error in some other way
+            });
             document.getElementById("timer-score").style.display = "flex";
             document.getElementById("subject-selection").style.display = "none";
             quizContainerEl.style.display = "block";
@@ -1098,7 +457,7 @@
                 totalTime++;
                 updateTimer();
             }, 1000);
-            loadQuestion();
+            // loadQuestion();
         });
 
         restartQuiz();
