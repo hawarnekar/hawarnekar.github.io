@@ -154,12 +154,12 @@
             </select>
             <label for="level" style="margin-left: 1rem;"><B>Select Level:</B></label>
             <select id="level">
-                <option value="level-ganit">Ganit </option>
-                <option value="level-if-else">if-else </option>
-                <option value="level-while-loop">while-loop </option>
-                <option value="level-for-loop">for-loop </option>
-                <option value="level-lists">lists </option>
-                <option value="level-functions">functions </option>
+                <option value="ganit">Ganit </option>
+                <option value="if-else">if-else </option>
+                <option value="while-loop">while-loop </option>
+                <option value="for-loop">for-loop </option>
+                <option value="lists">lists </option>
+                <option value="functions">functions </option>
             </select>
 
         <button id="start-btn" style="margin-left: 1rem;"><B>Start Quiz</B></button>
@@ -438,7 +438,13 @@
         }
 
         document.getElementById("start-btn").addEventListener("click", () => {
-            fetch('https://hawarnekar.github.io/quiz/questions/questions-python-ganit.json')
+            const urlPrefix = 'https://hawarnekar.github.io/quiz/questions/questions';
+            const subject = document.getElementById("subject").value;
+            const level = document.getElementById("level").value;
+            const questionsFile = `${urlPrefix}-${subject}-${level}.json`;
+            console.log(questionsFile);
+
+            fetch(questionsFile)
             .then(response => response.json())
             .then(data => {
                 questions = data;
