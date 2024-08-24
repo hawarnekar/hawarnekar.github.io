@@ -34,12 +34,6 @@ function updateSubTopics() {
                          // "functions"
                         ];
             break;
-        // case "javascript":
-        //     subTopics = ["basics", "dom-manipulation", "events", "async", "es6-features"];
-        //     break;
-        // case "html":
-        //     subTopics = ["tags", "forms", "semantics", "accessibility", "html5-features"];
-        //     break;
         default:
             subTopics = [];
     }
