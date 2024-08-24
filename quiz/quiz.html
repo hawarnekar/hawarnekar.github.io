@@ -428,7 +428,6 @@
         function restartQuiz() {
             totalScore = 0;
             totalTime = 0;
-            shuffleArray(questions);
             document.getElementById("subject-selection").style.display = "block";
             document.getElementById("final-result").style.display = "none";
             restartBtn.style.display = "none";
@@ -448,6 +447,7 @@
             .then(response => response.json())
             .then(data => {
                 questions = data;
+                shuffleArray(questions);
                 // Select the first 'numQuestions' questions of the shuffled Questions.
                 randomQuestions = questions.slice(0, numQuestions);
                 loadQuestion();
