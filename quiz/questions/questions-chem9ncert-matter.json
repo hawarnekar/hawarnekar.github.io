@@ -1,82 +1,22 @@
 [
     {
         "type": "fill-in-blank",
-        "question": "Anything that occupies space and has mass is called [BLANK].",
+        "question": "Anything that occupies !sspace!e and has !smass!e is called !smatter!e.",
         "correctAnswer": "matter"
     },
     {
         "type": "fill-in-blank",
-        "question": "Anything that occupies space and has [BLANK] is called matter.",
-        "correctAnswer": "mass"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "Anything that occupies [BLANK] and has mass is called matter.",
-        "correctAnswer": "space"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "On the basis of [BLANK] properties matter is classified as solids, liquids and gases.",
+        "question": "On the basis of !sphysical!e properties !smatter!e is classified as !ssolids!e, !sliquids!e and !sgases!e.",
         "correctAnswer": "physical"
     },
     {
         "type": "fill-in-blank",
-        "question": "On the basis of physical properties, [BLANK] is classified as solids, liquids and gases.",
-        "correctAnswer": "matter"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "On the basis of physical properties, matter is classified as [BLANK], liquids and gases.",
-        "correctAnswer": "solids"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "On the basis of physical properties, matter is classified as solids, [BLANK] and gases.",
-        "correctAnswer": "liquids"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "On the basis of physical properties, matter is classified as solids, liquids and [BLANK].",
-        "correctAnswer": "gases"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "On the basis of [BLANK] properties, matter is classified as elements, compounds and mixture.",
+        "question": "On the basis of !schemical!e properties, !smatter!e is classified as !selements!e, !scompounds!e and !smixture!e.",
         "correctAnswer": "chemical"
     },
     {
         "type": "fill-in-blank",
-        "question": "On the basis of chemical properties, [BLANK] is classified as elements, compounds and mixture.",
+        "question": "The particles which make up !smatter!e are !satoms!e or !smolecules!e.",
         "correctAnswer": "matter"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "On the basis of chemical properties, matter is classified as [BLANK], compounds and mixture.",
-        "correctAnswer": "elements"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "On the basis of chemical properties, matter is classified as elements, [BLANK] and mixture.",
-        "correctAnswer": "compounds"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "On the basis of chemical properties, matter is classified as elements, compounds and [BLANK].",
-        "correctAnswer": "mixture"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "The particles which make up [BLANK] are atoms or molecules.",
-        "correctAnswer": "matter"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "The particles which make up matter are [BLANK] or molecules.",
-        "correctAnswer": "atoms"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "The particles which make up matter are atoms or [BLANK].",
-        "correctAnswer": "molecules"
     }
 ]
