@@ -1,13 +1,105 @@
 [
     {
+        "type": "paragraph-fill-in-blank",
+        "question": "\"Hello World!\" print करने का program.<br>[CODE] { @!sprint!e(\"!sHello!e !sWorld!!e\")@,@ }[STOPCODE]"
+    },
+    {
         "type": "fill-in-blank",
-        "question": "क्या print होगा?<br>[CODE] {
-                @x = \"Madhuri\"@,@
-                x = 15@,@
-                print(x)@,@
-                }[STOPCODE]
-                OUTPUT: <br>
-                [BLANK]<br>",
+        "question": "क्या print होगा?<br>[CODE] { @x = 4@,@ @x = \"Amit\"@,@@print(x)@,@ @@,@ }[STOPCODE] OUTPUT: <br> [BLANK]<br>",
+        "correctAnswer": "Amit"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @x = \"Madhuri\"@,@ @x = 15@,@ @print(x)@,@ @}[STOPCODE] OUTPUT: <br> [BLANK]<br>",
         "correctAnswer": "15"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 23@,@ @print(23)@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "23"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 23@,@ @print(\"23\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "23"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 23@,@ @print(num)@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "23"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 23@,@ @print(\"num\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "num"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 23@,@ @print(\"{num}\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "{num}"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 23@,@ @print(f\"{num}\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "23"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 23@,@ @print(f'{num}')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "23"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @x1 = \"Hello friends!\"@,@ @print(x1)@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "Hello friends!"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @x1 = \"Hello friends!\"@,@ @print(\"x1\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "x1"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @x1 = \"Hello friends!\"@,@ @print(\"{x1}\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "{x1}"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @x1 = \"Hello friends!\"@,@ @print(f\"{x1}\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "Hello friends!"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @x1 = \"Hello friends!\"@,@ @print(f'{x1}')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "Hello friends!"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @x = \"Python\"@,@ @y = \"is\"@,@ @z = \"awesome\"@,@ @print(x, y, z)@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "Python is awesome"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @x = \"Python\"@,@ @y = \"is\"@,@ @z = \"awesome\"@,@ @print(x + y + z)@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "Pythonisawesome"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @price = 20@,@ @txt = f\"Biscuit ka daam ₹{price} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>Biscuit ka daam ₹[BLANK] hai.",
+        "correctAnswer": "20"
+    },
+    {
+        "type": "multiple-choice",
+        "question": "क्या print होगा?<br>[CODE] { @price = 20@,@ @txt = f\"Biscuit ka daam ₹{price:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br><br>",
+        "options": ["Biscuit ka daam ₹{price:.2f} hai.", "Biscuit ka daam ₹20 hai.",
+                "Biscuit ka daam ₹20.00 hai.", "Biscuit ka daam ₹{20} hai."],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{5 * 12} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
+        "options": ["Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹512 hai.",
+                "Ek darjan ball-pen ka daam ₹5 hai.", "Ek darjan ball-pen ka daam ₹12 hai."],
+        "correctAnswer": 0
     }
 ]
