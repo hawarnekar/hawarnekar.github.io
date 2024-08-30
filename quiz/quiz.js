@@ -72,14 +72,12 @@ function updateScore(correct) {
         const score_reducer_rate = 10;
         let score = 10;
         if(timer < 11) {
-            console.log('timer = '+timer+'; timer < 11  = '+score)
             score = 10;
         } else {
             score = 10 - Math.ceil((timer - 10) / score_reducer_rate);
             if (score < 1) {
                 score = 1;
             }
-            console.log('timer = '+timer+'; else = '+score)
         }
         totalScore += score;
     } else {
@@ -98,10 +96,32 @@ function loadQuestion() {
     resultEl.textContent = "";
     nextBtn.style.display = "none";
     submitBtn.style.display = "none";
-    console.log(question);
+
+    // Create code block
+    let qWithCode = question.question;
+    const parts = qWithCode.split("[CODE]");
+    const textBeforeCode = parts[0];
+    if(parts.length > 1) {
+        const codeBlockParts = parts[1].split("[STOPCODE]");
+        let codeBlock = codeBlockParts[0];
+        let hiddenText;
+        // Parse the code block
+        qWithCode = codeBlock.trim().slice(1, -1); // Remove curly braces
+        const modifiedCodeLines = qWithCode.split('@,@').map(line => {
+            return line.trim().replace(/^@|@$/g, '').replace(/\\@/g, '@');
+        });
+
+        const codeHtml = modifiedCodeLines.join('<br>');
+        qinnerHTML = `${textBeforeCode}<br><div class="code-block" style="margin: 2px; background-color: #F7F7F7">${codeHtml}</div>`;
+        if(codeBlockParts.length > 1) {
+            qinnerHTML = `${qinnerHTML}${codeBlockParts[1]}`;
+        }
+    } else {
+        qinnerHTML = qWithCode;
+    }
 
     if (question.type === "multiple-choice") {
-        questionEl.textContent = question.question;
+        questionEl.innerHTML = qinnerHTML;
         question.options.forEach((option, index) => {
             const button = document.createElement("div");
             button.className = "option";
@@ -110,51 +130,61 @@ function loadQuestion() {
             optionsEl.appendChild(button);
         });
     } else if (question.type === "fill-in-blank") {
-        const parts = question.question.split("[BLANK]");
-        questionEl.innerHTML = parts[0] + '<input type="text" id="fill-in-answer">' + parts[1];
-        submitBtn.style.display = "block";
-        submitBtn.onclick = checkFillInBlankAnswer;
+        const parts = qinnerHTML.split("[BLANK]");
+        if (parts.length > 1) {
+            questionEl.innerHTML = parts[0] + '<input type="text" id="fill-in-answer">' + parts[1];
+            submitBtn.style.display = "block";
+            submitBtn.onclick = checkFillInBlankAnswer;
+        } else {
+            // Find all parts between !s and !e
+            let sentence;
+            const regex = /!s(.*?)!e/g;
+            const matches = [...parts[0].matchAll(regex)];
+            if (matches.length > 0) {
+                // Randomly select one of the hidden parts
+                const randomIndex = Math.floor(Math.random() * (matches.length - 1))+1;
+                hiddenText = matches[randomIndex][1];
+                sentence = parts[0].replace(matches[randomIndex][0], "[BLANK]");
+            } else {
+                console.log("Cannot process question "+ currentQuestion + ":{" + parts[0] + "}");
+                currentQuestion++;
+                loadQuestion();
+                return;
+            }
+            matches.forEach(match => {
+                sentence = sentence.replace(match[0],match[1])
+            });
+            const blankParts = sentence.split("[BLANK]");
+            questionEl.innerHTML = blankParts[0] + '<input type="text" id="fill-in-answer">' + blankParts[1];
+            question.correctAnswer=hiddenText;
+
+            submitBtn.style.display = "block";
+            submitBtn.onclick = checkFillInBlankAnswer;
+        }
     } else if (question.type === "paragraph-fill-in-blank") {
-        const paragraph = question.question;
-        const parts = paragraph.split("[CODE]");
-        const textBeforeCode = parts[0];
-        const codeBlockParts = parts[1].split("[STOPCODE]");
-        let codeBlock = codeBlockParts[0];
-        let hiddenText;
-
-        // Parse the code block
-        codeBlock = codeBlock.trim().slice(1, -1); // Remove curly braces
-        console.log("codeBlock="+codeBlock)
-
         // Find all parts between !s and !e
         const hiddenParts = [];
         const regex = /!s(.*?)!e/g;
-        const matches = [...codeBlock.matchAll(regex)];
-        console.log("matches="+matches+",\n    length = "+matches.length);
+        const matches = [...qinnerHTML.matchAll(regex)];
         if (matches.length > 0) {
             // Randomly select one of the hidden parts
             const randomIndex = Math.floor(Math.random() * matches.length);
             hiddenText = matches[randomIndex][1];
-            console.log("randomIndex="+randomIndex)
-            codeBlock = codeBlock.replace(matches[randomIndex][0], "[BLANK]");
-            console.log("hiddenText="+hiddenText)
+            qinnerHTML = qinnerHTML.replace(matches[randomIndex][0], "[BLANK]");
+        } else {
+            currentQuestion++;
+            loadQuestion();
+            return;
         }
         matches.forEach(match => {
-            codeBlock = codeBlock.replace(match[0],match[1])
+            qinnerHTML = qinnerHTML.replace(match[0],match[1])
         });
-        console.log("codeBlock="+codeBlock)
-        const blankParts = codeBlock.split("[BLANK]");
-        codeBlock = blankParts[0] + '<input type="text" id="fill-in-answer">' + blankParts[1];
-
-        const modifiedCodeLines = codeBlock.split('@,@').map(line => {
-            return line.trim().replace(/^@|@$/g, '').replace(/\\@/g, '@');
-        });
-        console.log("modifiedCodeLines="+modifiedCodeLines)
+        const blankParts = qinnerHTML.split("[BLANK]");
+        qinnerHTML = blankParts[0] + '<input type="text" id="fill-in-answer">' + blankParts[1];
 
         if (matches.length > 0) {
-            const codeHtml = modifiedCodeLines.join('<br>');
-
-            questionEl.innerHTML = `${textBeforeCode}<br><div class="code-block">${codeHtml}</div>`;
+            questionEl.innerHTML = qinnerHTML;
+            questionEl.style = "font-family: 'Noto Sans Devanagari', serif";
             submitBtn.style.display = "block";
 
             submitBtn.onclick = () => {
