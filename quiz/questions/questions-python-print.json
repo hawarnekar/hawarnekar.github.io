@@ -1,23 +1,5 @@
 [
     {
-        "type": "paragraph-fill-in-blank",
-        "question": "\"Hello World!\" print करने का program.<br>[CODE] { \
-                    @!sprint!e(\"!sHello!e !sWorld!!e\")@,@ \
-                    }[STOPCODE]"
-    },
-    {
-        "type": "fill-in-blank",
-        "question": "क्या print होगा?<br>[CODE] { \
-                    @x = 4@,@ \
-                    @x = \"Amit\"@,@ \
-                    @print(x)@,@ \
-                    @@,@ \
-                    }[STOPCODE]\
-                    OUTPUT: <br>\
-                    [BLANK]<br>",
-        "correctAnswer": "Amit"
-    },
-    {
         "type": "fill-in-blank",
         "question": "क्या print होगा?<br>[CODE] { \
                 @x = \"Madhuri\"@,@ \
