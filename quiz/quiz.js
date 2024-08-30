@@ -27,6 +27,7 @@ function updateSubTopics() {
     switch(subject) {
         case "python":
             subTopics = ["ganit",
+                         "print",
                          // "if-else",
                          // "while-loop",
                          // "for-loop",
