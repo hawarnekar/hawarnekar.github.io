@@ -70,17 +70,19 @@ function updateTimer() {
 function updateScore(correct) {
     const scoreEl = document.getElementById("score");
     if (correct) {
-        const score_reducer_rate = 10;
-        let score = 10;
-        if(timer < 11) {
-            score = 10;
-        } else {
-            score = 10 - Math.ceil((timer - 10) / score_reducer_rate);
-            if (score < 1) {
-                score = 1;
-            }
-        }
-        totalScore += score;
+        totalScore += 10;
+        score = 10;
+        //const score_reducer_rate = 10;
+        //let score = 10;
+        //if(timer < 11) {
+        //    score = 10;
+        //} else {
+        //    score = 10 - Math.ceil((timer - 10) / score_reducer_rate);
+        //    if (score < 1) {
+        //        score = 1;
+        //    }
+        //}
+        //totalScore += score;
     } else {
         totalScore += 0;
     }
