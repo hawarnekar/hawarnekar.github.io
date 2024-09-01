@@ -321,11 +321,6 @@
     },
     {
         "type": "fill-in-blank",
-        "question": "3 // 5 ** 4 = [BLANK]",
-        "correctAnswer": "0"
-    },
-    {
-        "type": "fill-in-blank",
         "question": "7 % 6 // 7 = [BLANK]",
         "correctAnswer": "0"
     },
