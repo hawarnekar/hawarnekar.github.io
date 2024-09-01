@@ -155,105 +155,105 @@
         "options": ["Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹72 hai.",
                 "Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai."],
         "correctAnswer": 0
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{5 * 12} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹72.00 hai.", "Ek darjan ball-pen ka daam ₹60 hai.",
                 "Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72 hai."],
         "correctAnswer": 1
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{5 * 12} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹72 hai.", "Ek darjan ball-pen ka daam ₹60.00 hai.",
                 "Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai."],
         "correctAnswer": 2
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{5 * 12} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai.", 
                     "Ek darjan ball-pen ka daam ₹72 hai.", "Ek darjan ball-pen ka daam ₹60 hai."],
         "correctAnswer": 3
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{6 * 12} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹72 hai.",
                 "Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai."],
         "correctAnswer": 1
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{6 * 12} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹72.00 hai.", "Ek darjan ball-pen ka daam ₹60 hai.",
                 "Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72 hai."],
         "correctAnswer": 3
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{6 * 12} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹72 hai.", "Ek darjan ball-pen ka daam ₹60.00 hai.",
                 "Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai."],
         "correctAnswer": 0
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{6 * 12} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai.", 
                     "Ek darjan ball-pen ka daam ₹72 hai.", "Ek darjan ball-pen ka daam ₹60 hai."],
         "correctAnswer": 2
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{5 * 12:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹72 hai.",
                 "Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai."],
         "correctAnswer": 2
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{5 * 12:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹72 hai.", "Ek darjan ball-pen ka daam ₹60.00 hai.",
                 "Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai."],
         "correctAnswer": 1
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{5 * 12:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹72.00 hai.", "Ek darjan ball-pen ka daam ₹72 hai.",
                 "Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹60.00 hai."],
         "correctAnswer": 3
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{5 * 12:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72 hai.",
                     "Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai."],
         "correctAnswer": 0
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{6 * 12:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹72 hai.",
                 "Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai."],
         "correctAnswer": 3
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{6 * 12:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹72.00 hai.", "Ek darjan ball-pen ka daam ₹60 hai.",
                 "Ek darjan ball-pen ka daam ₹60.00 hai.", "Ek darjan ball-pen ka daam ₹72 hai."],
         "correctAnswer": 0
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{6 * 12:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
         "options": ["Ek darjan ball-pen ka daam ₹72 hai.", "Ek darjan ball-pen ka daam ₹72.00 hai.",
                 "Ek darjan ball-pen ka daam ₹60 hai.", "Ek darjan ball-pen ka daam ₹60.00 hai."],
         "correctAnswer": 1
-    }
+    },
     {
         "type": "multiple-choice",
         "question": "क्या print होगा?<br>[CODE] { @txt = f\"Ek darjan ball-pen ka daam ₹{6 * 12:.2f} hai.\"@,@ @print(txt)@,@ }[STOPCODE]OUTPUT: <br>",
