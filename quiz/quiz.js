@@ -28,23 +28,32 @@ function updateSubTopics() {
         case "python":
             subTopics = ["ganit",
                          "print",
-                         // "if-else",
+                         "ifelse",
                          // "while-loop",
                          // "for-loop",
                          // "list",
                          // "functions"
                         ];
+            subTopicsText =
+            [
+                "Numbers & Operations",
+                "Print statement",
+                "Condition checks",
+                // "Loops",
+                // "Lists",
+                // "Functions"
+            ];
             break;
         default:
             subTopics = [];
     }
 
-    subTopics.forEach(topic => {
+    for (let i = 0; i < subTopics.length; i++) {
         const option = document.createElement("option");
-        option.value = topic;
-        option.textContent = topic.charAt(0).toUpperCase() + topic.slice(1).replace("-", " ");
+        option.value = subTopics[i];
+        option.textContent = subTopicsText[i];
         subTopicSelect.appendChild(option);
-    });
+    }
 }
 
 function startTimer() {
