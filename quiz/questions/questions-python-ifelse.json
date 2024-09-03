@@ -33,11 +33,11 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"yellow\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and blue!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"yellow\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and green!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!syellow!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and blue!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!syellow!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and green!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
