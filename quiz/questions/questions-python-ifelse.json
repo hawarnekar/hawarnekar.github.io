@@ -1,162 +1,194 @@
 [
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s"red"!e@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!sred is a primary color!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"red\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sred is a primary color!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = "!sred!e"@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!sred is a primary color!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sred!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sred is a primary color!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = "!sgreen!e"@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!sgreen is a primary color!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sgreen!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sgreen is a primary color!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s"green"!e@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!sgreen is a primary color!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"green\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sgreen is a primary color!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = "!sblue!e"@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!sblue is a primary color!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sblue!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sblue is a primary color!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s"blue"!e@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!sblue is a primary color!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"blue\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sblue is a primary color!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s"purple"!e@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!spurple is mix of red and blue!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"purple\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!spurple is mix of red and blue!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = "!spurple!e"@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!spurple is mix of red and blue!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!spurple!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!spurple is mix of red and blue!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s"yellow"!e@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "purple":@,@ @    print("purple is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and blue!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"yellow\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and blue!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @colour = "!syellow!e"@,@ @!sif!e !scolour!e == "red" !sor!e !scolour!e == "green" or !scolour!e == "blue":@,@ @    print("{colour} is a primary color")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and green")@,@ @!selif!e !scolour!e == "yellow":@,@ @    print("yellow is mix of red and blue")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and blue!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!syellow!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and blue!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @a = 43@,@ @b = 34@,@ @if !sb!e !s>!e !sa!e:@,@ @    print("b is greater than a")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print("a and b are equal")@,@ @!selse:!e@,@ @   print("a is greater than b")@,@ @@,@ @OUTPUT: @,@ @!sa is greater than b!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 43@,@ @b = 34@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sa is greater than b!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 34@,@ @if !sb!e !s>!e !sa!e:@,@ @    print("b is greater than a")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print("a and b are equal")@,@ @!selse:!e@,@ @   print("a is greater than b")@,@ @@,@ @OUTPUT: @,@ @!sa and b are equal!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 34@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sa and b are equal!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 43@,@ @if !sb!e !s>!e !sa!e:@,@ @    print("b is greater than a")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print("a and b are equal")@,@ @!selse:!e@,@ @   print("a is greater than b")@,@ @@,@ @OUTPUT: @,@ @!sb is greater than a!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 43@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sb is greater than a!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @ !scostPrice!e = 100@,@ @ !squantity!e = 10@,@ @ !ssellPrice1!e = 130@,@ @ !ssellQuantity1!e = 5@,@ @ !ssellPrice2!e = 100@,@ @ !ssellQuantity2!e = 2@,@ @ !ssellPrice3!e = 85@,@ @ !ssellQuantity3!e = 3@,@ @@,@ @ !stotalCost!e = costPrice * quantity@,@ @ !stotalEarning!e = sellPrice1 * sellQuantity1 + sellPrice2 * sellQuantity2 + sellPrice3 * sellQuantity3@,@ @ !sif!e !stotalCost!e !s<!e !stotalEarning:!e@,@ @     print(f"Profit = {(totalEarning - totalCost) * 100 / totalCost} %")@,@ @ !selse:!e@,@ @     print(f"Loss = {(totalCost - totalEarning) * 100 / totalCost}")@,@ @@,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @ !scostPrice!e = 100@,@ @ !squantity!e = 10@,@ @ !ssellPrice1!e = 130@,@ @ !ssellQuantity1!e = 5@,@ @ !ssellPrice2!e = 100@,@ @ !ssellQuantity2!e = 2@,@ @ !ssellPrice3!e = 85@,@ @ !ssellQuantity3!e = 3@,@ @@,@ @ !stotalCost!e = costPrice * quantity@,@ @ !stotalEarning!e = sellPrice1 * sellQuantity1 + sellPrice2 * sellQuantity2 + sellPrice3 * sellQuantity3@,@ @ !sif!e !stotalCost!e !s<!e !stotalEarning:!e@,@ @     print(f\"Profit = {(totalEarning - totalCost) * 100 / totalCost} %\")@,@ @ !selse:!e@,@ @     print(f\"Loss = {(totalCost - totalEarning) * 100 / totalCost}\")@,@ @@,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s2!e == 0:@,@ @    print("The number is even.")@,@ @!selse:!e@,@ @    print("The number is odd.")@,@ @@,@ @OUTPUT: @,@ @!sThe number is odd.!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s2!e == 0:@,@ @    print(\"The number is even.\")@,@ @!selse:!e@,@ @    print(\"The number is odd.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is odd.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s3!e == 0:@,@ @    print("The number is divisible by 3.")@,@ @!selse:!e@,@ @    print("The number is not divisible by 3.")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 3.!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s3!e == 0:@,@ @    print(\"The number is divisible by 3.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 3.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 3.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s5!e == 0:@,@ @    print("The number is divisible by 5.")@,@ @!selse:!e@,@ @    print("The number is not divisible by 5.")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 5.!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s5!e == 0:@,@ @    print(\"The number is divisible by 5.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 5.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 5.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": 'Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s4!e == 0:@,@ @    print("The number is divisible by 4.")@,@ @!selse:!e@,@ @    print("The number is not divisible by 4.")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 4.!e @,@ }[STOPCODE]'
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s4!e == 0:@,@ @    print(\"The number is divisible by 4.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 4.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 4.!e @,@ }[STOPCODE]"
     },
     {
         "type": "multiple-choice",
-        "question":  '10 से 65 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(_____, 66, 5):@,@ @    print(k)@,@ }[STOPCODE]',
-        "options": ["5", "65", "10", "4"],
+        "question": "10 से 65 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(_____, 66, 5):@,@ @    print(k)@,@ }[STOPCODE]",
+        "options": [
+            "5",
+            "65",
+            "10",
+            "4"
+        ],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question":  '10 से 65 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(10, 66, _____):@,@ @    print(k)@,@ }[STOPCODE]',
-        "options": ["5", "65", "10", "4"],
+        "question": "10 से 65 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(10, 66, _____):@,@ @    print(k)@,@ }[STOPCODE]",
+        "options": [
+            "5",
+            "65",
+            "10",
+            "4"
+        ],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question":  '5 से 65 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(_____, 66, 5):@,@ @    print(k)@,@ }[STOPCODE]',
-        "options": ["65", "5", "10", "4"],
+        "question": "5 से 65 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(_____, 66, 5):@,@ @    print(k)@,@ }[STOPCODE]",
+        "options": [
+            "65",
+            "5",
+            "10",
+            "4"
+        ],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question":  '12 से 60 तक 4 के multiples print करने का program.<br><br>[CODE] { @for k in range(12, 61, _____):@,@ @    print(k)@,@ }[STOPCODE]',
-        "options": ["12", "61", "4", "60"],
+        "question": "12 से 60 तक 4 के multiples print करने का program.<br><br>[CODE] { @for k in range(12, 61, _____):@,@ @    print(k)@,@ }[STOPCODE]",
+        "options": [
+            "12",
+            "61",
+            "4",
+            "60"
+        ],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question":  '8 से 36 तक 4 के multiples print करने का program.<br><br>[CODE] { @for k in range(8, 37, _____):@,@ @    print(k)@,@ }[STOPCODE]',
-        "options": ["36", "8", "37", "4"],
+        "question": "8 से 36 तक 4 के multiples print करने का program.<br><br>[CODE] { @for k in range(8, 37, _____):@,@ @    print(k)@,@ }[STOPCODE]",
+        "options": [
+            "36",
+            "8",
+            "37",
+            "4"
+        ],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question":  '8 से 36 तक 4 के multiples print करने का program.<br><br>[CODE] { @for k in range(_____, 37, 4):@,@ @    print(k)@,@ }[STOPCODE]',
-        "options": ["36", "8", "37", "4"],
+        "question": "8 से 36 तक 4 के multiples print करने का program.<br><br>[CODE] { @for k in range(_____, 37, 4):@,@ @    print(k)@,@ }[STOPCODE]",
+        "options": [
+            "36",
+            "8",
+            "37",
+            "4"
+        ],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question":  '15 से 45 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(15, 46, _____):@,@ @    print(k)@,@ }[STOPCODE]',
-        "options": ["15", "5", "45", "46"],
+        "question": "15 से 45 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(15, 46, _____):@,@ @    print(k)@,@ }[STOPCODE]",
+        "options": [
+            "15",
+            "5",
+            "45",
+            "46"
+        ],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question":  '15 से 45 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(15, 46, _____):@,@ @    print(k)@,@ }[STOPCODE]',
-        "options": ["5", "45", "15", "46"],
+        "question": "15 से 45 तक 5 के multiples print करने का program.<br><br>[CODE] { @for k in range(15, 46, _____):@,@ @    print(k)@,@ }[STOPCODE]",
+        "options": [
+            "5",
+            "45",
+            "15",
+            "46"
+        ],
         "correctAnswer": 0
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": '10 से 65 तक 5 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s10!e, 66, !s5!e):@,@ @    print(k)@,@ \
-        }[STOPCODE]'
+        "question": "10 से 65 तक 5 के multiples print करने का program.[CODE] { @for k in !srange!e(!s10!e, 66, !s5!e):@,@ @    print(k)@,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": '5 से 65 तक 5 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s5!e, 66, !s5!e):@,@ @    print(k)@,@ \
-        }[STOPCODE]'
+        "question": "5 से 65 तक 5 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s5!e, 66, !s5!e):@,@ @    print(k)@,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": '10 से 60 तक 10 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s10!e, 61, !s10!e):@,@ @    print(k)@,@ \
-        }[STOPCODE]'
+        "question": "10 से 60 तक 10 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s10!e, 61, !s10!e):@,@ @    print(k)@,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": '12 से 64 तक 4 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s12!e, 66, !s4!e):@,@ @    print(k)@,@ \
-        }[STOPCODE]'
+        "question": "12 से 64 तक 4 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s12!e, 66, !s4!e):@,@ @    print(k)@,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": '12 से 54 तक 6 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s12!e, 55, !s6!e):@,@ @    print(k)@,@ \
-        }[STOPCODE]'
+        "question": "12 से 54 तक 6 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s12!e, 55, !s6!e):@,@ @    print(k)@,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": '12 से 60 तक 12 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s12!e, 61, !s12!e):@,@ @    print(k)@,@ \
-        }[STOPCODE]'
+        "question": "12 से 60 तक 12 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s12!e, 61, !s12!e):@,@ @    print(k)@,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": '8 से 36 तक 4 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s8!e, 37, !s4!e):@,@ @    print(k)@,@ \
-        }[STOPCODE]'
+        "question": "8 से 36 तक 4 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s8!e, 37, !s4!e):@,@ @    print(k)@,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": '15 से 45 तक 5 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s15!e, 46, !s5!e):@,@ @    print(k)@,@ \
-        }[STOPCODE]'
-    },
+        "question": "15 से 45 तक 5 के multiples print करने का program.[CODE]{ @for k in !srange!e(!s15!e, 46, !s5!e):@,@ @    print(k)@,@ }[STOPCODE]"
+    }
 ]
