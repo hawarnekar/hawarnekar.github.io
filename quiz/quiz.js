@@ -362,6 +362,7 @@ function displayQuizSummary() {
 }
 
 function resetQuestions() {
+    console.log("Shuffling the question set and selecting " + numQuestions + "questions.");
     shuffleArray(questions);
     // Select the first 'numQuestions' questions of the shuffled Questions.
     randomQuestions = questions.slice(0, numQuestions);
@@ -408,7 +409,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
             // Use a fallback set of questions or handle the error in some other way
         });
     }
-    
+    console.log(questions.length);
     if(questions.length > 0) {
 		resetQuestions();
 		document.getElementById("timer-score").style.display = "flex";
@@ -420,7 +421,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
 		}, 1000);
 
         console.log("Loading question...");
-		loadQuestion();
+	loadQuestion();
     }
 });
 
