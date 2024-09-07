@@ -361,12 +361,9 @@ function displayQuizSummary() {
 }
 
 function resetQuestions() {
-    console.log("Number of questions: " + questions.length);
     shuffleArray(questions);
-
     // Select the first 'numQuestions' questions of the shuffled Questions.
-    //randomQuestions = questions.slice(0, numQuestions);
-    randomQuestions = questions;        // TBD: This should be removed and above line uncommented when deploying.
+    randomQuestions = questions.slice(0, numQuestions);
 }
 
 function restartQuiz() {
@@ -402,7 +399,6 @@ document.getElementById("start-btn").addEventListener("click", () => {
         .then(response => response.json())
         .then(data => {
             questions = data;
-            restartQuiz();
         })
         .catch(error => {
             console.error('Error fetching questions:', error);
