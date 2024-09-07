@@ -105,6 +105,7 @@ function loadQuestion() {
 
     const question = randomQuestions[currentQuestion];
 
+	console.log("Question choosen: " + question);
     optionsEl.innerHTML = "";
     resultEl.textContent = "";
     nextBtn.style.display = "none";
@@ -394,10 +395,12 @@ document.getElementById("start-btn").addEventListener("click", () => {
         const subject = document.getElementById("subject").value;
         const subTopic = document.getElementById("sub-topic").value;
         const questionsFile = `${urlPrefix}-${subject}-${subTopic}.json`;
+        console.log("Questions JSON file: " + questionsFile);
 
         fetch(questionsFile)
         .then(response => response.json())
         .then(data => {
+            console.log("Questions File loaded successfully.");
             questions = data;
         })
         .catch(error => {
@@ -405,16 +408,20 @@ document.getElementById("start-btn").addEventListener("click", () => {
             // Use a fallback set of questions or handle the error in some other way
         });
     }
-    resetQuestions();
-    document.getElementById("timer-score").style.display = "flex";
-    document.getElementById("subject-selection").style.display = "none";
-    quizContainerEl.style.display = "block";
-    totalTimerInterval = setInterval(() => {
-        totalTime++;
-        updateTimer();
-    }, 1000);
+    
+    if(len(questions) > 0) {
+		resetQuestions();
+		document.getElementById("timer-score").style.display = "flex";
+		document.getElementById("subject-selection").style.display = "none";
+		quizContainerEl.style.display = "block";
+		totalTimerInterval = setInterval(() => {
+			totalTime++;
+			updateTimer();
+		}, 1000);
 
-    loadQuestion();
+        console.log("Loading question...");
+		loadQuestion();
+    }
 });
 
 // Call this function once when the page loads to populate the initial sub-topics
