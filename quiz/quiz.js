@@ -7,6 +7,7 @@ let timerInterval;
 let totalTimerInterval;
 let randomQuestions;
 const numQuestions = 15;
+const local_Qset = 0;
 
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
