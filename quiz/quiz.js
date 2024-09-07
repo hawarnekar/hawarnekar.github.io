@@ -409,7 +409,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
         });
     }
     
-    if(len(questions) > 0) {
+    if(questions.length > 0) {
 		resetQuestions();
 		document.getElementById("timer-score").style.display = "flex";
 		document.getElementById("subject-selection").style.display = "none";
