@@ -108,6 +108,7 @@ function loadQuestion() {
     resultEl.textContent = "";
     nextBtn.style.display = "none";
     submitBtn.style.display = "none";
+    questionEl.style = "font-family: 'Noto Sans Devanagari', serif";
 
     // Create code block
     let qWithCode = question.question;
@@ -203,6 +204,13 @@ function loadQuestion() {
                 const userAnswer = document.getElementById("fill-in-answer").value.trim();
                 const correctAnswer = hiddenText.trim();
 
+                userAnswers.push({
+                    question: questionEl.innerHTML,
+                    userAnswer: userAnswer,
+                    correctAnswer: correctAnswer,
+                    isCorrect: userAnswer === correctAnswer
+                });
+
                 if (userAnswer === correctAnswer) {
                     resultEl.textContent = "Correct!";
                 } else {
@@ -251,6 +259,13 @@ function checkMultipleChoiceAnswer(selectedIndex) {
     updateScore(isCorrect);
     stopTimer();
     nextBtn.style.display = "block";
+
+    userAnswers.push({
+        question: questionEl.innerHTML,
+        userAnswer: question.options[selectedIndex],
+        correctAnswer: question.options[question.correctAnswer],
+        isCorrect: selectedIndex === question.correctAnswer
+    });
 }
 
 function checkFillInBlankAnswer() {
@@ -271,6 +286,13 @@ function checkFillInBlankAnswer() {
     updateScore(isCorrect);
     stopTimer();
     nextBtn.style.display = "block";
+
+    userAnswers.push({
+        question: questionEl.innerHTML,
+        userAnswer: userAnswer,
+        correctAnswer: question.correctAnswer,
+        isCorrect: userAnswer.toLowerCase() === correctAnswer.toLowerCase()
+    });
 }
 
 function shuffleArray(array) {
@@ -300,12 +322,58 @@ nextBtn.onclick = () => {
 
         restartBtn.style.display = "block";
         restartBtn.onclick = restartQuiz;
+        stopTimer();
+        displayQuizSummary();
     }
 };
+
+function displayQuizSummary() {
+    questionEl.textContent = "Quiz completed!";
+    optionsEl.innerHTML = "";
+    
+    let summaryHTML = `<h2>Quiz Summary for ${userName}</h2>
+                        <p style="font-size: 24px; font-weight: bold;">Your final score is ${totalScore} out of ${numQuestions * 10}.</p>
+                        <p>It took you ${totalTime} seconds to complete the quiz.</p>
+                        <div id="question-summary">`;
+    
+    userAnswers.forEach((answer, index) => {
+        const color = answer.isCorrect ? "green" : "red";
+        summaryHTML += `
+            <div class="summary-item" style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+                <p><strong>Question ${index + 1}:</strong> ${answer.question}</p>
+                <p style="color: ${color};">Your answer: ${answer.userAnswer}</p>
+                <p>Correct answer: ${answer.correctAnswer}</p>
+            </div>
+        `;
+    });
+    
+    summaryHTML += '</div>';
+    
+    document.getElementById("final-result").innerHTML = summaryHTML;
+    document.getElementById("final-result").style.display = "block";
+    nextBtn.style.display = "none";
+    submitBtn.style.display = "none";
+    quizContainerEl.style.display = "none";
+
+    restartBtn.style.display = "block";
+    restartBtn.onclick = restartQuiz;
+}
+
+function resetQuestions() {
+    console.log("Number of questions: " + questions.length);
+    shuffleArray(questions);
+
+    // Select the first 'numQuestions' questions of the shuffled Questions.
+    //randomQuestions = questions.slice(0, numQuestions);
+    randomQuestions = questions;        // TBD: This should be removed and above line uncommented when deploying.
+}
 
 function restartQuiz() {
     totalScore = 0;
     totalTime = 0;
+    userAnswers = []; // Clear user answers
+    userName = "";
+    document.getElementById("name").value = ""; // Clear the name input
     document.getElementById("subject-selection").style.display = "block";
     document.getElementById("final-result").style.display = "none";
     restartBtn.style.display = "none";
@@ -315,25 +383,32 @@ function restartQuiz() {
 }
 
 document.getElementById("start-btn").addEventListener("click", () => {
-    const urlPrefix = './questions/questions';
-    const subject = document.getElementById("subject").value;
-    const subTopic = document.getElementById("sub-topic").value;
-    const questionsFile = `${urlPrefix}-${subject}-${subTopic}.json`;
-    console.log(questionsFile);
+    const nameInput = document.getElementById("name");
+    userName = nameInput.value.trim();
+    
+    if (!userName || !/^[A-Za-z\s]+$/.test(userName)) {
+        alert("Please enter a valid name (only alphabets and spaces)");
+        return;
+    }
 
-    fetch(questionsFile)
-    .then(response => response.json())
-    .then(data => {
-        questions = data;
-        shuffleArray(questions);
-        // Select the first 'numQuestions' questions of the shuffled Questions.
-        randomQuestions = questions.slice(0, numQuestions);
-        loadQuestion();
-    })
-    .catch(error => {
-        console.error('Error fetching questions:', error);
-        // Use a fallback set of questions or handle the error in some other way
-    });
+    if(local_Qset != 1) {
+        const urlPrefix = './questions/questions';
+        const subject = document.getElementById("subject").value;
+        const subTopic = document.getElementById("sub-topic").value;
+        const questionsFile = `${urlPrefix}-${subject}-${subTopic}.json`;
+
+        fetch(questionsFile)
+        .then(response => response.json())
+        .then(data => {
+            questions = data;
+            restartQuiz();
+        })
+        .catch(error => {
+            console.error('Error fetching questions:', error);
+            // Use a fallback set of questions or handle the error in some other way
+        });
+    }
+    resetQuestions();
     document.getElementById("timer-score").style.display = "flex";
     document.getElementById("subject-selection").style.display = "none";
     quizContainerEl.style.display = "block";
@@ -341,6 +416,8 @@ document.getElementById("start-btn").addEventListener("click", () => {
         totalTime++;
         updateTimer();
     }, 1000);
+
+    loadQuestion();
 });
 
 // Call this function once when the page loads to populate the initial sub-topics
