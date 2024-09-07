@@ -105,7 +105,7 @@ function loadQuestion() {
 
     const question = randomQuestions[currentQuestion];
 
-	console.log("Question choosen: " + question);
+    console.log("Question choosen: " + question.question);
     optionsEl.innerHTML = "";
     resultEl.textContent = "";
     nextBtn.style.display = "none";
@@ -362,7 +362,7 @@ function displayQuizSummary() {
 }
 
 function resetQuestions() {
-    console.log("Shuffling the question set and selecting " + numQuestions + "questions.");
+    console.log("Shuffling the question set and selecting " + numQuestions + " questions.");
     shuffleArray(questions);
     // Select the first 'numQuestions' questions of the shuffled Questions.
     randomQuestions = questions.slice(0, numQuestions);
@@ -383,19 +383,19 @@ function restartQuiz() {
 }
 
 document.getElementById("start-btn").addEventListener("click", () => {
+    const urlPrefix = './questions/questions';
+    const subject = document.getElementById("subject").value;
+    const subTopic = document.getElementById("sub-topic").value;
+    const questionsFile = `${urlPrefix}-${subject}-${subTopic}.json`;
     const nameInput = document.getElementById("name");
     userName = nameInput.value.trim();
-    
+
     if (!userName || !/^[A-Za-z\s]+$/.test(userName)) {
         alert("Please enter a valid name (only alphabets and spaces)");
         return;
     }
 
     if(local_Qset != 1) {
-        const urlPrefix = './questions/questions';
-        const subject = document.getElementById("subject").value;
-        const subTopic = document.getElementById("sub-topic").value;
-        const questionsFile = `${urlPrefix}-${subject}-${subTopic}.json`;
         console.log("Questions JSON file: " + questionsFile);
 
         fetch(questionsFile)
@@ -409,7 +409,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
             // Use a fallback set of questions or handle the error in some other way
         });
     }
-    console.log(questions.length);
+    console.log("Total no of questions: " + questions.length);
     if(questions.length > 0) {
 		resetQuestions();
 		document.getElementById("timer-score").style.display = "flex";
