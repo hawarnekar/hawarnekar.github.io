@@ -92,6 +92,136 @@
     },
     {
         "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(14)@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "14"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(\"14\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "14"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(\"{14}\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "{14}"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(f\"{14}\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "14"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print('14')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "14"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print('{14}')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "{14}"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(f'{14}')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "14"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(\"'14'\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "'14'"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(\"'{14}'\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "'{14}'"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(f\"'{14}'\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "'14'"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print('\"14\"')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "\"14\""
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print('\"{14}\"')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "\"{14}\""
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(f'\"{14}\"')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "\"14\""
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(num)@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "14"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(\"num\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "num"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(\"{num}\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "{num}"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(f\"{num}\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "14"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print('num')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "num"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print('{num}')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "{num}"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(f'{num}')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "14"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(\"'num'\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "'num'"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(\"'{num}'\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "'{num}'"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(f\"'{num}'\")@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "'14'"
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print('\"num\"')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "\"num\""
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print('\"{num}\"')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "\"{num}\""
+    },
+    {
+        "type": "fill-in-blank",
+        "question": "क्या print होगा?<br>[CODE] { @num = 14@,@ @print(f'\"{num}\"')@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
+        "correctAnswer": "\"14\""
+    },
+    {
+        "type": "fill-in-blank",
         "question": "क्या print होगा?<br>[CODE] { @x1 = \"Hello friends!\"@,@ @print(x1)@,@ }[STOPCODE]OUTPUT: <br>[BLANK]<br>",
         "correctAnswer": "Hello friends!"
     },
