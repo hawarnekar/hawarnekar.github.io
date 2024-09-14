@@ -1,43 +1,43 @@
 [
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"red\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sred is a primary color!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"red\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sred is a primary colour!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sred!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sred is a primary color!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sred!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sred is a primary colour!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sgreen!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sgreen is a primary color!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sgreen!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sgreen is a primary colour!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"green\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sgreen is a primary color!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"green\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sgreen is a primary colour!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sblue!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sblue is a primary color!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!sblue!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sblue is a primary colour!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"blue\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sblue is a primary color!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"blue\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!sblue is a primary colour!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"purple\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!spurple is mix of red and blue!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"purple\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!spurple is mix of red and blue!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!spurple!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!spurple is mix of red and blue!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!spurple!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!spurple is mix of red and blue!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"yellow\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and green!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = !s\"yellow\"!e@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"purple\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and green!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!syellow!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary color\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and green!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @colour = \"!syellow!e\"@,@ @!sif!e !scolour!e == \"red\" !sor!e !scolour!e == \"green\" or !scolour!e == \"blue\":@,@ @    print(f\"{colour} is a primary colour\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"yellow is mix of red and green\")@,@ @!selif!e !scolour!e == \"yellow\":@,@ @    print(\"purple is mix of red and blue\")@,@ @@,@ @OUTPUT: @,@ @!syellow is mix of red and green!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
