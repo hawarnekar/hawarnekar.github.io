@@ -30,9 +30,7 @@ function updateSubTopics() {
             subTopics = ["ganit",
                          "print",
                          "ifelse",
-                         // "while-loop",
-                         // "for-loop",
-                         // "list",
+                         // "loopnlists",
                          // "functions"
                         ];
             subTopicsText =
@@ -40,8 +38,7 @@ function updateSubTopics() {
                 "Numbers & Operations",
                 "Print statement",
                 "Condition checks",
-                // "Loops",
-                // "Lists",
+                // "Loops & Lists",
                 // "Functions"
             ];
             break;
