@@ -41,27 +41,27 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 72@,@ @b = 74@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sb is greater than a!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 72@,@ @b = 74@,@ @!sif!e !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sb is greater than a!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 69@,@ @b = 59@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sa is greater than b!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 69@,@ @b = 59@,@ @!sif!e !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sa is greater than b!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 64@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sb is greater than a!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 64@,@ @!sif!e !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sb is greater than a!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 43@,@ @b = 34@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sa is greater than b!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 43@,@ @b = 34@,@ @!sif!e !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sa is greater than b!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 34@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sa and b are equal!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 34@,@ @!sif!e !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sa and b are equal!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 43@,@ @if !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sb is greater than a!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @a = 34@,@ @b = 43@,@ @!sif!e !sb!e !s>!e !sa!e:@,@ @    print(\"b is greater than a\")@,@ @!selif!e !sa!e !s==!e !sb!e:@,@ @    print(\"a and b are equal\")@,@ @!selse:!e@,@ @   print(\"a is greater than b\")@,@ @@,@ @OUTPUT: @,@ @!sb is greater than a!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
@@ -69,50 +69,50 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 35@,@ @if !snumber!e !s%!e !s2!e == 0:@,@ @    print(\"The number is even.\")@,@ @!selse:!e@,@ @    print(\"The number is odd.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is odd.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 35@,@ @!sif!e !snumber!e !s%!e !s2!e == 0:@,@ @    print(\"The number is even.\")@,@ @!selse:!e@,@ @    print(\"The number is odd.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is odd.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 35@,@ @if !snumber!e !s%!e !s3!e == 0:@,@ @    print(\"The number is divisible by 3.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 3.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 3.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 35@,@ @!sif!e !snumber!e !s%!e !s3!e == 0:@,@ @    print(\"The number is divisible by 3.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 3.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 3.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 35@,@ @if !snumber!e !s%!e !s5!e == 0:@,@ @    print(\"The number is divisible by 5.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 5.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 5.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 35@,@ @!sif!e !snumber!e !s%!e !s5!e == 0:@,@ @    print(\"The number is divisible by 5.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 5.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 5.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 35@,@ @if !snumber!e !s%!e !s7!e == 0:@,@ @    print(\"The number is divisible by 7.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 7.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 7.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 35@,@ @!sif!e !snumber!e !s%!e !s7!e == 0:@,@ @    print(\"The number is divisible by 7.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 7.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 7.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 24@,@ @if !snumber!e !s%!e !s2!e == 0:@,@ @    print(\"The number is even.\")@,@ @!selse:!e@,@ @    print(\"The number is odd.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is even.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 24@,@ @!sif!e !snumber!e !s%!e !s2!e == 0:@,@ @    print(\"The number is even.\")@,@ @!selse:!e@,@ @    print(\"The number is odd.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is even.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 24@,@ @if !snumber!e !s%!e !s3!e == 0:@,@ @    print(\"The number is divisible by 3.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 3.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 3.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 24@,@ @!sif!e !snumber!e !s%!e !s3!e == 0:@,@ @    print(\"The number is divisible by 3.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 3.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 3.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 24@,@ @if !snumber!e !s%!e !s6!e == 0:@,@ @    print(\"The number is divisible by 6.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 6.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 6.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 24@,@ @!sif!e !snumber!e !s%!e !s6!e == 0:@,@ @    print(\"The number is divisible by 6.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 6.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 6.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 24@,@ @if !snumber!e !s%!e !s9!e == 0:@,@ @    print(\"The number is divisible by 9.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 9.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 9.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 24@,@ @!sif!e !snumber!e !s%!e !s9!e == 0:@,@ @    print(\"The number is divisible by 9.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 9.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 9.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s2!e == 0:@,@ @    print(\"The number is even.\")@,@ @!selse:!e@,@ @    print(\"The number is odd.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is odd.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 15@,@ @!sif!e !snumber!e !s%!e !s2!e == 0:@,@ @    print(\"The number is even.\")@,@ @!selse:!e@,@ @    print(\"The number is odd.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is odd.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s3!e == 0:@,@ @    print(\"The number is divisible by 3.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 3.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 3.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 15@,@ @!sif!e !snumber!e !s%!e !s3!e == 0:@,@ @    print(\"The number is divisible by 3.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 3.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 3.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s5!e == 0:@,@ @    print(\"The number is divisible by 5.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 5.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 5.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 15@,@ @!sif!e !snumber!e !s%!e !s5!e == 0:@,@ @    print(\"The number is divisible by 5.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 5.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 5.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 15@,@ @if !snumber!e !s%!e !s4!e == 0:@,@ @    print(\"The number is divisible by 4.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 4.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 4.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 15@,@ @!sif!e !snumber!e !s%!e !s4!e == 0:@,@ @    print(\"The number is divisible by 4.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 4.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 4.!e @,@ }[STOPCODE]"
     }
 ]
