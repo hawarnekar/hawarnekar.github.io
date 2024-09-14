@@ -81,7 +81,7 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 35@,@ @if !snumber!e !s%!e !s7!e == 0:@,@ @    print(\"The number is divisible by 7.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 7.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is not divisible by 7.!e @,@ }[STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @!snumber!e = 35@,@ @if !snumber!e !s%!e !s7!e == 0:@,@ @    print(\"The number is divisible by 7.\")@,@ @!selse:!e@,@ @    print(\"The number is not divisible by 7.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is divisible by 7.!e @,@ }[STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
