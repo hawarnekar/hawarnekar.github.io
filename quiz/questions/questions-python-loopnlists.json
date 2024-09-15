@@ -41,7 +41,7 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 451@,@ @total = 0@,@ @while n > 0:@,@ @    total += n % 10@,@ @    n //= 10@,@ @print(total)@,@ @@,@ @OUTPUT:@,@ @!s9!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 451@,@ @total = 0@,@ @while n > 0:@,@ @    total += n % 10@,@ @    n //= 10@,@ @print(total)@,@ @@,@ @OUTPUT:@,@ @!s10!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
