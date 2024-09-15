@@ -1,0 +1,86 @@
+[
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {num = 1@,@ @while num <= 10:@,@ @    num *= 3@,@ @print(num)@,@ @@,@ @OUTPUT:@,@ @!s27!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 1@,@ @while n <= 5:@,@ @    n *= 3@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s9!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {num = 1@,@ @while num <= 32:@,@ @    num *= 2@,@ @print(num)@,@ @@,@ @OUTPUT:@,@ @!s64!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 1@,@ @while n < 50:@,@ @    n *= 2@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s64!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {num = 1@,@ @while num <= 4:@,@ @    num *= 2@,@ @print(num)@,@ @@,@ @OUTPUT:@,@ @!s8!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 5@,@ @sum = 0@,@ @i = 1@,@ @!swhile!s !si!e <= !sn!e:@,@ @    !ssum!e += !si!e@,@ @    !si!e += !s1!e@,@ @print(\"Sum of first\", n, \"natural numbers:\", sum)@,@ @@,@ @OUTPUT:@,@ @!sSum of first 5 natural numbers: 15!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 10@,@ @sum = 0@,@ @i = 1@,@ @!swhile!s !si!e <= !sn!e:@,@ @    !ssum!e += !si!e@,@ @    !si!e += !s1!e@,@ @print(\"Sum of first\", n, \"natural numbers:\", sum)@,@ @@,@ @OUTPUT:@,@ @!sSum of first 10 natural numbers: 55!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 6153@,@ @total = 0@,@ @while n > 0:@,@ @    total += n % 10@,@ @    n //= 10@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s0!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 6153@,@ @total = 0@,@ @while n > 0:@,@ @    total += n % 10@,@ @    n //= 10@,@ @print(total)@,@ @@,@ @OUTPUT:@,@ @!s15!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 451@,@ @total = 0@,@ @while n > 0:@,@ @    total += n % 10@,@ @    n //= 10@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s0!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 451@,@ @total = 0@,@ @while n > 0:@,@ @    total += n % 10@,@ @    n //= 10@,@ @print(total)@,@ @@,@ @OUTPUT:@,@ @!s9!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 6@,@ @sum = 0!swhile!e !sn!e < 25:@,@ @    !ssum!e += n@,@ @    !sn!e += 7@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s27!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 6@,@ @sum = 0!swhile!e !sn!e < 25:@,@ @    !ssum!e += n@,@ @    !sn!e += 7@,@ @print(sum)@,@ @@,@ @OUTPUT:@,@ @!s39!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 4@,@ @sum = 0!swhile!e !sn!e < 15:@,@ @    !ssum!e += n@,@ @    !sn!e += 3@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s16!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 4@,@ @sum = 0!swhile!e !sn!e < 15:@,@ @    !ssum!e += n@,@ @    !sn!e += 3@,@ @print(sum)@,@ @@,@ @OUTPUT:@,@ @!s34!e @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "12 से20 तक  even numbers print करने का program.<br>[CODE] {num = !s12!e@,@ @!swhile!s !snum!e !s<!e !s21!e:@,@ @    print(!snum!e)@,@ @    num += !s2!e@,@ @ @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "2 से 10 तक  even numbers print करने का program.<br>[CODE] {num = !s2!e@,@ @!swhile!e !snum!e !s<!e !s11!e:@,@ @    print(!snum!e)@,@ @    !snum!e += !s2!e@,@ @ @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "12 से20 तक  even numbers print करने का program.<br>[CODE] {num = !s12!e@,@ @!swhile!s !snum!e !s<=!e !s20!e:@,@ @    print(!snum!e)@,@ @    num += !s2!e@,@ @ @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "2 से 10 तक  even numbers print करने का program.<br>[CODE] {num = !s2!e@,@ @!swhile!e !snum!e !s<=!e !s10!e:@,@ @    print(!snum!e)@,@ @    !snum!e += !s2!e@,@ @ @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "5 Multiplication table उलटा print करने का program.<br>[CODE] {num = 5@,@ @i = 1@,@ @!swhile!s !si!e <= 10:@,@ @    !sproduct!e = !snum!e * !si!e@,@ @    print(!snum!e, \"x\", !si!e, \"=\", !sproduct!e)@,@ @    !si!e += 1@,@ @ @,@ } [STOPCODE]"
+    },
+    {
+        "type": "paragraph-fill-in-blank",
+        "questions": "5 Multiplication table print करने का program.<br>[CODE] {num = 5@,@ @i = 1@,@ @!swhile!s !si!e <= 10:@,@ @    !sproduct!e = !snum!e * !si!e@,@ @    print(!snum!e, \"x\", !si!e, \"=\", !sproduct!e)@,@ @    !si!e += 1@,@ @ @,@ } [STOPCODE]"
+    }
+]
