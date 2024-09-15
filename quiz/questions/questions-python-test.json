@@ -25,7 +25,7 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {sum = 0@,@ @!sfor!e !sn!e !sin!e !srange!e(!s6!e, 25, 7):@,@ @    !ssum!e += n@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s27!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {sum = 0@,@ @!sfor!e !sn!e !sin!e !srange!e(!s6!e, 25, 7):@,@ @    !ssum!e += n@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s20!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
