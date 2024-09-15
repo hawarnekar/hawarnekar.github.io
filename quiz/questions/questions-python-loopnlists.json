@@ -45,19 +45,19 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 6@,@ @sum = 0!swhile!e !sn!e < 25:@,@ @    !ssum!e += n@,@ @    !sn!e += 7@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s27!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 6@,@ @sum = 0@,@ @!swhile!e !sn!e < 25:@,@ @    !ssum!e += n@,@ @    !sn!e += 7@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s27!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 6@,@ @sum = 0!swhile!e !sn!e < 25:@,@ @    !ssum!e += n@,@ @    !sn!e += 7@,@ @print(sum)@,@ @@,@ @OUTPUT:@,@ @!s39!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 6@,@ @sum = 0@,@ @!swhile!e !sn!e < 25:@,@ @    !ssum!e += n@,@ @    !sn!e += 7@,@ @print(sum)@,@ @@,@ @OUTPUT:@,@ @!s39!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 4@,@ @sum = 0!swhile!e !sn!e < 15:@,@ @    !ssum!e += n@,@ @    !sn!e += 3@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s16!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 4@,@ @sum = 0@,@ @!swhile!e !sn!e < 15:@,@ @    !ssum!e += n@,@ @    !sn!e += 3@,@ @print(n)@,@ @@,@ @OUTPUT:@,@ @!s16!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 4@,@ @sum = 0!swhile!e !sn!e < 15:@,@ @    !ssum!e += n@,@ @    !sn!e += 3@,@ @print(sum)@,@ @@,@ @OUTPUT:@,@ @!s34!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 4@,@ @sum = 0@,@ @!swhile!e !sn!e < 15:@,@ @    !ssum!e += n@,@ @    !sn!e += 3@,@ @print(sum)@,@ @@,@ @OUTPUT:@,@ @!s34!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
