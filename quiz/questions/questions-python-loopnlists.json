@@ -21,11 +21,11 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 5@,@ @sum = 0@,@ @i = 1@,@ @!swhile!s !si!e <= !sn!e:@,@ @    !ssum!e += !si!e@,@ @    !si!e += !s1!e@,@ @print(\"Sum of first\", n, \"natural numbers:\", sum)@,@ @@,@ @OUTPUT:@,@ @!sSum of first 5 natural numbers: 15!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 5@,@ @sum = 0@,@ @i = 1@,@ @!swhile!e !si!e <= !sn!e:@,@ @    !ssum!e += !si!e@,@ @    !si!e += !s1!e@,@ @print(\"Sum of first\", n, \"natural numbers:\", sum)@,@ @@,@ @OUTPUT:@,@ @!sSum of first 5 natural numbers: 15!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 10@,@ @sum = 0@,@ @i = 1@,@ @!swhile!s !si!e <= !sn!e:@,@ @    !ssum!e += !si!e@,@ @    !si!e += !s1!e@,@ @print(\"Sum of first\", n, \"natural numbers:\", sum)@,@ @@,@ @OUTPUT:@,@ @!sSum of first 10 natural numbers: 55!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {n = 10@,@ @sum = 0@,@ @i = 1@,@ @!swhile!e !si!e <= !sn!e:@,@ @    !ssum!e += !si!e@,@ @    !si!e += !s1!e@,@ @print(\"Sum of first\", n, \"natural numbers:\", sum)@,@ @@,@ @OUTPUT:@,@ @!sSum of first 10 natural numbers: 55!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
@@ -61,7 +61,7 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "12 से20 तक  even numbers print करने का program.<br>[CODE] {num = !s12!e@,@ @!swhile!s !snum!e !s<!e !s21!e:@,@ @    print(!snum!e)@,@ @    num += !s2!e@,@ @ @,@ } [STOPCODE]"
+        "question": "12 से20 तक  even numbers print करने का program.<br>[CODE] {num = !s12!e@,@ @!swhile!e !snum!e !s<!e !s21!e:@,@ @    print(!snum!e)@,@ @    num += !s2!e@,@ @ @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
@@ -69,7 +69,7 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "12 से20 तक  even numbers print करने का program.<br>[CODE] {num = !s12!e@,@ @!swhile!s !snum!e !s<=!e !s20!e:@,@ @    print(!snum!e)@,@ @    num += !s2!e@,@ @ @,@ } [STOPCODE]"
+        "question": "12 से20 तक  even numbers print करने का program.<br>[CODE] {num = !s12!e@,@ @!swhile!e !snum!e !s<=!e !s20!e:@,@ @    print(!snum!e)@,@ @    num += !s2!e@,@ @ @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
