@@ -1,15 +1,15 @@
 [
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {!ssum!e = 0@,@ @!sfor!e !snum!e !sin!e !srange!e(!s1!e, !s11!e, !s3!e):@,@ @    !ssum!e += !snum!e@,@ @print(num)@,@ @@,@ @OUTPUT:@,@ @!s11!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {!ssum!e = 0@,@ @!sfor!e !snum!e !sin!e !srange!e(!s1!e, !s11!e, 3):@,@ @    !ssum!e += !snum!e@,@ @print(num)@,@ @@,@ @OUTPUT:@,@ @!s11!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {!ssum!e = 0@,@ @!sfor!e !snum!e !sin!e !srange!e(!s5!e, !s20!e, !s5!e):@,@ @    !ssum!e += !snum!e@,@ @print(num)@,@ @@,@ @OUTPUT:@,@ @!s20!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {!ssum!e = 0@,@ @!sfor!e !snum!e !sin!e !srange!e(!s1!e, !s11!e, !s3!e):@,@ @    !ssum!e += !snum!e@,@ @print(sum)@,@ @@,@ @OUTPUT:@,@ @!s12!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {!ssum!e = 0@,@ @!sfor!e !snum!e !sin!e !srange!e(!s1!e, !s11!e, !s3!e):@,@ @    !ssum!e += !snum!e@,@ @print(sum)@,@ @@,@ @OUTPUT:@,@ @!s22!e @,@ } [STOPCODE]"
+        "question": "Program समझकर खाली जगह भरो.<br>[CODE] {!ssum!e = 0@,@ @!sfor!e !snum!e !sin!e !srange!e(!s5!e, !s20!e, 5):@,@ @    !ssum!e += !snum!e@,@ @print(num)@,@ @@,@ @OUTPUT:@,@ @!s20!e @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
