@@ -77,7 +77,7 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "5 Multiplication table उलटा print करने का program.<br>[CODE] {num = 5@,@ @i = 1@,@ @!swhile!s !si!e <= 10:@,@ @    !sproduct!e = !snum!e * !si!e@,@ @    print(!snum!e, \"x\", !si!e, \"=\", !sproduct!e)@,@ @    !si!e += 1@,@ @ @,@ } [STOPCODE]"
+        "question": "5 Multiplication table उलटा print करने का program.<br>[CODE] {num = 5@,@ @i = 1@,@ @!swhile!e !si!e <= 10:@,@ @    !sproduct!e = !snum!e * !si!e@,@ @    print(!snum!e, \"x\", !si!e, \"=\", !sproduct!e)@,@ @    !si!e += 1@,@ @ @,@ } [STOPCODE]"
     },
     {
         "type": "paragraph-fill-in-blank",
