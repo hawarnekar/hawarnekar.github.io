@@ -1,13 +1,13 @@
 [
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Which of the following can be made into crystal??</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of the following can be made into crystal??</H3>",
         "options": ["A Bacterium", "An Amoeba", "A Virus", "A Sperm"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] A cell will swell up if</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> A cell will swell up if</H3>",
         "options": ["The concentration of water molecules in the cell is higher than the concentration of water molecules in surrounding medium",
                     "The concentration of water molecules in surrounding medium is higher than water molecules concentration in the cell",
                     "The concentration of water molecules is same in the cell and in the surrounding medium",
@@ -16,26 +16,26 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Chromosomes are made up of</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Chromosomes are made up of</H3>",
         "options": ["DNA", "protein", "DNA and protein", "RNA"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Which of these options are not a function of Ribosomes?<br>(i) It helps in manufacture of protein molecules<br>(i) It helps in manufacture of protein molecules<br>(iii) It helps in manufacture of hormones<br>(iv) It helps in manufacture of starch molecules</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of these options are not a function of Ribosomes?<br>(i) It helps in manufacture of protein molecules<br>(i) It helps in manufacture of protein molecules<br>(iii) It helps in manufacture of hormones<br>(iv) It helps in manufacture of starch molecules</H3>",
         "options": ["(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)", "(iv) and (i)"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Which of these is not related to endoplasmic reticulum?</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of these is not related to endoplasmic reticulum?</H3>",
         "options": ["It behaves as transport channel for proteins between nucleus and cytoplasm", "It transports materials between various regions in cytoplasm",
                     "It can be the site of energy generation", "It can be the site for some biochemical activities of the cell"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Following are a few definitions of osmosis<br>Read carefully and select the correct definition</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Following are a few definitions of osmosis<br>Read carefully and select the correct definition</H3>",
         "options": ["Movement of water molecules from a region of higher concentration to a region of lower concentration through a semipermeable membrane",
                     "Movement of solvent molecules from its higher concentration to lower concentration",
                     "Movement of solvent molecules from higher concentration to lower concentration of solution through a permeable membrane",
@@ -44,19 +44,19 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Plasmolysis in a plant cell is defined as</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Plasmolysis in a plant cell is defined as</H3>",
         "options": ["break down (lysis) of plasma membrane in hypotonic medium", "shrinkage of cytoplasm in hypertonic medium", "shrinkage of nucleoplasm", "none of them"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Which of the following are covered by a single membrane?</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of the following are covered by a single membrane?</H3>",
         "options": ["Mitochondria", "Vacuole", "Lysosome", "Plastid"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Find out the false sentences</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Find out the false sentences</H3>",
         "options": ["Golgi apparatus is involved with the formation of lysosomes",
                     "Nucleus, mitochondria and plastid have DNA; hence they are able to make their own structural proteins",
                     "Mitochondria is said to be the power house of the cell as ATP is generated in them.", "Cytoplasm is called as protoplasm"],
@@ -64,7 +64,7 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Find out the correct sentence</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Find out the correct sentence</H3>",
         "options": ["Enzymes packed in Lysosomes are made through RER (rough endoplasmic reticulum)",
                     "Rough endoplasmic reticulum and smooth endoplasmic reticulum produce lipid and protein respectively",
                     "Endoplasmic reticulum is related with the destruction of plasma membrane", "Nucleoid is present inside the nucleoplasm of eukaryotic nucleus"],
@@ -72,115 +72,115 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Which cell organelle plays a crucial role in detoxifying many poisons and drugs in a cell?</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle plays a crucial role in detoxifying many poisons and drugs in a cell?</H3>",
         "options": ["Golgi apparatus", "Lysosomes", "Smooth endoplasmic reticulum", "Vacuoles"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] The proteins and lipids, essential for building the cell membrane, are manufactured by</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> The proteins and lipids, essential for building the cell membrane, are manufactured by</H3>",
         "options": ["rough endoplasmic reticulum", "golgi apparatus", "plasma membrane", "mitochondria"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] The undefined nuclear region of prokaryotes are also known as</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> The undefined nuclear region of prokaryotes are also known as</H3>",
         "options": ["nucleus", "nucleolus", "nucleic acid", "nucleoid"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] The cell organelle involved in forming complex sugars from simple sugars are</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> The cell organelle involved in forming complex sugars from simple sugars are</H3>",
         "options": ["endoplasmic reticulum", "ribosomes", "plastids", "golgi apparatus"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Which out of the following is not a function of vacuole?</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which out of the following is not a function of vacuole?</H3>",
         "options": ["Storage", "Providing turgidity and rigidity to the cell", "Waste excretion", "Locomotion"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Amoeba acquires its food through a process, termed</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Amoeba acquires its food through a process, termed</H3>",
         "options": ["exocytosis", "endocytosis", "plasmolysis", "exocytosis and endocytosis both"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Cell wall of which one of these is not made up of cellulose?</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Cell wall of which one of these is not made up of cellulose?</H3>",
         "options": ["Bacteria", "Hydrilla", "Mango tree", "Cactus"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Silver nitrate solution is used to study</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Silver nitrate solution is used to study</H3>",
         "options": ["endoplasmic reticulum", "golgi apparatus", "nucleus", "mitochondria"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Organelle other than nucleus, containing DNA is</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Organelle other than nucleus, containing DNA is</H3>",
         "options": ["endoplasmic reticulum", "golgi apparatus", "mitochondria", "lysosome"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Kitchen of the cell is</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Kitchen of the cell is</H3>",
         "options": ["mitochondria", "endoplasmic reticulum", "chloroplast", "golgi apparatus"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Lipid molecules in the cell are sythesized by</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Lipid molecules in the cell are sythesized by</H3>",
         "options": ["smooth endoplasmic reticulum", "rough endoplasmic reticulum", "golgi apparatus", "plastids"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Cell arises from pre-existing cell was stated by</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Cell arises from pre-existing cell was stated by</H3>",
         "options": ["Haeckel", "Virchow", "Hooke", "Schleiden"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Cell theory was given by</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Cell theory was given by</H3>",
         "options": ["Schleiden and Schwann", "Virchow", "Hooke", "Haeckel"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] The only cell organelle seen in prokaryotic cell is</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> The only cell organelle seen in prokaryotic cell is</H3>",
         "options": ["mitochondria", "ribosomes", "plastids", "lysosomes"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Organelle without a cell membrane is</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Organelle without a cell membrane is</H3>",
         "options": ["ribosome", "golgi apparatus", "chloroplast", "nucleus"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] 1 μm is</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> 1 μm is</H3>",
         "options": ["10<sup>–6</sup> m", "10<sup>–9</sup> m", "10<sup>–10</sup> m", "10<sup>–3</sup> m"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Lysosome arises from</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Lysosome arises from</H3>",
         "options": ["endoplasmic reticulum", "golgi apparatus", "nucleus", "mitochondria"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Living cells were discovered by</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Living cells were discovered by</H3>",
         "options": ["Robert Hooke", "Purkinje", "Leeuwenhoek", "Robert Brown"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>] Select the odd one out</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Select the odd one out</H3>",
         "options": ["The movement of water across a semi permeable membrane is affected by the amount of substances dissolved in it.",
                     "Membranes are made of organic molecules like proteins and lipids",
                     "Molecules soluble in organic solvents can easily pass through the membrane.", "Plasma membranes contain chitin sugar in plants"],
@@ -188,209 +188,209 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Which of the following tissues has dead cells?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Which of the following tissues has dead cells?</H3>",
         "options": ["Parenchyma", "Sclerenchyma", "Collenchyma", "Epithelial tissue"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Find out incorrect sentence</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Find out incorrect sentence</H3>",
         "options": ["Parenchymatous tissues have intercellular spaces", "Collenchymatous tissues are irregularly thickened at corners",
                     "Apical and intercalary meristems are permanent tissues", "Meristematic tissues, in its early stage, lack vacuoles"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Girth of stem increases due to</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Girth of stem increases due to</H3>",
         "options": ["apical meristem", "lateral meristem", "lateral meristem", "vertical meristem"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Which cell does not have perforated cell wall?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Which cell does not have perforated cell wall?</H3>",
         "options": ["Tracheids", "Companion cells", "Sieve tubes", "Vessels"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Intestine absorb the digested food materials. What type of epithelial cells are responsible for that?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Intestine absorb the digested food materials. What type of epithelial cells are responsible for that?</H3>",
         "options": ["Stratified squamous epithelium", "Columnar epithelium", "Spindle fibres", "Cuboidal epithelium"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] A person met with an accident in which two long bones of hand were dislocated. Which among the following may be the possible reason?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> A person met with an accident in which two long bones of hand were dislocated. Which among the following may be the possible reason?</H3>",
         "options": ["Tendon break", "Break of skeletal muscle", "Ligament break", "Areolar tissue break"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] While doing work and running, you move your organs like hands, legs etc. Which among the following is correct?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> While doing work and running, you move your organs like hands, legs etc. Which among the following is correct?</H3>",
         "options": ["Smooth muscles contract and pull the ligament to move the bones", "Smooth muscles contract and pull the tendons to move the bones",
                     "Smooth muscles contract and pull the tendons to move the bones", "Skeletal muscles contract and pull the tendon to move the bones"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Which muscles act involuntarily?<br>(i) Striated muscles<br>(ii) Smooth muscles<br>(iii) Cardiac muscles<br>(iv) Skeletal muslces</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Which muscles act involuntarily?<br>(i) Striated muscles<br>(ii) Smooth muscles<br>(iii) Cardiac muscles<br>(iv) Skeletal muslces</H3>",
         "options": ["(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)", "(i) and (iv)"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Meristematic tissues in plants are</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Meristematic tissues in plants are</H3>",
         "options": ["localised and permanent", "not limited to certain regions", "localised and dividing cells", "growing in volume"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Which is not a function of epidermis?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Which is not a function of epidermis?</H3>",
         "options": ["Protection from adverse condition", "Gaseous exchange", "Conduction of water", "Transpiration"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Select the incorrect sentence</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Select the incorrect sentence</H3>",
         "options": ["Blood has matrix containing proteins, salts and hormones", "Two bones are connected with ligament",
                     "Tendons are non-fibrous tissue and fragile", "Cartilage is a form of connective tissue"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Cartilage is not found in</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Cartilage is not found in</H3>",
         "options": ["nose", "ear", "kidney", "larynx"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Fats are stored in human body as</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Fats are stored in human body as</H3>",
         "options": ["cuboidal epithelium", "adipose tissue", "bones", "cartilage"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Bone matrix is rich in</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Bone matrix is rich in</H3>",
         "options": ["fluoride and calcium", "calcium and phosphorus", "calcium and potassium", "phosphorus and potassium"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Contractile proteins are found in</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Contractile proteins are found in</H3>",
         "options": ["bones", "blood", "muscles", "cartilage"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Voluntary muscles are found in</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Voluntary muscles are found in</H3>",
         "options": ["alimentary canal", "limbs", "iris of the eye", "bronchi of lungs"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Nervous tissue is not found in</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Nervous tissue is not found in</H3>",
         "options": ["brain", "spinal cord", "tendons", "nerves"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Nerve cell does not contain</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Nerve cell does not contain</H3>",
         "options": ["axon", "nerve endings", "tendons", "dendrites"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Which of the following helps in repair of tissue and fills up the space inside the organ?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Which of the following helps in repair of tissue and fills up the space inside the organ?</H3>",
         "options": ["Tendon", "Adipose tissue", "Areolar", "Cartilage"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] The muscular tissue which function throughout the life continuously without fatigue is</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> The muscular tissue which function throughout the life continuously without fatigue is</H3>",
         "options": ["skeletal muscle", "cardiac muscle", "smooth muscle", "voluntary muscle"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Which of the following cells is found in the cartilaginous tissue of the body?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Which of the following cells is found in the cartilaginous tissue of the body?</H3>",
         "options": ["Mast cells", "Basophils", "Osteocytes", "Chondrocytes"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] The dead element present in the phloem is</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> The dead element present in the phloem is</H3>",
         "options": ["companion cells", "phloem fibres", "phloem parenchyma", "phloem parenchyma"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Which of the following does not lose their nucleus at maturity?</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Which of the following does not lose their nucleus at maturity?</H3>",
         "options": ["Companion cells", "Red blood cells", "Vessel", "Sieve tube cells"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] In desert plants, rate of water loss gets reduced due to the presence of</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> In desert plants, rate of water loss gets reduced due to the presence of</H3>",
         "options": ["cuticle", "stomata", "lignin", "suberin"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] A long tree has several branches. The tissue that helps in the side ways conduction of water in the branches is</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> A long tree has several branches. The tissue that helps in the side ways conduction of water in the branches is</H3>",
         "options": ["collenchyma", "xylem parenchyma", "parenchyma", "xylem vessels"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] If the tip of sugarcane plant is removed from the field, even then it keeps on growing in length. It is due to the presence of</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> If the tip of sugarcane plant is removed from the field, even then it keeps on growing in length. It is due to the presence of</H3>",
         "options": ["cambium", "apical meristem", "lateral meristem", "intercalary meristem"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] A nail is inserted in the trunk of a tree at a height of 1 metre from the ground level. After 3 years the nail will</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> A nail is inserted in the trunk of a tree at a height of 1 metre from the ground level. After 3 years the nail will</H3>",
         "options": ["move downwards", "move upwards", "remain at the same position", "move sideways"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Parenchyma cells are</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Parenchyma cells are</H3>",
         "options": ["relatively unspecified and thin walled", "thick walled and specialised", "lignified", "none of these"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Flexibility in plants is due to</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Flexibility in plants is due to</H3>",
         "options": ["collenchyma", "sclerenchyma", "parenchyma", "chlorenchyma"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Cork cells are made impervious to water and gases by the presence of</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Cork cells are made impervious to water and gases by the presence of</H3>",
         "options": ["cellulose", "lipids", "suberin", "lignin"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Survival of plants in terrestrial environment has been made possible by the presence of</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Survival of plants in terrestrial environment has been made possible by the presence of</H3>",
         "options": ["intercalary meristem", "conducting tissue", "apical meristem", "parenchymatous tissue"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] Choose the wrong statement</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> Choose the wrong statement</H3>",
         "options": ["The nature of matrix differs according to the function of the tissue", "Fats are stored below the skin and in between the internal organs",
                     "Epithelial tissues have intercellular spaces between them", "Cells of striated muscles are multinucleate and unbranched"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Tissues</I>] The water conducting tissue generally present in gymnosperm is</H3>",
+        "question": "<H3>[<I>Chapter: Tissues</I>]<br> The water conducting tissue generally present in gymnosperm is</H3>",
         "options": ["vessels", "sieve tube", "tracheids", "xylem fibres"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Find out incorrect sentence</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Find out incorrect sentence</H3>",
         "options": ["Protista includes unicellular eukaryotic organisms",
                     "Whittaker considered cell structure, mode and source of nutrition for classifying the organisms in five kingdoms",
                     "Both Monera and Protista may be autotrophic and heterotrophic", "Monerans have well defined nucleus"],
@@ -398,61 +398,61 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which among the following has specialised tissue for conduction of water?<br>(i) Thallophyta<br>(ii) Bryophyta<br>(iii) Pteridophyta<br>(iv) Gymnosperms</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following has specialised tissue for conduction of water?<br>(i) Thallophyta<br>(ii) Bryophyta<br>(iii) Pteridophyta<br>(iv) Gymnosperms</H3>",
         "options": ["(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)", "(i) and (iv)"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which among the following produce seeds?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following produce seeds?</H3>",
         "options": ["Thallophyta", "Bryophyta", "Pteridophyta", "Gymnosperms"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which one is a true fish?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which one is a true fish?</H3>",
         "options": ["Jellyfish", "Starfish", "Dogfish", "Silverfish"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which among the following is exclusively marine?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following is exclusively marine?</H3>",
         "options": ["Porifera", "Echinodermata", "Mollusca", "Pisces"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which among the following have open circulatory system?<br>(i) Arthropoda<br>(ii) Mollusca<br>(iii) Annelida<br>(iv) Coelenterata</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following have open circulatory system?<br>(i) Arthropoda<br>(ii) Mollusca<br>(iii) Annelida<br>(iv) Coelenterata</H3>",
         "options": ["(i) and (ii)", "(iii) and (iv)", "(i) and (iii)", "(ii) and (iv)"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] In which group of animals, coelom is filled with blood?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> In which group of animals, coelom is filled with blood?</H3>",
         "options": ["Arthropoda", "Annelida", "Nematoda", "Echinodermata"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Elephantiasis is caused by</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Elephantiasis is caused by</H3>",
         "options": ["Wuchereria", "Pinworm", "Planarians", "Liver flukes"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which one is the most striking or (common) character of the vertebrates?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which one is the most striking or (common) character of the vertebrates?</H3>",
         "options": ["Presence of notochord", "Presence of triploblastic condition", "Presence of gill pouches", "Presence of coelom"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which among the following have scales?<br>(i) Amphibians<br>(ii) Pisces<br>(iii) Reptiles<br>(iv) Mammals</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following have scales?<br>(i) Amphibians<br>(ii) Pisces<br>(iii) Reptiles<br>(iv) Mammals</H3>",
         "options": ["(i) and (iii)", "(iii) and (iv)", "(ii) and (iii)", "(i) and (ii)"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Find out the false statement</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Find out the false statement</H3>",
         "options": ["Aves are warm blooded, egg laying and have four chambered heart",
                     "Aves have feather covered body, fore limbs are modified as wing and breathe through lungs",
                     "Most of the mammals are viviparous", "Fishes, amphibians and reptiles are oviparous"],
@@ -460,368 +460,368 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Pteridophyta do not have</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Pteridophyta do not have</H3>",
         "options": ["root", "stem", "flowers", "leaves"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Identify a member of porifera</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Identify a member of porifera</H3>",
         "options": ["Spongilla", "Euglena", "Penicillium", "Hydra"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which is not an aquatic animal?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which is not an aquatic animal?</H3>",
         "options": ["Hydra", "Jelly fish", "Corals", "Filaria"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Amphibians do not have the following</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Amphibians do not have the following</H3>",
         "options": ["Three chambered heart", "Gills or lungs", "Scales", "Mucus glands"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Organisms without nucleus and cell organelles belong to<br>(i) fungi<br>(ii) protista<br>(iii) cyano bacteria<br>(iv) archae bacteria</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Organisms without nucleus and cell organelles belong to<br>(i) fungi<br>(ii) protista<br>(iii) cyano bacteria<br>(iv) archae bacteria</H3>",
         "options": ["(i) and (ii)", "(iii) and (iv)", "(i) and (iv)", "(ii) and (iii)"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Which of the following is not a criterion for classification of living organisms?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which of the following is not a criterion for classification of living organisms?</H3>",
         "options": ["Body design of the organism", "Ability to produce one’s own food", "Membrane bound nucleus and cell organelles", "Height of the plant"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] The feature that is not a characteristic of protochordata?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> The feature that is not a characteristic of protochordata?</H3>",
         "options": ["Presence of notochord", "Bilateral symmetry and coelom", "Jointed legs", "Presence of circulatory system"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] The locomotory organs of Echinodermata are</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> The locomotory organs of Echinodermata are</H3>",
         "options": ["tube feet", "muscular feet", "jointed legs", "parapodia"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Corals are</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Corals are</H3>",
         "options": ["Poriferans attached to some solid support", "Cnidarians, that are solitary living", "Poriferans present at the sea bed", "Cnidarians that live in colonies"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Who introduced the system of scientific nomenclature of organisms</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Who introduced the system of scientific nomenclature of organisms</H3>",
         "options": ["Robert Whittaker", "Carolus Linnaeus", "Robert Hooke", "Ernst Haeckel"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Two chambered heart occurs in</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Two chambered heart occurs in</H3>",
         "options": ["crocodiles", "fish", "aves", "amphibians"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Skeleton is made entirely of cartilage in</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Skeleton is made entirely of cartilage in</H3>",
         "options": ["Sharks", "Tuna", "Rohu", "None of these"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] One of the following is not an Annelid</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> One of the following is not an Annelid</H3>",
         "options": ["Nereis", "Earthworm", "Leech", "Urchins"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] The book Systema Naturae was written by</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> The book Systema Naturae was written by</H3>",
         "options": ["Linnaeus", "Haeckel", "Whittaker", "Robert Brown"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Karl Von Linne was involved with which branch of science?</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Karl Von Linne was involved with which branch of science?</H3>",
         "options": ["Morphology", "Taxonomy", "Physiology", "Medicine"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Real organs are absent in</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Real organs are absent in</H3>",
         "options": ["Mollusca", "Coelenterata", "Arthropoda", "Echinodermata"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Hard calcium carbonate structures are used as skeleton by</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Hard calcium carbonate structures are used as skeleton by</H3>",
         "options": ["Echinodermata", "Protochordata", "Arthropoda", "Nematoda"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Differentiation in segmental fashion occurs in</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Differentiation in segmental fashion occurs in</H3>",
         "options": ["Leech", "Starfish", "Snails", "Ascaris"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] In taxonomic hierarchy family comes between</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> In taxonomic hierarchy family comes between</H3>",
         "options": ["Class and Order", "Order and Genus", "Genus and Species", "Division and Class"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] 5-Kingdom classification has given by</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> 5-Kingdom classification has given by</H3>",
         "options": ["Morgan", "R. Whittaker", "Linnaeus", "Haeckel"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Well defined nucleus is absent in</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Well defined nucleus is absent in</H3>",
         "options": ["blue green algae", "diatoms", "algae", "yeast"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] The ‘Origin of Species’ is written by</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> The ‘Origin of Species’ is written by</H3>",
         "options": ["Linnaeus", "Darwin", "Hackel", "Whittaker"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Meena and Hari observed an animal in their garden. Hari called it an insect while Meena said it was an earthworm. Choose the character from the following which confirms that it is an insect.</H3>",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Meena and Hari observed an animal in their garden. Hari called it an insect while Meena said it was an earthworm. Choose the character from the following which confirms that it is an insect.</H3>",
         "options": ["Bilateral symmetrical body", "Body with jointed legs", "Cylindrical body", "Body with little segmentation"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which one of the following is not a viral disease?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which one of the following is not a viral disease?</H3>",
         "options": ["Dengue", "AIDS", "Typhoid", "Influenza"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which one of the following is not a bacterial disease?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which one of the following is not a bacterial disease?</H3>",
         "options": ["Cholera", "Tuberculosis", "Anthrax", "Influenza"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which one of the following disease is not transmitted by mosquito?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which one of the following disease is not transmitted by mosquito?</H3>",
         "options": ["Brain fever", "Malaria", "Typhoid", "Dengue"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which one of the following disease is caused by bacteria?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which one of the following disease is caused by bacteria?</H3>",
         "options": ["Typhoid", "Anthrax", "Tuberculosis", "Malaria"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which one of the following diseases is caused by protozoans?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which one of the following diseases is caused by protozoans?</H3>",
         "options": ["Malaria", "Influenza", "AIDS", "Cholera"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which one of the following has a long term effect on the health of an individual?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which one of the following has a long term effect on the health of an individual?</H3>",
         "options": ["Common cold", "Chicken pox", "Chewing tobacco", "Stress"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which of the following can make you ill if you come in contact with an infected person?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which of the following can make you ill if you come in contact with an infected person?</H3>",
         "options": ["High blood pressure", "Genetic abnormalities", "Genetic abnormalities", "Blood cancer"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] AIDS cannot be transmitted by</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> AIDS cannot be transmitted by</H3>",
         "options": ["sexual contact", "hugs", "breast feeding", "blood transfusion"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Making anti-viral drugs is more difficult than making anti-bacterial medicines because</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Making anti-viral drugs is more difficult than making anti-bacterial medicines because</H3>",
         "options": ["viruses make use of host machinery", "viruses are on the border line of living and non-living",
                     "viruses have very few biochemical mechanisms of their own", "viruses have a protein coat"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which one of the following causes kala-azar?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which one of the following causes kala-azar?</H3>",
         "options": ["Ascaris", "Trypanosoma", "Leishmania", "Bacteria"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] If you live in a overcrowded and poorly ventilated house, it is possible that you may suffer from which of the following diseases</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> If you live in a overcrowded and poorly ventilated house, it is possible that you may suffer from which of the following diseases</H3>",
         "options": ["Cancer", "AIDS", "Air borne diseases", "Cholera"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which disease is not transmitted by mosquitoes?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which disease is not transmitted by mosquitoes?</H3>",
         "options": ["Dengue", "Malaria", "Brain fever or encephalitis", "Pneumonia"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Which one of the following is not important for individual health?</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which one of the following is not important for individual health?</H3>",
         "options": ["Living in clean space", "Good economic condition", "Social equality and harmony", "Living in a large and well furnished house"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Choose the wrong statement</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Choose the wrong statement</H3>",
         "options": ["High blood pressure is caused by excessive weight and lack of exercise.", "Cancers can be caused by genetic abnormalities",
                     "Peptic ulcers are caused by eating acidic food", "Acne in not caused by staphylococci"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] We should not allow mosquitoes to breed in our surroundings because they</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> We should not allow mosquitoes to breed in our surroundings because they</H3>",
         "options": ["multiply very fast and cause pollution", "are vectors for many diseases", "bite and cause skin diseases", "are not important insects"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] You are aware of Polio Eradication Programme in your city. Children are vaccinated because</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> You are aware of Polio Eradication Programme in your city. Children are vaccinated because</H3>",
         "options": ["vaccination kills the polio causing microorganisms", "prevents the entry of polio causing organism", "it creates immunity in the body", "all the above"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Viruses, which cause hepatitis, are transmitted through</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Viruses, which cause hepatitis, are transmitted through</H3>",
         "options": ["air", "water", "food", "personal contact"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>] Vectors can be defined as</H3>",
+        "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Vectors can be defined as</H3>",
         "options": ["animals carry the infecting agents from sick person to another healthy person", "microorganisms which cause many diseases",
                     "infected person", "diseased plants"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] The atmosphere of the earth is heated by radiations which are mainly</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> The atmosphere of the earth is heated by radiations which are mainly</H3>",
         "options": ["radiated by the sun", "re-radiated by land", "re-radiated by water", "re-radiated by land and water"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] If there were no atmosphere around the earth, the temperature of the earth will</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> If there were no atmosphere around the earth, the temperature of the earth will</H3>",
         "options": ["increase", "go on decreasing", "increase during day and decrease during night", "be unaffected"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] What would happen, if all the oxygen present in the environment is converted to ozone?</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> What would happen, if all the oxygen present in the environment is converted to ozone?</H3>",
         "options": ["We will be protected more", "It will become poisonous and kill living forms", "Ozone is not stable, hence it will be toxic",
                     "It will help harmful sun radiations to reach earth and damage many life forms."],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] One of the following factors does not lead to soil formation in nature</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> One of the following factors does not lead to soil formation in nature</H3>",
         "options": ["the sun", "water", "wind", "polythene bags"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] The two forms of oxygen found in the atmosphere are</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> The two forms of oxygen found in the atmosphere are</H3>",
         "options": ["water and ozone", "water and oxygen", "ozone and oxygen", "water and carbon-dioxide"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] The process of nitrogen-fixation by bacteria does not take place in the presence of</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> The process of nitrogen-fixation by bacteria does not take place in the presence of</H3>",
         "options": ["molecular form of hydrogen", "elemental form of oxygen", "water", "elemental form of nitrogen"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Rainfall patterns depend on</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Rainfall patterns depend on</H3>",
         "options": ["the underground water table", "the number of water bodies in an area", "the density pattern of human population in an area", "the prevailing season in an area"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Among the given options, which one is not correct for the use of large amount of fertilisers and pesticides?</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Among the given options, which one is not correct for the use of large amount of fertilisers and pesticides?</H3>",
         "options": ["They are eco-friendly", "They turn the fields barren after some time", "They adversally affect the useful component from the soil", "They destroy the soil fertility"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] The nitrogen molecules present in air can be converted into nitrates and nitrites by</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> The nitrogen molecules present in air can be converted into nitrates and nitrites by</H3>",
         "options": ["a biological process of nitrogen fixing bacteria present in soil", "a biological process of carbon fixing factor present in soil",
                     "any of the industries manufacturing nitrogenous compounds", "the plants used as cereal crops in field"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] One of the following processes is not a step involved in the water-cycle operating in nature</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> One of the following processes is not a step involved in the water-cycle operating in nature</H3>",
         "options": ["evaporation", "transpiration", "precipitation", "photosynthesis"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] The term 'water-pollution' can be defined in several ways. Which of the following statements does not give the correct definition?</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> The term 'water-pollution' can be defined in several ways. Which of the following statements does not give the correct definition?</H3>",
         "options": ["The addition of undesirable substances to water-bodies", "The removal of desirable substances from water-bodies",
                     "A change in pressure of the water bodies", "A change in temperature of the water bodies"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Which of the following is not a green house gas?</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Which of the following is not a green house gas?</H3>",
         "options": ["Methane", "Carbon dioxide", "Carbon monoxide", "Ammonia"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Which step is not involved in the carbon-cycle?</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Which step is not involved in the carbon-cycle?</H3>",
         "options": ["Photosynthesis", "Transpiration", "Respiration", "Burning of fossil fuels"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] ‘Ozone-hole’ means</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> ‘Ozone-hole’ means</H3>",
         "options": ["a large sized hole in the ozone layer", "thinning of the ozone layer", "small holes scattered in the ozone layer", "thickening of ozone in the ozone layer"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Ozone-layer is getting depleted because of</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Ozone-layer is getting depleted because of</H3>",
         "options": ["excessive use of automobiles", "excessive formation of industrial units", "excessive use of man-made compounds containing both fluorine and chlorine", "excessive deforestation."],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Which of the following is a recently originated problem of environment?</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Which of the following is a recently originated problem of environment?</H3>",
         "options": ["Ozone layer depletion", "Green house effect", "Global warming", "All of the above"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] When we breathe in air, nitrogen also goes inside along with oxygen. What is the fate of this nitrogen?</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> When we breathe in air, nitrogen also goes inside along with oxygen. What is the fate of this nitrogen?</H3>",
         "options": ["It moves along with oxygen into the cells", "It comes out with the CO2 during exhalation", "It is absorbed only by the nasal cells",
                     "Nitrogen concentration is already more in the cells so it is not at all absorbed."],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Top-soil contains the following</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Top-soil contains the following</H3>",
         "options": ["Humus and living organisms only", "Humus and soil particles only", "Humus, living organisms and plants", "Humus, living organisms and soil particles."],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Choose the correct sequences</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Choose the correct sequences</H3>",
         "options": ["CO2 in atmosphere → decomposers → organic carbon in animals → organic carbon in plants",
                     "CO2 in atmosphere → organic carbon in plants → organic carbon in animals → inorganic carbon in soil",
                     "Inorganic carbonates in water → organic carbon in plants → organic carbon in animals → scavengers",
@@ -830,171 +830,171 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Major source of mineral in soil is the</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Major source of mineral in soil is the</H3>",
         "options": ["parent rock from which soil is formed", "plants", "animals", "bacteria"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Total earth’s surface covered by water is</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Total earth’s surface covered by water is</H3>",
         "options": ["75%", "60%", "85%", "50%"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Biotic component of biosphere is not constituted by</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Biotic component of biosphere is not constituted by</H3>",
         "options": ["producers", "consumers", "decomposer", "air"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] An increase in carbondioxide content in the atmosphere would not cause</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> An increase in carbondioxide content in the atmosphere would not cause</H3>",
         "options": ["more heat to be retained by the environment", "increase in photosynthesis in plants", "global warming", "abundance of desert plants"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Oxygen is returned to the atmosphere mainly by</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Oxygen is returned to the atmosphere mainly by</H3>",
         "options": ["burning of fossil fuel", "respiration", "photosynthesis", "fungi"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Low visibility during cold weather is due to</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Low visibility during cold weather is due to</H3>",
         "options": ["formation of fossil fuel", "unburnt carbon particles or hydrocarbons suspended in air", "lack of adequate power supply", "none of these"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Growth of Lichens on barren rocks is followed by the growth of</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Growth of Lichens on barren rocks is followed by the growth of</H3>",
         "options": ["moss", "fers", "gymnosperms", "algae"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Marked temperature changes in aquatic environment can affect</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Marked temperature changes in aquatic environment can affect</H3>",
         "options": ["breeding of animals", "more growth of aquatic plants", "process of digestion in animals", "availability of nutrients"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Soil erosion can be prevented by</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Soil erosion can be prevented by</H3>",
         "options": ["raising forests", "deforestation", "excessive use of fertilizer", "overgrazing by animals"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] What happens when rain falls on soil without vegetational cover?</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> What happens when rain falls on soil without vegetational cover?</H3>",
         "options": ["Rain water percolates in soil efficiently", "Rain water causes loss of surface soil", "Rain water leads to fertility of the soil", "Rain water does not cause any change in soil"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Natural Resources</I>] Oxygen is harmful for</H3>",
+        "question": "<H3>[<I>Chapter: Natural Resources</I>]<br> Oxygen is harmful for</H3>",
         "options": ["ferns", "nitrogen fixing bacteria", "chara", "mango tree"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Which one is an oil yielding plant among the following?</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Which one is an oil yielding plant among the following?</H3>",
         "options": ["Lentil", "Sunflower", "Cauliflower", "Hibiscus"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Which one is not a source of carbohydrate?</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Which one is not a source of carbohydrate?</H3>",
         "options": ["Rice", "Millets", "Sorghum", "Gram"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Find out the wrong statement from the following</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Find out the wrong statement from the following</H3>",
         "options": ["White revolution is meant for increase in milk production", "Blue revolution is meant for increase in fish production",
                     "Increasing food production without compromising with environmental quality is called as sustainable agriculture", "None of the above"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] To solve the food problem of the country, which among the following is necessary?</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> To solve the food problem of the country, which among the following is necessary?</H3>",
         "options": ["Increased production and storage of food grains", "Easy access of people to the food grain", "People should have money to purchase the grains",
                     "All of the above"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Find out the correct sentence. <BR> (i) Hybridisation means crossing between genetically dissimilar plants <BR> (ii) Cross between two varieties is called as inter specific hybridisation <BR> (iii) Introducing genes of desired character into a plant gives genetically modified crop <BR> (iv) Cross between plants of two species is called as inter varietal hybridisation</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Find out the correct sentence. <BR> (i) Hybridisation means crossing between genetically dissimilar plants <BR> (ii) Cross between two varieties is called as inter specific hybridisation <BR> (iii) Introducing genes of desired character into a plant gives genetically modified crop <BR> (iv) Cross between plants of two species is called as inter varietal hybridisation</H3>",
         "options": ["(i) and (iii)", "(ii) and (iv)", "(ii) and (iii)", "(iii) and (iv)"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Weeds affect the crop plants by</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Weeds affect the crop plants by</H3>",
         "options": ["killing of plants in field before they grow", "dominating the plants to grow", "competing for various resources of crops (plants) causing low availability of nutrients", "all of the above."],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Which one of the following species of honey bee is an Italian species?</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Which one of the following species of honey bee is an Italian species?</H3>",
         "options": ["Apis dorsata", "Apis florae", "Apis cerana indica", "Apis mellifera"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Find out the correct sentence about manure.<br>(i) Manure contains large quantities of organic matter and small quantities of nutrients.<br>(ii) It increases the water holding capacity of sandy soil.<br>(iii) It helps in draining out of excess of water from clayey soil.<br>(iv) Its excessive use pollutes environment because it is made of animal excretory waste.</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Find out the correct sentence about manure.<br>(i) Manure contains large quantities of organic matter and small quantities of nutrients.<br>(ii) It increases the water holding capacity of sandy soil.<br>(iii) It helps in draining out of excess of water from clayey soil.<br>(iv) Its excessive use pollutes environment because it is made of animal excretory waste.</H3>",
         "options": ["(i) and (iii)", "(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Cattle husbandry is done for the following purposes <br>(i) Milk Production<br>(ii) Agricultural work<br>(iii) Meat production<br>(iv) Egg production</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Cattle husbandry is done for the following purposes <br>(i) Milk Production<br>(ii) Agricultural work<br>(iii) Meat production<br>(iv) Egg production</H3>",
         "options": ["(i), (ii) and (iii)", "(ii), (iii) and (iv)", "(iii) and (iv)", "(i) and (iv)"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Which of the following are Indian cattle?<br>(i) Bos indicus<br>(ii) Bos domestica<br>(iii) Bos bubalis<br>(iv) Bos vulgaris</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Which of the following are Indian cattle?<br>(i) Bos indicus<br>(ii) Bos domestica<br>(iii) Bos bubalis<br>(iv) Bos vulgaris</H3>",
         "options": ["(i) and (iii)", "(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Which of the following are exotic breeds?<br>(i) Brawn<br>(ii) Jersey<br>(iii) Brown Swiss<br>(iv) Jersey Swiss</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Which of the following are exotic breeds?<br>(i) Brawn<br>(ii) Jersey<br>(iii) Brown Swiss<br>(iv) Jersey Swiss</H3>",
         "options": ["(i) and (iii)", "(ii) and (iii)", "(i) and (iv)", "(ii) and (iv)"],
         "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Poultry farming is undertaken to raise following<br>(i) Egg production<br>(ii) Feather production<br>(iii) Chicken meat<br>(iv) Milk production</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Poultry farming is undertaken to raise following<br>(i) Egg production<br>(ii) Feather production<br>(iii) Chicken meat<br>(iv) Milk production</H3>",
         "options": ["(i) and (iii)", "(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)"],
         "correctAnswer": 0
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Poultry fowl are susceptible to the following pathogens</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Poultry fowl are susceptible to the following pathogens</H3>",
         "options": ["Viruses", "Bacteria", "Fungi", "All of the above"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Which one of the following fishes is a surface feeder?</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Which one of the following fishes is a surface feeder?</H3>",
         "options": ["Rohus", "Mrigals", "Common carps", "Catlas"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Animal husbandry is the scientific management of<br>(i) animal breeding<br>(ii) culture of animals<br>(iii) animal livestock<br>(iv) rearing of animals</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Animal husbandry is the scientific management of<br>(i) animal breeding<br>(ii) culture of animals<br>(iii) animal livestock<br>(iv) rearing of animals</H3>",
         "options": ["(i), (ii) and (iii)", "(ii), (iii) and (iv)", "(i), (ii) and (iv)", "(i), (iii) and (iv)"],
         "correctAnswer": 3
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Which one of the following nutrients is not available in fertilizers?</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Which one of the following nutrients is not available in fertilizers?</H3>",
         "options": ["Nitrogen", "Phosphorus", "Iron", "Potassium"],
         "correctAnswer": 2
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>] Preventive and control measures adopted for the storage of grains include</H3>",
+        "question": "<H3>[<I>Chapter: Improvement in Food Resources</I>]<br> Preventive and control measures adopted for the storage of grains include</H3>",
         "options": ["strict cleaning", "proper disjoining", "fumigation", "all of the above"],
         "correctAnswer": 3
     }
