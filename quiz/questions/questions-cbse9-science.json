@@ -1,6 +1,208 @@
 [
     {
         "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Which of the following tissues has dead cells?</H3>",
+        "options": ["Parenchyma", "Sclerenchyma", "Collenchyma", "Epithelial tissue"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Find out incorrect sentence</H3>",
+        "options": ["Parenchymatous tissues have intercellular spaces", "Collenchymatous tissues are irregularly thickened at corners",
+                    "Apical and intercalary meristems are permanent tissues", "Meristematic tissues, in its early stage, lack vacuoles"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Girth of stem increases due to</H3>",
+        "options": ["apical meristem", "lateral meristem", "lateral meristem", "vertical meristem"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Which cell does not have perforated cell wall?</H3>",
+        "options": ["Tracheids", "Companion cells", "Sieve tubes", "Vessels"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Intestine absorb the digested food materials. What type of epithelial cells are responsible for that?</H3>",
+        "options": ["Stratified squamous epithelium", "Columnar epithelium", "Spindle fibres", "Cuboidal epithelium"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] A person met with an accident in which two long bones of hand were dislocated. Which among the following may be the possible reason?</H3>",
+        "options": ["Tendon break", "Break of skeletal muscle", "Ligament break", "Areolar tissue break"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] While doing work and running, you move your organs like hands, legs etc. Which among the following is correct?</H3>",
+        "options": ["Smooth muscles contract and pull the ligament to move the bones", "Smooth muscles contract and pull the tendons to move the bones",
+                    "Smooth muscles contract and pull the tendons to move the bones", "Skeletal muscles contract and pull the tendon to move the bones"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Which muscles act involuntarily?<br>(i) Striated muscles<br>(ii) Smooth muscles<br>(iii) Cardiac muscles<br>(iv) Skeletal muslces</H3>",
+        "options": ["(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)", "(i) and (iv)"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Meristematic tissues in plants are</H3>",
+        "options": ["localised and permanent", "not limited to certain regions", "localised and dividing cells", "growing in volume"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Which is not a function of epidermis?</H3>",
+        "options": ["Protection from adverse condition", "Gaseous exchange", "Conduction of water", "Transpiration"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Select the incorrect sentence</H3>",
+        "options": ["Blood has matrix containing proteins, salts and hormones", "Two bones are connected with ligament",
+                    "Tendons are non-fibrous tissue and fragile", "Cartilage is a form of connective tissue"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Cartilage is not found in</H3>",
+        "options": ["nose", "ear", "kidney", "larynx"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Fats are stored in human body as</H3>",
+        "options": ["cuboidal epithelium", "adipose tissue", "bones", "cartilage"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Bone matrix is rich in</H3>",
+        "options": ["fluoride and calcium", "calcium and phosphorus", "calcium and potassium", "phosphorus and potassium"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Contractile proteins are found in</H3>",
+        "options": ["bones", "blood", "muscles", "cartilage"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Voluntary muscles are found in</H3>",
+        "options": ["alimentary canal", "limbs", "iris of the eye", "bronchi of lungs"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Nervous tissue is not found in</H3>",
+        "options": ["brain", "spinal cord", "tendons", "nerves"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Nerve cell does not contain</H3>",
+        "options": ["axon", "nerve endings", "tendons", "dendrites"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Which of the following helps in repair of tissue and fills up the space inside the organ?</H3>",
+        "options": ["Tendon", "Adipose tissue", "Areolar", "Cartilage"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] The muscular tissue which function throughout the life continuously without fatigue is</H3>",
+        "options": ["skeletal muscle", "cardiac muscle", "smooth muscle", "voluntary muscle"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Which of the following cells is found in the cartilaginous tissue of the body?</H3>",
+        "options": ["Mast cells", "Basophils", "Osteocytes", "Chondrocytes"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] The dead element present in the phloem is</H3>",
+        "options": ["companion cells", "phloem fibres", "phloem parenchyma", "phloem parenchyma"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Which of the following does not lose their nucleus at maturity?</H3>",
+        "options": ["Companion cells", "Red blood cells", "Vessel", "Sieve tube cells"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] In desert plants, rate of water loss gets reduced due to the presence of</H3>",
+        "options": ["cuticle", "stomata", "lignin", "suberin"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] A long tree has several branches. The tissue that helps in the side ways conduction of water in the branches is</H3>",
+        "options": ["collenchyma", "xylem parenchyma", "parenchyma", "xylem vessels"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] If the tip of sugarcane plant is removed from the field, even then it keeps on growing in length. It is due to the presence of</H3>",
+        "options": ["cambium", "apical meristem", "lateral meristem", "intercalary meristem"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] A nail is inserted in the trunk of a tree at a height of 1 metre from the ground level. After 3 years the nail will</H3>",
+        "options": ["move downwards", "move upwards", "remain at the same position", "move sideways"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Parenchyma cells are</H3>",
+        "options": ["relatively unspecified and thin walled", "thick walled and specialised", "lignified", "none of these"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Flexibility in plants is due to</H3>",
+        "options": ["collenchyma", "sclerenchyma", "parenchyma", "chlorenchyma"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Cork cells are made impervious to water and gases by the presence of</H3>",
+        "options": ["cellulose", "lipids", "suberin", "lignin"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Survival of plants in terrestrial environment has been made possible by the presence of</H3>",
+        "options": ["intercalary meristem", "conducting tissue", "apical meristem", "parenchymatous tissue"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] Choose the wrong statement</H3>",
+        "options": ["The nature of matrix differs according to the function of the tissue", "Fats are stored below the skin and in between the internal organs",
+                    "Epithelial tissues have intercellular spaces between them", "Cells of striated muscles are multinucleate and unbranched"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Tissues</I>] The water conducting tissue generally present in gymnosperm is</H3>",
+        "options": ["vessels", "sieve tube", "tracheids", "xylem fibres"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
         "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>] Find out incorrect sentence</H3>",
         "options": ["Protista includes unicellular eukaryotic organisms",
                     "Whittaker considered cell structure, mode and source of nutrition for classifying the organisms in five kingdoms",
