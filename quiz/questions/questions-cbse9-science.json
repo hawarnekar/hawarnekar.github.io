@@ -635,7 +635,7 @@
     {
         "type": "multiple-choice",
         "question": "<H3>[<I>Chapter: Why Do We Fall Ill</I>]<br> Which of the following can make you ill if you come in contact with an infected person?</H3>",
-        "options": ["High blood pressure", "Genetic abnormalities", "Genetic abnormalities", "Blood cancer"],
+        "options": ["High blood pressure", "Genetic abnormalities", "Sneezing", "Blood cancer"],
         "correctAnswer": 2
     },
     {
