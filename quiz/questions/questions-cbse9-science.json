@@ -1,0 +1,189 @@
+[
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] The atmosphere of the earth is heated by radiations which are mainly",
+        "options": ["radiated by the sun", "re-radiated by land", "re-radiated by water", "re-radiated by land and water"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] If there were no atmosphere around the earth, the temperature of the earth will",
+        "options": ["increase", "go on decreasing", "increase during day and decrease during night", "be unaffected"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] What would happen, if all the oxygen present in the environment is converted to ozone?",
+        "options": ["We will be protected more", "It will become poisonous and kill living forms", "Ozone is not stable, hence it will be toxic",
+                    "It will help harmful sun radiations to reach earth and damage many life forms."],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] One of the following factors does not lead to soil formation in nature",
+        "options": ["the sun", "water", "wind", "polythene bags"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] The two forms of oxygen found in the atmosphere are",
+        "options": ["water and ozone", "water and oxygen", "ozone and oxygen", "water and carbon-dioxide"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] The process of nitrogen-fixation by bacteria does not take place in the presence of",
+        "options": ["molecular form of hydrogen", "elemental form of oxygen", "water", "elemental form of nitrogen"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Rainfall patterns depend on",
+        "options": ["the underground water table", "the number of water bodies in an area", "the density pattern of human population in an area", "the prevailing season in an area"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Among the given options, which one is not correct for the use of large amount of fertilisers and pesticides?",
+        "options": ["They are eco-friendly", "They turn the fields barren after some time", "They adversally affect the useful component from the soil", "They destroy the soil fertility"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] The nitrogen molecules present in air can be converted into nitrates and nitrites by",
+        "options": ["a biological process of nitrogen fixing bacteria present in soil", "a biological process of carbon fixing factor present in soil",
+                    "any of the industries manufacturing nitrogenous compounds", "the plants used as cereal crops in field"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] One of the following processes is not a step involved in the water-cycle operating in nature",
+        "options": ["evaporation", "transpiration", "precipitation", "photosynthesis"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] The term 'water-pollution' can be defined in several ways. Which of the following statements does not give the correct definition?",
+        "options": ["The addition of undesirable substances to water-bodies", "The removal of desirable substances from water-bodies",
+                    "A change in pressure of the water bodies", "A change in temperature of the water bodies"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Which of the following is not a green house gas?",
+        "options": ["Methane", "Carbon dioxide", "Carbon monoxide", "Ammonia"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Which step is not involved in the carbon-cycle?",
+        "options": ["Photosynthesis", "Transpiration", "Respiration", "Burning of fossil fuels"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] ‘Ozone-hole’ means",
+        "options": ["a large sized hole in the ozone layer", "thinning of the ozone layer", "small holes scattered in the ozone layer", "thickening of ozone in the ozone layer"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Ozone-layer is getting depleted because of",
+        "options": ["excessive use of automobiles", "excessive formation of industrial units", "excessive use of man-made compounds containing both fluorine and chlorine", "excessive deforestation."],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Which of the following is a recently originated problem of environment?",
+        "options": ["Ozone layer depletion", "Green house effect", "Global warming", "All of the above"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] When we breathe in air, nitrogen also goes inside along with oxygen. What is the fate of this nitrogen?",
+        "options": ["It moves along with oxygen into the cells", "It comes out with the CO2 during exhalation", "It is absorbed only by the nasal cells",
+                    "Nitrogen concentration is already more in the cells so it is not at all absorbed."],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Top-soil contains the following",
+        "options": ["Humus and living organisms only", "Humus and soil particles only", "Humus, living organisms and plants", "Humus, living organisms and soil particles."],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Choose the correct sequences",
+        "options": ["CO2 in atmosphere → decomposers → organic carbon in animals → organic carbon in plants",
+                    "CO2 in atmosphere → organic carbon in plants → organic carbon in animals → inorganic carbon in soil",
+                    "Inorganic carbonates in water → organic carbon in plants → organic carbon in animals → scavengers",
+                    "Organic carbon in animals → decomposers → CO2 in atmosphere → organic carbon in plants"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Major source of mineral in soil is the",
+        "options": ["parent rock from which soil is formed", "plants", "animals", "bacteria"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Total earth’s surface covered by water is",
+        "options": ["75%", "60%", "85%", "50%"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Biotic component of biosphere is not constituted by",
+        "options": ["producers", "consumers", "decomposer", "air"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] An increase in carbondioxide content in the atmosphere would not cause",
+        "options": ["more heat to be retained by the environment", "increase in photosynthesis in plants", "global warming", "abundance of desert plants"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Oxygen is returned to the atmosphere mainly by",
+        "options": ["burning of fossil fuel", "respiration", "photosynthesis", "fungi"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Low visibility during cold weather is due to",
+        "options": ["formation of fossil fuel", "unburnt carbon particles or hydrocarbons suspended in air", "lack of adequate power supply", "none of these"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Growth of Lichens on barren rocks is followed by the growth of",
+        "options": ["moss", "fers", "gymnosperms", "algae"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Marked temperature changes in aquatic environment can affect",
+        "options": ["breeding of animals", "more growth of aquatic plants", "process of digestion in animals", "availability of nutrients"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Soil erosion can be prevented by",
+        "options": ["raising forests", "deforestation", "excessive use of fertilizer", "overgrazing by animals"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] What happens when rain falls on soil without vegetational cover?",
+        "options": ["Rain water percolates in soil efficiently", "Rain water causes loss of surface soil", "Rain water leads to fertility of the soil", "Rain water does not cause any change in soil"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "[Chapter: Natural Resources] Oxygen is harmful for",
+        "options": ["ferns", "nitrogen fixing bacteria", "chara", "mango tree"],
+        "correctAnswer": 1
+    }
+]
