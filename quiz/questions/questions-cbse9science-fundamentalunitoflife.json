@@ -1,0 +1,189 @@
+[
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of the following can be made into crystal??</H3>",
+        "options": ["A Bacterium", "An Amoeba", "A Virus", "A Sperm"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> A cell will swell up if</H3>",
+        "options": ["The concentration of water molecules in the cell is higher than the concentration of water molecules in surrounding medium",
+                    "The concentration of water molecules in surrounding medium is higher than water molecules concentration in the cell",
+                    "The concentration of water molecules is same in the cell and in the surrounding medium",
+                    "Concentration of water molecules does not matter"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Chromosomes are made up of</H3>",
+        "options": ["DNA", "protein", "DNA and protein", "RNA"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of these options are not a function of Ribosomes?<br>(i) It helps in manufacture of protein molecules<br>(i) It helps in manufacture of protein molecules<br>(iii) It helps in manufacture of hormones<br>(iv) It helps in manufacture of starch molecules</H3>",
+        "options": ["(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)", "(iv) and (i)"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of these is not related to endoplasmic reticulum?</H3>",
+        "options": ["It behaves as transport channel for proteins between nucleus and cytoplasm", "It transports materials between various regions in cytoplasm",
+                    "It can be the site of energy generation", "It can be the site for some biochemical activities of the cell"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Following are a few definitions of osmosis<br>Read carefully and select the correct definition</H3>",
+        "options": ["Movement of water molecules from a region of higher concentration to a region of lower concentration through a semipermeable membrane",
+                    "Movement of solvent molecules from its higher concentration to lower concentration",
+                    "Movement of solvent molecules from higher concentration to lower concentration of solution through a permeable membrane",
+                    "Movement of solute molecules from lower concentration to higher concentration of solution through a semipermeable membrane"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Plasmolysis in a plant cell is defined as</H3>",
+        "options": ["break down (lysis) of plasma membrane in hypotonic medium", "shrinkage of cytoplasm in hypertonic medium", "shrinkage of nucleoplasm", "none of them"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of the following are covered by a single membrane?</H3>",
+        "options": ["Mitochondria", "Vacuole", "Lysosome", "Plastid"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Find out the false sentences</H3>",
+        "options": ["Golgi apparatus is involved with the formation of lysosomes",
+                    "Nucleus, mitochondria and plastid have DNA; hence they are able to make their own structural proteins",
+                    "Mitochondria is said to be the power house of the cell as ATP is generated in them.", "Cytoplasm is called as protoplasm"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Find out the correct sentence</H3>",
+        "options": ["Enzymes packed in Lysosomes are made through RER (rough endoplasmic reticulum)",
+                    "Rough endoplasmic reticulum and smooth endoplasmic reticulum produce lipid and protein respectively",
+                    "Endoplasmic reticulum is related with the destruction of plasma membrane", "Nucleoid is present inside the nucleoplasm of eukaryotic nucleus"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle plays a crucial role in detoxifying many poisons and drugs in a cell?</H3>",
+        "options": ["Golgi apparatus", "Lysosomes", "Smooth endoplasmic reticulum", "Vacuoles"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> The proteins and lipids, essential for building the cell membrane, are manufactured by</H3>",
+        "options": ["rough endoplasmic reticulum", "golgi apparatus", "plasma membrane", "mitochondria"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> The undefined nuclear region of prokaryotes are also known as</H3>",
+        "options": ["nucleus", "nucleolus", "nucleic acid", "nucleoid"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> The cell organelle involved in forming complex sugars from simple sugars are</H3>",
+        "options": ["endoplasmic reticulum", "ribosomes", "plastids", "golgi apparatus"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which out of the following is not a function of vacuole?</H3>",
+        "options": ["Storage", "Providing turgidity and rigidity to the cell", "Waste excretion", "Locomotion"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Amoeba acquires its food through a process, termed</H3>",
+        "options": ["exocytosis", "endocytosis", "plasmolysis", "exocytosis and endocytosis both"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Cell wall of which one of these is not made up of cellulose?</H3>",
+        "options": ["Bacteria", "Hydrilla", "Mango tree", "Cactus"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Silver nitrate solution is used to study</H3>",
+        "options": ["endoplasmic reticulum", "golgi apparatus", "nucleus", "mitochondria"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Organelle other than nucleus, containing DNA is</H3>",
+        "options": ["endoplasmic reticulum", "golgi apparatus", "mitochondria", "lysosome"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Kitchen of the cell is</H3>",
+        "options": ["mitochondria", "endoplasmic reticulum", "chloroplast", "golgi apparatus"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Lipid molecules in the cell are sythesized by</H3>",
+        "options": ["smooth endoplasmic reticulum", "rough endoplasmic reticulum", "golgi apparatus", "plastids"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Cell arises from pre-existing cell was stated by</H3>",
+        "options": ["Haeckel", "Virchow", "Hooke", "Schleiden"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Cell theory was given by</H3>",
+        "options": ["Schleiden and Schwann", "Virchow", "Hooke", "Haeckel"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> The only cell organelle seen in prokaryotic cell is</H3>",
+        "options": ["mitochondria", "ribosomes", "plastids", "lysosomes"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Organelle without a cell membrane is</H3>",
+        "options": ["ribosome", "golgi apparatus", "chloroplast", "nucleus"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> 1 μm is</H3>",
+        "options": ["10^–6 m", "10^–9 m", "10^–10 m", "10^–3 m"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Lysosome arises from</H3>",
+        "options": ["endoplasmic reticulum", "golgi apparatus", "nucleus", "mitochondria"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Living cells were discovered by</H3>",
+        "options": ["Robert Hooke", "Purkinje", "Leeuwenhoek", "Robert Brown"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Select the odd one out</H3>",
+        "options": ["The movement of water across a semi permeable membrane is affected by the amount of substances dissolved in it.",
+                    "Membranes are made of organic molecules like proteins and lipids",
+                    "Molecules soluble in organic solvents can easily pass through the membrane.", "Plasma membranes contain chitin sugar in plants"],
+        "correctAnswer": 3
+    }
+]
