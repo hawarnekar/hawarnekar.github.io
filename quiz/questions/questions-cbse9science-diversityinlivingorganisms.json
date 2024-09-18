@@ -1,0 +1,210 @@
+[
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Find out incorrect sentence</H3>",
+        "options": ["Protista includes unicellular eukaryotic organisms",
+                    "Whittaker considered cell structure, mode and source of nutrition for classifying the organisms in five kingdoms",
+                    "Both Monera and Protista may be autotrophic and heterotrophic", "Monerans have well defined nucleus"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following has specialised tissue for conduction of water?<br>(i) Thallophyta<br>(ii) Bryophyta<br>(iii) Pteridophyta<br>(iv) Gymnosperms</H3>",
+        "options": ["(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)", "(i) and (iv)"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following produce seeds?</H3>",
+        "options": ["Thallophyta", "Bryophyta", "Pteridophyta", "Gymnosperms"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which one is a true fish?</H3>",
+        "options": ["Jellyfish", "Starfish", "Dogfish", "Silverfish"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following is exclusively marine?</H3>",
+        "options": ["Porifera", "Echinodermata", "Mollusca", "Pisces"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following have open circulatory system?<br>(i) Arthropoda<br>(ii) Mollusca<br>(iii) Annelida<br>(iv) Coelenterata</H3>",
+        "options": ["(i) and (ii)", "(iii) and (iv)", "(i) and (iii)", "(ii) and (iv)"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> In which group of animals, coelom is filled with blood?</H3>",
+        "options": ["Arthropoda", "Annelida", "Nematoda", "Echinodermata"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Elephantiasis is caused by</H3>",
+        "options": ["Wuchereria", "Pinworm", "Planarians", "Liver flukes"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which one is the most striking or (common) character of the vertebrates?</H3>",
+        "options": ["Presence of notochord", "Presence of triploblastic condition", "Presence of gill pouches", "Presence of coelom"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which among the following have scales?<br>(i) Amphibians<br>(ii) Pisces<br>(iii) Reptiles<br>(iv) Mammals</H3>",
+        "options": ["(i) and (iii)", "(iii) and (iv)", "(ii) and (iii)", "(i) and (ii)"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Find out the false statement</H3>",
+        "options": ["Aves are warm blooded, egg laying and have four chambered heart",
+                    "Aves have feather covered body, fore limbs are modified as wing and breathe through lungs",
+                    "Most of the mammals are viviparous", "Fishes, amphibians and reptiles are oviparous"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Pteridophyta do not have</H3>",
+        "options": ["root", "stem", "flowers", "leaves"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Identify a member of porifera</H3>",
+        "options": ["Spongilla", "Euglena", "Penicillium", "Hydra"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which is not an aquatic animal?</H3>",
+        "options": ["Hydra", "Jelly fish", "Corals", "Filaria"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Amphibians do not have the following</H3>",
+        "options": ["Three chambered heart", "Gills or lungs", "Scales", "Mucus glands"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Organisms without nucleus and cell organelles belong to<br>(i) fungi<br>(ii) protista<br>(iii) cyano bacteria<br>(iv) archae bacteria</H3>",
+        "options": ["(i) and (ii)", "(iii) and (iv)", "(i) and (iv)", "(ii) and (iii)"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Which of the following is not a criterion for classification of living organisms?</H3>",
+        "options": ["Body design of the organism", "Ability to produce one’s own food", "Membrane bound nucleus and cell organelles", "Height of the plant"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> The feature that is not a characteristic of protochordata?</H3>",
+        "options": ["Presence of notochord", "Bilateral symmetry and coelom", "Jointed legs", "Presence of circulatory system"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> The locomotory organs of Echinodermata are</H3>",
+        "options": ["tube feet", "muscular feet", "jointed legs", "parapodia"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Corals are</H3>",
+        "options": ["Poriferans attached to some solid support", "Cnidarians, that are solitary living", "Poriferans present at the sea bed", "Cnidarians that live in colonies"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Who introduced the system of scientific nomenclature of organisms</H3>",
+        "options": ["Robert Whittaker", "Carolus Linnaeus", "Robert Hooke", "Ernst Haeckel"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Two chambered heart occurs in</H3>",
+        "options": ["crocodiles", "fish", "aves", "amphibians"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Skeleton is made entirely of cartilage in</H3>",
+        "options": ["Sharks", "Tuna", "Rohu", "None of these"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> One of the following is not an Annelid</H3>",
+        "options": ["Nereis", "Earthworm", "Leech", "Urchins"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> The book Systema Naturae was written by</H3>",
+        "options": ["Linnaeus", "Haeckel", "Whittaker", "Robert Brown"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Karl Von Linne was involved with which branch of science?</H3>",
+        "options": ["Morphology", "Taxonomy", "Physiology", "Medicine"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Real organs are absent in</H3>",
+        "options": ["Mollusca", "Coelenterata", "Arthropoda", "Echinodermata"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Hard calcium carbonate structures are used as skeleton by</H3>",
+        "options": ["Echinodermata", "Protochordata", "Arthropoda", "Nematoda"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Differentiation in segmental fashion occurs in</H3>",
+        "options": ["Leech", "Starfish", "Snails", "Ascaris"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> In taxonomic hierarchy family comes between</H3>",
+        "options": ["Class and Order", "Order and Genus", "Genus and Species", "Division and Class"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> 5-Kingdom classification has given by</H3>",
+        "options": ["Morgan", "R. Whittaker", "Linnaeus", "Haeckel"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Well defined nucleus is absent in</H3>",
+        "options": ["blue green algae", "diatoms", "algae", "yeast"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> The ‘Origin of Species’ is written by</H3>",
+        "options": ["Linnaeus", "Darwin", "Hackel", "Whittaker"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: Diversity In Living Organisms</I>]<br> Meena and Hari observed an animal in their garden. Hari called it an insect while Meena said it was an earthworm. Choose the character from the following which confirms that it is an insect.</H3>",
+        "options": ["Bilateral symmetrical body", "Body with jointed legs", "Cylindrical body", "Body with little segmentation"],
+        "correctAnswer": 1
+    }
+]
