@@ -42,6 +42,24 @@ function updateSubTopics() {
                 // "Functions"
             ];
             break;
+        case "cbse9science":
+            subTopics = ["diversityinlivingorganisms",
+                         "fundamentalunitoflife",
+			 "improvementinfoodresources",
+			 "naturalresources",
+			 "tissues",
+			 "whydowefallill"
+                        ];
+            subTopicsText =
+            [
+                "Diversity in Living Organisms",
+                "Fundamental Unit of Life",
+		"Improvement in Food Resources",
+		"Natural Resources",
+		"Tissues",
+		"Why Do We Fall Ill",
+            ];
+            break;
         default:
             subTopics = [];
     }
