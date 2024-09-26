@@ -48,7 +48,8 @@ function updateSubTopics() {
 			 "improvementinfoodresources",
 			 "naturalresources",
 			 "tissues",
-			 "whydowefallill"
+			 "whydowefallill",
+			 "all"
                         ];
             subTopicsText =
             [
@@ -58,6 +59,7 @@ function updateSubTopics() {
 		"Natural Resources",
 		"Tissues",
 		"Why Do We Fall Ill",
+		"All topics"
             ];
             break;
         default:
