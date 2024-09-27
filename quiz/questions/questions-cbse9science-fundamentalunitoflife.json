@@ -22,7 +22,7 @@
     },
     {
         "type": "multiple-choice",
-        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of these options are not a function of Ribosomes?<br>(i) It helps in manufacture of protein molecules<br>(i) It helps in manufacture of enzymes<br>(iii) It helps in manufacture of hormones<br>(iv) It helps in manufacture of starch molecules</H3>",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which of these options are not a function of Ribosomes?<br>(i) It helps in manufacture of protein molecules<br>(ii) It helps in manufacture of enzymes<br>(iii) It helps in manufacture of hormones<br>(iv) It helps in manufacture of starch molecules</H3>",
         "options": ["(i) and (ii)", "(ii) and (iii)", "(iii) and (iv)", "(iv) and (i)"],
         "correctAnswer": 2
     },
