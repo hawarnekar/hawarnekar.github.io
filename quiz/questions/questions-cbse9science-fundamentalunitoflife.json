@@ -120,6 +120,48 @@
     },
     {
         "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle works as transporting channels of the cell?</H3>",
+        "options": ["endoplasmic reticulum", "golgi apparatus", "nucleus", "vacuole"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle is the power house of the cell?</H3>",
+        "options": ["nucleus", "lysosome", "mitochondria", "chloroplast"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle is packaging and dispatching unit of the cell?</H3>",
+        "options": ["endoplasmic reticulum", "lysosome", "mitochondria", "golgi body"],
+        "correctAnswer": 3
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle is the digestive bag of the cell?</H3>",
+        "options": ["endoplasmic reticulum", "lysosome", "mitochondria", "nucleus"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle work as storage sacs of the cell?</H3>",
+        "options": ["golgi body", "nucleus", "vacuole", "lysosome"],
+        "correctAnswer": 2
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle is known as kitchen of the cell?</H3>",
+        "options": ["chloroplast", "mitochondria", "golgi body", "lysosome"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle is known as control room of the cell?</H3>",
+        "options": ["chloroplast", "nucleus", "golgi body", "lysosome"],
+        "correctAnswer": 0
+    },
+    {
+        "type": "multiple-choice",
         "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Silver nitrate solution is used to study</H3>",
         "options": ["endoplasmic reticulum", "golgi apparatus", "nucleus", "mitochondria"],
         "correctAnswer": 1
