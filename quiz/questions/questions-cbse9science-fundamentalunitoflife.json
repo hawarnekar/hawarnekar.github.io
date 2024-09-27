@@ -72,6 +72,12 @@
     },
     {
         "type": "multiple-choice",
+        "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle are known as ‘suicide-bags’ of a cell?</H3>",
+        "options": ["Golgi apparatus", "Lysosomes", "Smooth endoplasmic reticulum", "Vacuoles"],
+        "correctAnswer": 1
+    },
+    {
+        "type": "multiple-choice",
         "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle plays a crucial role in detoxifying many poisons and drugs in a cell?</H3>",
         "options": ["Golgi apparatus", "Lysosomes", "Smooth endoplasmic reticulum", "Vacuoles"],
         "correctAnswer": 2
