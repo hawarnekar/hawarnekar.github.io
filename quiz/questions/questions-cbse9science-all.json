@@ -152,7 +152,7 @@
         "type": "multiple-choice",
         "question": "<H3>[<I>Chapter: The Fundamental Unit Of Life</I>]<br> Which cell organelle is known as control room of the cell?</H3>",
         "options": ["chloroplast", "nucleus", "golgi body", "lysosome"],
-        "correctAnswer": 0
+        "correctAnswer": 1
     },
     {
         "type": "multiple-choice",
