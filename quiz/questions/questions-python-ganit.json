@@ -146,6 +146,81 @@
     },
     {
          "type": "fill-in-blank",
+        "question": "Binary number 1111 ka decimal value [BLANK] hai.",
+        "correctAnswer": "15"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 10000 ka decimal value [BLANK] hai.",
+        "correctAnswer": "16"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 10001 ka decimal value [BLANK] hai.",
+        "correctAnswer": "17"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 10010 ka decimal value [BLANK] hai.",
+        "correctAnswer": "18"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 10011 ka decimal value [BLANK] hai.",
+        "correctAnswer": "19"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 10100 ka decimal value [BLANK] hai.",
+        "correctAnswer": "20"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 10101 ka decimal value [BLANK] hai.",
+        "correctAnswer": "21"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 10110 ka decimal value [BLANK] hai.",
+        "correctAnswer": "22"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 10111 ka decimal value [BLANK] hai.",
+        "correctAnswer": "23"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 11000 ka decimal value [BLANK] hai.",
+        "correctAnswer": "24"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 11001 ka decimal value [BLANK] hai.",
+        "correctAnswer": "25"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 11010 ka decimal value [BLANK] hai.",
+        "correctAnswer": "26"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 11011 ka decimal value [BLANK] hai.",
+        "correctAnswer": "27"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 11100 ka decimal value [BLANK] hai.",
+        "correctAnswer": "28"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Binary number 11101 ka decimal value [BLANK] hai.",
+        "correctAnswer": "29"
+    },
+    {
+         "type": "fill-in-blank",
         "question": "8 ka hexadecimal value [BLANK] hai.",
         "correctAnswer": "8"
     },
