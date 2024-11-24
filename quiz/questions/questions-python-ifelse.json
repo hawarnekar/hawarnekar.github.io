@@ -65,10 +65,6 @@
     },
     {
         "type": "paragraph-fill-in-blank",
-        "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @ !scostPrice!e = 100@,@ @ !squantity!e = 10@,@ @ !ssellPrice1!e = 130@,@ @ !ssellQuantity1!e = 5@,@ @ !ssellPrice2!e = 100@,@ @ !ssellQuantity2!e = 2@,@ @ !ssellPrice3!e = 85@,@ @ !ssellQuantity3!e = 3@,@ @@,@ @ !stotalCost!e = costPrice * quantity@,@ @ !stotalEarning!e = sellPrice1 * sellQuantity1 + sellPrice2 * sellQuantity2 + sellPrice3 * sellQuantity3@,@ @ !sif!e !stotalCost!e !s<!e !stotalEarning:!e@,@ @     print(f\"Profit = {(totalEarning - totalCost) * 100 / totalCost} %\")@,@ @ !selse:!e@,@ @     print(f\"Loss = {(totalCost - totalEarning) * 100 / totalCost}\")@,@ @@,@ }[STOPCODE]"
-    },
-    {
-        "type": "paragraph-fill-in-blank",
         "question": "Program समझकर खाली जगह भरो.<br>[CODE] { @number = 35@,@ @!sif!e !snumber!e !s%!e !s2!e == 0:@,@ @    print(\"The number is even.\")@,@ @!selse:!e@,@ @    print(\"The number is odd.\")@,@ @@,@ @OUTPUT: @,@ @!sThe number is odd.!e @,@ }[STOPCODE]"
     },
     {
