@@ -146,41 +146,6 @@
     },
     {
          "type": "fill-in-blank",
-        "question": "1 ka hexadecimal value [BLANK] hai.",
-        "correctAnswer": "1"
-    },
-    {
-         "type": "fill-in-blank",
-        "question": "2 ka hexadecimal value [BLANK] hai.",
-        "correctAnswer": "2"
-    },
-    {
-         "type": "fill-in-blank",
-        "question": "3 ka hexadecimal value [BLANK] hai.",
-        "correctAnswer": "3"
-    },
-    {
-         "type": "fill-in-blank",
-        "question": "4 ka hexadecimal value [BLANK] hai.",
-        "correctAnswer": "4"
-    },
-    {
-         "type": "fill-in-blank",
-        "question": "5 ka hexadecimal value [BLANK] hai.",
-        "correctAnswer": "5"
-    },
-    {
-         "type": "fill-in-blank",
-        "question": "6 ka hexadecimal value [BLANK] hai.",
-        "correctAnswer": "6"
-    },
-    {
-         "type": "fill-in-blank",
-        "question": "7 ka hexadecimal value [BLANK] hai.",
-        "correctAnswer": "7"
-    },
-    {
-         "type": "fill-in-blank",
         "question": "8 ka hexadecimal value [BLANK] hai.",
         "correctAnswer": "8"
     },
@@ -303,6 +268,41 @@
          "type": "fill-in-blank",
         "question": "32 ka hexadecimal value [BLANK] hai.",
         "correctAnswer": "20"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "33 ka hexadecimal value [BLANK] hai.",
+        "correctAnswer": "21"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "34 ka hexadecimal value [BLANK] hai.",
+        "correctAnswer": "22"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "35 ka hexadecimal value [BLANK] hai.",
+        "correctAnswer": "23"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "36 ka hexadecimal value [BLANK] hai.",
+        "correctAnswer": "24"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "37 ka hexadecimal value [BLANK] hai.",
+        "correctAnswer": "25"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "38 ka hexadecimal value [BLANK] hai.",
+        "correctAnswer": "26"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "39 ka hexadecimal value [BLANK] hai.",
+        "correctAnswer": "27"
     },
     {
         "type": "fill-in-blank",
