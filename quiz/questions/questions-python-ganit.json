@@ -380,6 +380,86 @@
         "correctAnswer": "27"
     },
     {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 14 ka decimal value [BLANK] hai.",
+        "correctAnswer": "20"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 15 ka decimal value [BLANK] hai.",
+        "correctAnswer": "21"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 16 ka decimal value [BLANK] hai.",
+        "correctAnswer": "22"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 17 ka decimal value [BLANK] hai.",
+        "correctAnswer": "23"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 18 ka decimal value [BLANK] hai.",
+        "correctAnswer": "24"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 19 ka decimal value [BLANK] hai.",
+        "correctAnswer": "25"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 1a ka decimal value [BLANK] hai.",
+        "correctAnswer": "26"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 1b ka decimal value [BLANK] hai.",
+        "correctAnswer": "27"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 1c ka decimal value [BLANK] hai.",
+        "correctAnswer": "28"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 1d ka decimal value [BLANK] hai.",
+        "correctAnswer": "29"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 1e ka decimal value [BLANK] hai.",
+        "correctAnswer": "30"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 1f ka decimal value [BLANK] hai.",
+        "correctAnswer": "31"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 20 ka decimal value [BLANK] hai.",
+        "correctAnswer": "32"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 21 ka decimal value [BLANK] hai.",
+        "correctAnswer": "33"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 22 ka decimal value [BLANK] hai.",
+        "correctAnswer": "34"
+    },
+    {
+         "type": "fill-in-blank",
+        "question": "Hexadecimal number 23 ka decimal value [BLANK] hai.",
+        "correctAnswer": "35"
+    },
+    {
         "type": "fill-in-blank",
         "question": "4 * 6 / 5 = [BLANK]",
         "correctAnswer": "4.8"
