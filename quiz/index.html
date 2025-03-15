@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Programming Quiz</h1>
+
+        <!-- Selection Screen -->
+        <div id="selection-screen" class="screen">
+            <div class="form-group">
+                <label for="username">Enter your name:</label>
+                <input type="text" id="username" placeholder="Your name" required>
+                <button id="next-button">Next</button>
+            </div>
+
+            <div class="form-group">
+                <label for="topic">Topic:</label>
+                <select id="topic" disabled>
+                    <option value="">Loading topics...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="subtopic">Subtopic:</label>
+                <select id="subtopic" disabled>
+                    <option value="">Select a topic first</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" disabled>
+                    <option value="">Select a subtopic first</option>
+                </select>
+            </div>
+
+            <button id="start-quiz" class="hidden">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen hidden">
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="question-number"></div>
+            <div id="question-text"></div>
+            <div id="options"></div>
+            <input type="text" id="fill-blank" placeholder="Type your answer here">
+            <button id="submit-answer">Submit</button>
+            <button id="next-question" class="hidden">Next Question</button>
+            <div id="result" class="hidden"></div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen hidden">
+            <h2>Quiz Results</h2>
+            <div id="final-score" style="font-size: larger;"></div>
+            <div id="review-answers"></div>
+            <button id="restart-quiz">Restart Quiz</button>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
