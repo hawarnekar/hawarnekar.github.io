@@ -33,15 +33,17 @@ function log(...args) {
 import { genCondQns } from './cond_qn_gen.js';
 import { genArithQns } from './arithmetic_qn_gen.js';
 import { genConvQns } from './num_conv_qn_gen.js';
+import { genWhileQns } from './while_qn_gen.js';
 
 // Generate 100 random questions on page load
 window.onload = () => {
     log("Window loaded. Generating questions...");
-    const condQuestions = genCondQns(150);
-    const arithQuestions = genArithQns(100);
+    const whileQuestions = genWhileQns(600);
+    const arithQuestions = genArithQns(600);
     const convQuestions = genConvQns();
+    const condQuestions = genCondQns(600);
 
-    allQuestions = [ ...condQuestions, ...arithQuestions, ...convQuestions];
+    allQuestions = [...whileQuestions, ...condQuestions, ...arithQuestions, ...convQuestions];
     log("All questions:", allQuestions);
     populateDropdowns();
 };
