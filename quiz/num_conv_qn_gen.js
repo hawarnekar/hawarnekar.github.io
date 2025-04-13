@@ -1,4 +1,4 @@
-const isLoggingEnabled = true;
+const isLoggingEnabled = false;
 
 function log(...args) {
   if (isLoggingEnabled) {

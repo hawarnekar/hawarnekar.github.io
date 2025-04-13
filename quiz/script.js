@@ -30,16 +30,18 @@ function log(...args) {
 }
 
 // Import the question generator
+import { genCondQns } from './cond_qn_gen.js';
 import { genArithQns } from './arithmetic_qn_gen.js';
 import { genConvQns } from './num_conv_qn_gen.js';
 
 // Generate 100 random questions on page load
 window.onload = () => {
     log("Window loaded. Generating questions...");
+    const condQuestions = genCondQns(150);
     const arithQuestions = genArithQns(100);
     const convQuestions = genConvQns();
 
-    allQuestions = [...arithQuestions, ...convQuestions];
+    allQuestions = [ ...condQuestions, ...arithQuestions, ...convQuestions];
     log("All questions:", allQuestions);
     populateDropdowns();
 };
@@ -285,7 +287,7 @@ function checkAnswer(answer) {
 
     userAnswers.push({ question: q.question, userAnswer, correctAnswer: q.answer });
 
-    const isCorrect = q.type === 'multiple' ? answer === q.correct : userAnswer.toLowerCase() === q.answer.toLowerCase();
+    const isCorrect = q.type === 'multiple' ? answer === q.correct : userAnswer === q.answer;
     log("Is correct:", isCorrect, "Correct Answer: ",q.answer);
     if (isCorrect) score++;
 
@@ -354,7 +356,6 @@ function showResults() {
 
         // 5. Scroll to the top.
         window.scrollTo(0, 0);
-
     });
 
     document.getElementById('restart-quiz').onclick = () => restartQuiz();

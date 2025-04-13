@@ -337,7 +337,9 @@ function genArithQns(numQuestions) {
   function getRandomParams(num) {
     const params = [];
     for (let i = 0; i < num; i++) {
-      params.push(getRandomInt(-N, N));
+      const v = getRandomInt(-N, N);
+      if (v === 0) { i--; continue; }
+      params.push(v);
     }
 
     const ops = [];
