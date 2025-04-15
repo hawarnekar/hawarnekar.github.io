@@ -1,88 +1,118 @@
 /**
  * cond_qn_gen.js
  * Generates quiz questions for Python conditional statements (if, if-else, if-elif-else, nested if-else).
+ * @module cond_qn_gen
  */
 
 // --- Configuration ---
 const isLoggingEnabled = false; // Set to true for debugging logs
 
+/**
+ * Logs messages to the console if logging is enabled.
+ * @param {...any} args - Arguments to log.
+ */
 function log(...args) {
   if (isLoggingEnabled) {
-    console.log(...args);
+    console.log('[cond_qn_gen]', ...args); // Added prefix for clarity
   }
 }
+
+// --- Constants ---
+const ARITHMETIC_OPERATORS = Object.freeze(['+', '-', '*', '//', '%']);
+const COMPARISON_OPERATORS = Object.freeze(['<', '<=', '>', '>=', '==', '!=']);
+const VARIABLE_VALUE_RANGE = Object.freeze({ MIN: 2, MAX: 25 });
+const COMPARISON_VALUE_RANGE = Object.freeze({ MIN: 2, MAX: 25 });
+const PRINT_VALUES = Object.freeze([
+    "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot",
+    "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima"
+]);
+const MAX_GENERATION_ATTEMPTS_MULTIPLIER = 15;
 
 // --- Modules ---
 
 /**
- * Module: NumberUtils (Adapted from arithmetic_qn_gen.js)
- * Description: Contains utility functions for number-related operations.
+ * Utility functions for number-related operations.
+ * @namespace NumberUtils
  */
 const NumberUtils = {
+  /**
+   * Generates a random integer between min and max (inclusive).
+   * @param {number} min - The minimum value.
+   * @param {number} max - The maximum value.
+   * @returns {number} A random integer.
+   */
   getRandomInt: function (min, max) {
+    // Simplified implementation
+    min = Math.ceil(min);
+    max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
-  // This function evaluates simple arithmetic expressions with actual numbers
-  evaluateExpression: function (expression) {
-    try {
-        log(`evaluateExpression => Input expression: ${expression}`);
-        // A safer way to evaluate simple arithmetic without full eval()
-        expression = String(expression).replace(/\s/g, ''); // Ensure it's a string first
-        let operatorIndex = -1;
-        let operator = '';
-        // Order matters for '//' vs '/' and handling negative numbers
-        const operators = ['//', '%', '*', '/', '+', '-']; // Check longer ops first
 
-        // Find the operator, handling potential negative numbers correctly
-        for (const op of operators) {
-            let currentIdx = expression.indexOf(op);
+  /**
+   * Evaluates simple arithmetic expressions involving two operands and one operator,
+   * attempting to mimic Python 3 behavior for division and modulo.
+   * Does not handle operator precedence or parentheses.
+   * @param {string} expression - The expression string (e.g., "5 * 3", "10 // 4").
+   * @returns {number|NaN} The result of the evaluation or NaN on error/invalid input.
+   */
+  evaluateSimpleExpression: function (expression) {
+    try {
+        log(`evaluateSimpleExpression => Input: ${expression}`);
+        const exprStr = String(expression).trim(); // Ensure string and trim whitespace
+
+        // Find the operator (longer ones first)
+        let operator = '';
+        let operatorIndex = -1;
+        const operatorsToSearch = ['//', '%', '*', '/', '+', '-']; // Order matters
+
+        for (const op of operatorsToSearch) {
+            // Search for operator, ensuring it's not part of a number (e.g., negative sign at start)
+            let currentIdx = exprStr.indexOf(op);
             while (currentIdx !== -1) {
-                // Ensure it's not part of a negative number at the start or after another operator
-                 if (currentIdx > 0 || (currentIdx === 0 && op !== '-')) {
-                    // Check if the character before is also an operator (avoid matching '--', '++' etc. if needed)
-                    if (currentIdx > 0 && operators.includes(expression[currentIdx-1])) {
-                         // This might be a negative number following an operator, e.g., 5 + -3
-                         // Continue searching for the *next* occurrence of this operator
-                         currentIdx = expression.indexOf(op, currentIdx + 1);
+                // Check if it's a binary operator (not a unary minus at the start)
+                if (currentIdx > 0 || (currentIdx === 0 && op !== '-')) {
+                    // Check if the character before is also an operator (e.g., 5 + -3)
+                    // This simple parser assumes only one main operator.
+                    // If the previous char is an operator, this 'op' might be part of the second operand.
+                    const prevChar = exprStr[currentIdx - 1];
+                    if (prevChar && operatorsToSearch.includes(prevChar)) {
+                         // Continue search if it looks like a negative second operand
+                         currentIdx = exprStr.indexOf(op, currentIdx + 1);
                          continue;
                     }
-                    operatorIndex = currentIdx;
                     operator = op;
+                    operatorIndex = currentIdx;
                     break; // Found the main operator
-                 }
-                 // Check next occurrence if the first was a unary minus
-                 currentIdx = expression.indexOf(op, currentIdx + 1);
+                }
+                // If it was a unary minus at the start, continue searching for this operator
+                currentIdx = exprStr.indexOf(op, currentIdx + 1);
             }
-            if (operator) break;
+            if (operator) break; // Exit outer loop once operator is found
         }
 
-
-        if (!operator) { // No operator found, likely just a number (could be negative)
-             const num = parseFloat(expression);
-             if (isNaN(num)) throw new Error(`Invalid expression format or single number: ${expression}`);
-             log(`evaluateExpression => Single number found: ${num}`);
+        // Handle case where no operator is found (likely just a number)
+        if (!operator) {
+             const num = parseFloat(exprStr);
+             if (isNaN(num)) throw new Error(`Invalid format or single number: ${exprStr}`);
+             log(`evaluateSimpleExpression => Single number found: ${num}`);
              return num;
         }
 
-        const operand1Str = expression.substring(0, operatorIndex);
-        const operand2Str = expression.substring(operatorIndex + operator.length);
+        // Extract operands
+        const operand1Str = exprStr.substring(0, operatorIndex).trim();
+        const operand2Str = exprStr.substring(operatorIndex + operator.length).trim();
 
         const operand1 = parseFloat(operand1Str);
         const operand2 = parseFloat(operand2Str);
 
+        // Validate operands
         if (isNaN(operand1) || isNaN(operand2)) {
-             // Handle cases like '5 * -3' where operand2Str might be '-3'
-             const operand2Retry = parseFloat(operand2Str);
-             if (isNaN(operand1) || isNaN(operand2Retry)) {
-                 throw new Error(`Invalid operands in expression: ${expression} (parsed as ${operand1Str}, ${operand2Str})`);
-             }
-             // If retry worked, use the retried value
-             operand2 = operand2Retry;
+            throw new Error(`Invalid operands: '${operand1Str}', '${operand2Str}' in expression: ${exprStr}`);
         }
 
+        log(`evaluateSimpleExpression => Evaluating: ${operand1} ${operator} ${operand2}`);
 
-        log(`evaluateExpression => Evaluating: ${operand1} ${operator} ${operand2}`);
-
+        // Perform calculation
         switch (operator) {
             case '+': return operand1 + operand2;
             case '-': return operand1 - operand2;
@@ -90,47 +120,54 @@ const NumberUtils = {
             case '/':
                  if (operand2 === 0) return NaN; // Avoid division by zero
                  const result = operand1 / operand2;
-                 // Ensure float result for '/' like Python 3
+                 // Mimic Python 3's float result for '/'
+                 // Return as float even if result is whole number (e.g., 4.0)
                  return Number.isInteger(result) ? parseFloat(result.toFixed(1)) : result;
             case '//':
                  if (operand2 === 0) return NaN; // Avoid division by zero
-                 // Python's floor division behavior for negative numbers differs slightly
-                 // from Math.floor in JS for negative results.
-                 // Mimic Python:
-                 if (operand1 * operand2 < 0 && operand1 % operand2 !== 0) {
-                     // For negative results where there's a remainder, JS Math.floor matches Python
-                     return Math.floor(operand1 / operand2) ;
-                 } else {
-                     // For positive results or exact division, JS Math.floor matches Python
-                     return Math.floor(operand1 / operand2);
-                 }
+                 // Mimic Python's floor division (handles negative numbers differently than JS Math.floor sometimes)
+                 // Standard formula: a // b = floor(a/b)
+                 return Math.floor(operand1 / operand2);
             case '%':
                  if (operand2 === 0) return NaN; // Avoid division by zero
                  // Mimic Python's modulo behavior (result has same sign as divisor)
                  return ((operand1 % operand2) + operand2) % operand2;
-            // case '**': return Math.pow(operand1, operand2); // Add if needed
-            default: throw new Error(`Unsupported operator: ${operator}`);
+            default:
+                // Should not happen if operator search is correct
+                throw new Error(`Unsupported operator: ${operator}`);
         }
     } catch (error) {
         console.error("Expression evaluation error:", error.message, "Expression:", expression);
         return NaN; // Indicate failure
     }
   },
+
+  /**
+   * Evaluates a simple comparison between two values.
+   * @param {number|string} val1 - The left-hand side value.
+   * @param {string} compOp - The comparison operator (e.g., '<', '==').
+   * @param {number|string} val2 - The right-hand side value.
+   * @returns {boolean} The result of the comparison.
+   */
   evaluateCondition: function(val1, compOp, val2) {
     log(`Evaluating condition: ${val1} ${compOp} ${val2}`);
-    // Ensure values are numbers for comparison
+    // Convert to numbers for reliable comparison
     const num1 = Number(val1);
     const num2 = Number(val2);
+
     if (isNaN(num1) || isNaN(num2)) {
         log("Warning: Non-numeric value in condition evaluation:", val1, compOp, val2);
-        return false; // Or handle as needed
+        // Defaulting to false for non-numeric comparisons in this context
+        return false;
     }
+
     switch (compOp) {
       case '<': return num1 < num2;
       case '<=': return num1 <= num2;
       case '>': return num1 > num2;
       case '>=': return num1 >= num2;
-      case '==': return num1 == num2; // Note: Using == for loose comparison like Python often does with numbers
+      // Using == for loose comparison, similar to Python's behavior with numbers
+      case '==': return num1 == num2;
       case '!=': return num1 != num2;
       default:
         log("Warning: Unknown comparison operator:", compOp);
@@ -140,83 +177,87 @@ const NumberUtils = {
 };
 
 /**
- * Module: QuestionFormatter
- * Description: Contains functions for formatting question and answer strings.
+ * Functions for formatting Python code snippets for questions.
+ * @namespace QuestionFormatter
  */
 const QuestionFormatter = {
+  /** Formats a simple if statement. */
   formatIfStatement: (varDefs, condition, printValTrue) => {
     return `${varDefs}\nif ${condition}:\n    print("${printValTrue}")`;
   },
+  /** Formats an if-else statement. */
   formatIfElseStatement: (varDefs, condition, printValTrue, printValFalse) => {
     return `${varDefs}\nif ${condition}:\n    print("${printValTrue}")\nelse:\n    print("${printValFalse}")`;
   },
+  /** Formats an if-elif-else statement. */
   formatIfElifElseStatement: (varDefs, condition1, printVal1, condition2, printVal2, printValElse) => {
     return `${varDefs}\nif ${condition1}:\n    print("${printVal1}")\nelif ${condition2}:\n    print("${printVal2}")\nelse:\n    print("${printValElse}")`;
   },
-  // --- NEW: Formatter for Nested If-Else ---
+  /** Formats a nested if-else statement. */
   formatNestedIfElseStatement: (varDefs, outerCondition, innerCondition, printValOuterTrueInnerTrue, printValOuterTrueInnerFalse, printValOuterFalse) => {
     return `${varDefs}\nif ${outerCondition}:\n    if ${innerCondition}:\n        print("${printValOuterTrueInnerTrue}")\n    else:\n        print("${printValOuterTrueInnerFalse}")\nelse:\n    print("${printValOuterFalse}")`;
   }
 };
 
 /**
- * Module: QuestionGenerator
- * Description: Contains functions for generating different types of conditional questions.
+ * Functions for generating specific types of conditional questions.
+ * @namespace QuestionGenerator
  */
 const QuestionGenerator = {
-  // Reusable function to create the final question object
-  genQuestion: function(questionText, answer, difficulty) {
-    // Ensure the answer is treated as a string, even if it's empty
-    const finalAnswer = answer === null || answer === undefined ? "" : String(answer);
+  /**
+   * Creates the final question object structure.
+   * @param {string} questionText - The formatted Python code snippet.
+   * @param {string} answer - The expected output string.
+   * @param {'easy'|'medium'|'hard'} difficulty - The difficulty level.
+   * @returns {object} The question object.
+   */
+  createQuestionEntry: function(questionText, answer, difficulty) {
+    // Ensure the answer is always a string, even if empty
+    const finalAnswer = String(answer ?? ""); // Use nullish coalescing
     const entry = {
       topic: 'python',
       subtopic: 'conditional statements',
       difficulty: difficulty,
       type: 'fill', // All conditional questions are fill-in-the-blank for the output
-      question: `What will be the output of the following code?\n\n\`\`\`${questionText}\n\`\`\``,
-      answer: finalAnswer, // Answer is the string that gets printed (or empty string if nothing prints)
+      // Added 'python' tag for markdown code block highlighting
+      question: `What will be the output of the following code?\n\n\`\`\`python\n${questionText}\n\`\`\``,
+      answer: finalAnswer,
     };
     log(`Generated entry: ${JSON.stringify(entry)}`);
     return entry;
   },
 
-  // --- Specific Question Type Generators ---
-
+  /** Generates an 'easy' if-else question. */
   genIfElseQuestion: function(params) {
     const { varDefs, conditionExpr, comparisonOp, comparisonVal, conditionValue, printValTrue, printValFalse } = params;
     log(`Generating if-else question with params: ${JSON.stringify(params)}`);
 
-    const conditionLHS = conditionValue;
-
-     if (isNaN(conditionLHS)) {
+    if (isNaN(conditionValue)) {
         log("Skipping if-else due to invalid pre-calculated condition value.");
         return null;
     }
 
-    const conditionIsTrue = NumberUtils.evaluateCondition(conditionLHS, comparisonOp, comparisonVal);
+    const conditionIsTrue = NumberUtils.evaluateCondition(conditionValue, comparisonOp, comparisonVal);
     const conditionString = `${conditionExpr} ${comparisonOp} ${comparisonVal}`;
     const questionText = QuestionFormatter.formatIfElseStatement(varDefs, conditionString, printValTrue, printValFalse);
-
     const answer = conditionIsTrue ? printValTrue : printValFalse;
 
-    return QuestionGenerator.genQuestion(questionText, answer, 'easy');
+    return QuestionGenerator.createQuestionEntry(questionText, answer, 'easy');
   },
 
+  /** Generates a 'medium' if-elif-else question. */
   genIfElifElseQuestion: function(params) {
     const { varDefs, conditionExpr1, comparisonOp1, comparisonVal1, conditionValue1, printVal1,
             conditionExpr2, comparisonOp2, comparisonVal2, conditionValue2, printVal2, printValElse } = params;
     log(`Generating if-elif-else question with params: ${JSON.stringify(params)}`);
 
-    const conditionLHS1 = conditionValue1;
-    const conditionLHS2 = conditionValue2;
-
-     if (isNaN(conditionLHS1) || isNaN(conditionLHS2)) {
+    if (isNaN(conditionValue1) || isNaN(conditionValue2)) {
         log("Skipping if-elif-else due to invalid pre-calculated condition value(s).");
         return null;
     }
 
-    const condition1IsTrue = NumberUtils.evaluateCondition(conditionLHS1, comparisonOp1, comparisonVal1);
-    const condition2IsTrue = NumberUtils.evaluateCondition(conditionLHS2, comparisonOp2, comparisonVal2);
+    const condition1IsTrue = NumberUtils.evaluateCondition(conditionValue1, comparisonOp1, comparisonVal1);
+    const condition2IsTrue = NumberUtils.evaluateCondition(conditionValue2, comparisonOp2, comparisonVal2);
 
     const conditionString1 = `${conditionExpr1} ${comparisonOp1} ${comparisonVal1}`;
     const conditionString2 = `${conditionExpr2} ${comparisonOp2} ${comparisonVal2}`;
@@ -231,10 +272,10 @@ const QuestionGenerator = {
       answer = printValElse;
     }
 
-    return QuestionGenerator.genQuestion(questionText, answer, 'medium');
+    return QuestionGenerator.createQuestionEntry(questionText, answer, 'medium');
   },
 
-  // --- NEW: Generator for Nested If-Else ---
+  /** Generates a 'hard' nested if-else question. */
   genNestedIfElseQuestion: function(params) {
     const { varDefs,
             conditionExprOuter, comparisonOpOuter, comparisonValOuter, conditionValueOuter,
@@ -242,16 +283,13 @@ const QuestionGenerator = {
             printValOuterTrueInnerTrue, printValOuterTrueInnerFalse, printValOuterFalse } = params;
     log(`Generating nested if-else question with params: ${JSON.stringify(params)}`);
 
-    const conditionLHSOuter = conditionValueOuter;
-    const conditionLHSInner = conditionValueInner;
-
-    if (isNaN(conditionLHSOuter) || isNaN(conditionLHSInner)) {
+    if (isNaN(conditionValueOuter) || isNaN(conditionValueInner)) {
         log("Skipping nested if-else due to invalid pre-calculated condition value(s).");
         return null;
     }
 
-    const outerConditionIsTrue = NumberUtils.evaluateCondition(conditionLHSOuter, comparisonOpOuter, comparisonValOuter);
-    const innerConditionIsTrue = NumberUtils.evaluateCondition(conditionLHSInner, comparisonOpInner, comparisonValInner);
+    const outerConditionIsTrue = NumberUtils.evaluateCondition(conditionValueOuter, comparisonOpOuter, comparisonValOuter);
+    const innerConditionIsTrue = NumberUtils.evaluateCondition(conditionValueInner, comparisonOpInner, comparisonValInner);
 
     const outerConditionString = `${conditionExprOuter} ${comparisonOpOuter} ${comparisonValOuter}`;
     const innerConditionString = `${conditionExprInner} ${comparisonOpInner} ${comparisonValInner}`;
@@ -272,206 +310,208 @@ const QuestionGenerator = {
         answer = printValOuterFalse;
     }
 
-    return QuestionGenerator.genQuestion(questionText, answer, 'hard'); // Set difficulty to 'hard'
+    return QuestionGenerator.createQuestionEntry(questionText, answer, 'hard');
   }
 };
 
 /**
- * Generates a specified number of random conditional questions.
- * @param {number} numQuestions - The total number of questions to generate across all difficulties.
- * @returns {Array<object>} The generated questions.
+ * Selects a random element from an array.
+ * @template T
+ * @param {T[]} list - The array to choose from.
+ * @returns {T} A random element from the array.
+ */
+function getRandomElement(list) {
+    if (!list || list.length === 0) {
+        throw new Error("Cannot get random element from empty or invalid list.");
+    }
+    return list[Math.floor(Math.random() * list.length)];
+}
+
+/**
+ * Generates parameters for two distinct conditions based on the same initial variables.
+ * Used for if-elif-else and nested if-else questions.
+ * @returns {object|null} An object containing parameters for two conditions and print values, or null if generation fails.
+ */
+function getRandomConditionalParams() {
+    log(`Entering getRandomConditionalParams`);
+    let x, y;
+    const existingVars = {};
+
+    // Define variables, ensuring y is not 0 for potential division/modulo
+    x = NumberUtils.getRandomInt(VARIABLE_VALUE_RANGE.MIN, VARIABLE_VALUE_RANGE.MAX);
+    do {
+        y = NumberUtils.getRandomInt(VARIABLE_VALUE_RANGE.MIN, VARIABLE_VALUE_RANGE.MAX);
+    } while (y === 0);
+
+    existingVars['x'] = x;
+    existingVars['y'] = y;
+    const varDefs = `x = ${x}\ny = ${y}`;
+
+    // --- Generate details for a single condition ---
+    const generateConditionDetails = (varNames) => {
+        const operand1Name = getRandomElement(varNames);
+        const operand2Name = getRandomElement(varNames);
+        const operand1Value = existingVars[operand1Name];
+        const operand2Value = existingVars[operand2Name];
+
+        let arithOp;
+        let conditionValue;
+        let attempt = 0;
+        const maxArithAttempts = 10; // Prevent infinite loops
+
+        // Find a valid arithmetic operation
+        do {
+            arithOp = getRandomElement(ARITHMETIC_OPERATORS);
+            // Avoid division/modulo by zero explicitly (though y!=0 check helps)
+            if (['/', '//', '%'].includes(arithOp) && operand2Value === 0) {
+                conditionValue = NaN;
+            } else {
+                const expressionToEvaluate = `${operand1Value} ${arithOp} ${operand2Value}`;
+                conditionValue = NumberUtils.evaluateSimpleExpression(expressionToEvaluate);
+            }
+            attempt++;
+        } while (isNaN(conditionValue) && attempt < maxArithAttempts);
+
+        if (isNaN(conditionValue)) {
+            log(`Failed to generate valid arithmetic expression after ${maxArithAttempts} attempts.`);
+            return null; // Signal failure
+        }
+
+        const conditionExpr = `${operand1Name} ${arithOp} ${operand2Name}`;
+        const comparisonOp = getRandomElement(COMPARISON_OPERATORS);
+        const comparisonVal = NumberUtils.getRandomInt(COMPARISON_VALUE_RANGE.MIN, COMPARISON_VALUE_RANGE.MAX);
+
+        return { conditionExpr, comparisonOp, comparisonVal, conditionValue };
+    };
+
+    // --- Generate Condition 1 ---
+    const details1 = generateConditionDetails(['x', 'y']);
+    if (!details1) return null;
+
+    // --- Generate Condition 2 (ensure it's likely different) ---
+    let details2;
+    let attempt = 0;
+    const maxConditionAttempts = 10;
+    do {
+        details2 = generateConditionDetails(['x', 'y']);
+        attempt++;
+        // Try to ensure conditions are somewhat different, not strictly required but good for variety
+    } while ((!details2 || (details1.conditionExpr === details2.conditionExpr && details1.comparisonOp === details2.comparisonOp && details1.comparisonVal === details2.comparisonVal)) && attempt < maxConditionAttempts);
+
+    if (!details2) {
+        log(`Failed to generate distinct second condition after ${maxConditionAttempts} attempts.`);
+        return null; // Signal failure if second condition couldn't be generated
+    }
+
+    // Shuffle and pick distinct print values
+    const shuffledVals = [...PRINT_VALUES].sort(() => 0.5 - Math.random());
+
+    log(`Exiting getRandomConditionalParams`);
+
+    return {
+        varDefs,
+        // Condition 1 details
+        conditionExpr1: details1.conditionExpr,
+        comparisonOp1: details1.comparisonOp,
+        comparisonVal1: details1.comparisonVal,
+        conditionValue1: details1.conditionValue,
+        // Condition 2 details
+        conditionExpr2: details2.conditionExpr,
+        comparisonOp2: details2.comparisonOp,
+        comparisonVal2: details2.comparisonVal,
+        conditionValue2: details2.conditionValue,
+        // Print values
+        printValIfElseTrue: shuffledVals[0],
+        printValIfElseFalse: shuffledVals[1],
+        printValElif1: shuffledVals[2],
+        printValElif2: shuffledVals[3],
+        printValElifElse: shuffledVals[4],
+        printValNestOuterTrueInnerTrue: shuffledVals[5],
+        printValNestOuterTrueInnerFalse: shuffledVals[6],
+        printValNestOuterFalse: shuffledVals[7]
+    };
+}
+
+/**
+ * Generates a specified number of random conditional questions covering different structures and difficulties.
+ * @param {number} numQuestions - The total number of questions to generate.
+ * @returns {Array<object>} An array of generated question objects.
+ * @alias module:cond_qn_gen.genCondQns
  */
 function genCondQns(numQuestions) {
   log(`Generating ${numQuestions} conditional questions...`);
   const questions = [];
-  const arithOps = ['+', '-', '*', '//', '%'];
-  const compOps = ['<', '<=', '>', '>=', '==', '!='];
-  const N = 25; // Range for random numbers for variables
-  const M = 25; // Range for comparison values
-
-  // Use distinct print values to make answers clear
-  const printVals = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima"];
-
-  function getRandomOp(opsList) {
-    return opsList[Math.floor(Math.random() * opsList.length)];
-  }
-
-  // --- MODIFIED: Generates parameters for TWO conditions based on the SAME variables ---
-  function getRandomMultiConditionParams() {
-      log(`Entering getRandomMultiConditionParams`);
-      let x, y, z;
-      let varDefs = "";
-      let existingVars = {};
-
-      // Define variables
-      x = NumberUtils.getRandomInt(2, N);
-      y = NumberUtils.getRandomInt(2, N);
-      // Ensure y is not zero for division/modulo if it might be used as divisor
-      while (y === 0) {
-          y = NumberUtils.getRandomInt(2, N);
-      }
-      existingVars['x'] = x;
-      existingVars['y'] = y;
-      varDefs = `x = ${x}\ny = ${y}`;
-
-      // --- Condition 1 ---
-      let operand1Name1 = 'x';
-      let operand2Name1 = 'y';
-      let operand1Value1 = existingVars[operand1Name1];
-      let operand2Value1 = existingVars[operand2Name1];
-      let arithOp1 = getRandomOp(arithOps);
-      // Avoid division/modulo by zero if y was chosen as the second operand
-      while (['/', '//', '%'].includes(arithOp1) && operand2Value1 === 0) {
-          log("Retrying arithOp1 due to potential division by zero");
-          arithOp1 = getRandomOp(arithOps); // Simple retry, could refine
-      }
-      let conditionExpr1 = `${operand1Name1} ${arithOp1} ${operand2Name1}`;
-      let expressionToEvaluate1 = `${operand1Value1} ${arithOp1} ${operand2Value1}`;
-      let conditionValue1 = NumberUtils.evaluateExpression(expressionToEvaluate1);
-      if (isNaN(conditionValue1)) {
-          log(`Invalid arithmetic expression 1: ${conditionExpr1} with values ${expressionToEvaluate1}. Retrying.`);
-          return null; // Signal to retry
-      }
-      let comparisonOp1 = getRandomOp(compOps);
-      let comparisonVal1 = NumberUtils.getRandomInt(2, M);
-
-      // --- Condition 2 ---
-      // Use the same variables but potentially different operands and operator
-      let operand1Name2 = Math.random() < 0.5 ? 'x' : 'y'; // Choose x or y
-      let operand2Name2 = Math.random() < 0.5 ? 'x' : 'y'; // Choose x or y
-      let operand1Value2 = existingVars[operand1Name2];
-      let operand2Value2 = existingVars[operand2Name2];
-      let arithOp2 = getRandomOp(arithOps);
-      // Avoid division/modulo by zero
-      while (['/', '//', '%'].includes(arithOp2) && operand2Value2 === 0) {
-          log("Retrying arithOp2 due to potential division by zero");
-          arithOp2 = getRandomOp(arithOps);
-      }
-      let conditionExpr2 = `${operand1Name2} ${arithOp2} ${operand2Name2}`;
-      let expressionToEvaluate2 = `${operand1Value2} ${arithOp2} ${operand2Value2}`;
-      let conditionValue2 = NumberUtils.evaluateExpression(expressionToEvaluate2);
-      if (isNaN(conditionValue2)) {
-          log(`Invalid arithmetic expression 2: ${conditionExpr2} with values ${expressionToEvaluate2}. Retrying.`);
-          return null; // Signal to retry
-      }
-      let comparisonOp2 = getRandomOp(compOps);
-      let comparisonVal2 = NumberUtils.getRandomInt(2, M); // Can be different from comparisonVal1
-
-      // Shuffle and pick distinct print values
-      const shuffledVals = [...printVals].sort(() => 0.5 - Math.random()); // Create a shuffled copy
-
-      log(`Exiting getRandomMultiConditionParams`);
-
-      return {
-          varDefs,
-          // Condition 1 details
-          conditionExpr1,
-          comparisonOp1,
-          comparisonVal1,
-          conditionValue1,
-          // Condition 2 details
-          conditionExpr2,
-          comparisonOp2,
-          comparisonVal2,
-          conditionValue2,
-          // Print values (ensure enough unique ones are picked)
-          printValIfElseTrue: shuffledVals[0],
-          printValIfElseFalse: shuffledVals[1],
-          printValElif1: shuffledVals[2],
-          printValElif2: shuffledVals[3],
-          printValElifElse: shuffledVals[4],
-          printValNestOuterTrueInnerTrue: shuffledVals[5],
-          printValNestOuterTrueInnerFalse: shuffledVals[6],
-          printValNestOuterFalse: shuffledVals[7]
-      };
-  }
-
-
   let attempts = 0;
-  const maxAttempts = numQuestions * 15; // Allow more attempts for variety
+  const maxAttempts = numQuestions * MAX_GENERATION_ATTEMPTS_MULTIPLIER;
 
+  const questionGenerators = [
+      { type: 'easy', generator: QuestionGenerator.genIfElseQuestion, paramsKey: 'ifElse' },
+      { type: 'medium', generator: QuestionGenerator.genIfElifElseQuestion, paramsKey: 'ifElifElse' },
+      { type: 'hard', generator: QuestionGenerator.genNestedIfElseQuestion, paramsKey: 'nested' }
+  ];
 
   while (questions.length < numQuestions && attempts < maxAttempts) {
     attempts++;
-    let params = getRandomMultiConditionParams();
-    if (!params) continue; // Retry if params generation failed
+    const baseParams = getRandomConditionalParams();
+    if (!baseParams) continue; // Retry if base parameter generation failed
 
-    let nextEntry;
+    // Randomly select which type of question to generate in this iteration
+    const selectedGeneratorInfo = getRandomElement(questionGenerators);
 
-    // --- Generate Easy: If-Else ---
-    const ifElseParams = {
-        varDefs: params.varDefs,
-        conditionExpr: params.conditionExpr1, // Use condition 1
-        comparisonOp: params.comparisonOp1,
-        comparisonVal: params.comparisonVal1,
-        conditionValue: params.conditionValue1,
-        printValTrue: params.printValIfElseTrue,
-        printValFalse: params.printValIfElseFalse
-    };
-    nextEntry = QuestionGenerator.genIfElseQuestion(ifElseParams);
-    if (nextEntry && questions.length < numQuestions) {
-        questions.push(nextEntry);
+    let specificParams;
+    switch (selectedGeneratorInfo.paramsKey) {
+        case 'ifElse':
+            specificParams = {
+                varDefs: baseParams.varDefs,
+                conditionExpr: baseParams.conditionExpr1,
+                comparisonOp: baseParams.comparisonOp1,
+                comparisonVal: baseParams.comparisonVal1,
+                conditionValue: baseParams.conditionValue1,
+                printValTrue: baseParams.printValIfElseTrue,
+                printValFalse: baseParams.printValIfElseFalse
+            };
+            break;
+        case 'ifElifElse':
+            specificParams = {
+                varDefs: baseParams.varDefs,
+                conditionExpr1: baseParams.conditionExpr1, comparisonOp1: baseParams.comparisonOp1, comparisonVal1: baseParams.comparisonVal1, conditionValue1: baseParams.conditionValue1, printVal1: baseParams.printValElif1,
+                conditionExpr2: baseParams.conditionExpr2, comparisonOp2: baseParams.comparisonOp2, comparisonVal2: baseParams.comparisonVal2, conditionValue2: baseParams.conditionValue2, printVal2: baseParams.printValElif2,
+                printValElse: baseParams.printValElifElse
+            };
+            break;
+        case 'nested':
+             specificParams = {
+                varDefs: baseParams.varDefs,
+                conditionExprOuter: baseParams.conditionExpr1, comparisonOpOuter: baseParams.comparisonOp1, comparisonValOuter: baseParams.comparisonVal1, conditionValueOuter: baseParams.conditionValue1,
+                conditionExprInner: baseParams.conditionExpr2, comparisonOpInner: baseParams.comparisonOp2, comparisonValInner: baseParams.comparisonVal2, conditionValueInner: baseParams.conditionValue2,
+                printValOuterTrueInnerTrue: baseParams.printValNestOuterTrueInnerTrue,
+                printValOuterTrueInnerFalse: baseParams.printValNestOuterTrueInnerFalse,
+                printValOuterFalse: baseParams.printValNestOuterFalse
+            };
+            break;
+        default:
+            log("Error: Unknown generator type selected.");
+            continue;
     }
 
-    // --- Generate Medium: If-Elif-Else ---
-    const ifElifElseParams = {
-        varDefs: params.varDefs,
-        conditionExpr1: params.conditionExpr1,
-        comparisonOp1: params.comparisonOp1,
-        comparisonVal1: params.comparisonVal1,
-        conditionValue1: params.conditionValue1,
-        printVal1: params.printValElif1,
-        conditionExpr2: params.conditionExpr2, // Use condition 2
-        comparisonOp2: params.comparisonOp2,
-        comparisonVal2: params.comparisonVal2,
-        conditionValue2: params.conditionValue2,
-        printVal2: params.printValElif2,
-        printValElse: params.printValElifElse
-    };
-    nextEntry = QuestionGenerator.genIfElifElseQuestion(ifElifElseParams);
-     if (nextEntry && questions.length < numQuestions) {
+    const nextEntry = selectedGeneratorInfo.generator(specificParams);
+
+    if (nextEntry) {
         questions.push(nextEntry);
     }
-
-    // --- Generate Hard: Nested If-Else ---
-    const nestedParams = {
-        varDefs: params.varDefs,
-        conditionExprOuter: params.conditionExpr1, // Use condition 1 as outer
-        comparisonOpOuter: params.comparisonOp1,
-        comparisonValOuter: params.comparisonVal1,
-        conditionValueOuter: params.conditionValue1,
-        conditionExprInner: params.conditionExpr2, // Use condition 2 as inner
-        comparisonOpInner: params.comparisonOp2,
-        comparisonValInner: params.comparisonVal2,
-        conditionValueInner: params.conditionValue2,
-        printValOuterTrueInnerTrue: params.printValNestOuterTrueInnerTrue,
-        printValOuterTrueInnerFalse: params.printValNestOuterTrueInnerFalse,
-        printValOuterFalse: params.printValNestOuterFalse
-    };
-    nextEntry = QuestionGenerator.genNestedIfElseQuestion(nestedParams);
-    if (nextEntry && questions.length < numQuestions) {
-        questions.push(nextEntry);
-    }
-  }
-
+  } // End while loop
 
   if (attempts >= maxAttempts && questions.length < numQuestions) {
       log(`Warning: Reached max attempts (${maxAttempts}) while trying to generate ${numQuestions} questions. Generated ${questions.length}.`);
   }
 
-
   log(`Generated ${questions.length} conditional questions.`);
-  // Shuffle the final list to mix difficulties
+  // Shuffle the final list to mix difficulties just before returning
   questions.sort(() => Math.random() - 0.5);
 
-
-  return questions.slice(0, numQuestions); // Return exactly numQuestions if more were generated
+  // Return exactly numQuestions if more were generated due to loop structure
+  return questions.slice(0, numQuestions);
 }
-
-// Example Usage (can be removed or commented out in final version)
-// const generatedQuestions = genCondQns(20); // Generate 20 questions including easy, medium, hard
-// console.log(JSON.stringify(generatedQuestions.filter(q => q.difficulty === 'hard'), null, 2)); // Log only hard ones for check
-// console.log(`Total generated: ${generatedQuestions.length}`);
 
 // Export the main generation function
 export { genCondQns };
