@@ -23,6 +23,9 @@ const LOOP_RANGE_MAX = 10; // Max value for loop start (n) - Increased range sli
 const LOOP_MAX_DIFF = 5; // Max difference (m - n) for loops (so m-n <= 6)
 const LOOP_END_MAX = LOOP_RANGE_MAX + LOOP_MAX_DIFF; // Absolute max for m
 const EXCLUDE_DIVISORS = Object.freeze([2, 3, 5]);
+const LOOP_ACTIONS = Object.freeze(['continue', 'break']); // Actions for hard questions
+const INCREMENTING_OPS = Object.freeze(['<', '<=']);
+const DECREMENTING_OPS = Object.freeze(['>', '>=']);
 const MAX_GENERATION_ATTEMPTS_MULTIPLIER = 5;
 
 // --- Modules ---
@@ -55,6 +58,40 @@ const NumberUtils = {
         throw new Error("Cannot get random element from empty or invalid list.");
     }
     return list[Math.floor(Math.random() * list.length)];
+  },
+
+  /**
+   * Evaluates a simple comparison between two values.
+   * @param {number|string} val1 - The left-hand side value.
+   * @param {string} compOp - The comparison operator (e.g., '<', '==').
+   * @param {number|string} val2 - The right-hand side value.
+   * @returns {boolean} The result of the comparison.
+   */
+  evaluateCondition: function(val1, compOp, val2) {
+    // This function is also defined in cond_qn_gen.js, ensure consistency if modified.
+    log(`Evaluating condition: ${val1} ${compOp} ${val2}`);
+    // Convert to numbers for reliable comparison
+    const num1 = Number(val1);
+    const num2 = Number(val2);
+
+    if (isNaN(num1) || isNaN(num2)) {
+        log("Warning: Non-numeric value in condition evaluation:", val1, compOp, val2);
+        // Defaulting to false for non-numeric comparisons in this context
+        return false;
+    }
+
+    switch (compOp) {
+      case '<': return num1 < num2;
+      case '<=': return num1 <= num2;
+      case '>': return num1 > num2;
+      case '>=': return num1 >= num2;
+      // Using == for loose comparison, similar to Python's behavior with numbers
+      case '==': return num1 == num2;
+      case '!=': return num1 != num2;
+      default:
+        log("Warning: Unknown comparison operator:", compOp);
+        return false;
+    }
   }
   // Add other NumberUtils functions here if needed by future while loop questions
 };
@@ -65,13 +102,35 @@ const NumberUtils = {
  */
 const QuestionFormatter = {
   /** Formats an easy while loop summation question. */
-  formatWhileLoopSumEasy: (n, m) => {
-    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile n <= m:\n    total += n\n    n += 1\nprint(total)`;
+  formatWhileLoopSumEasy: (n, m, comparisonOp, direction) => {
+    const step = direction === 'increment' ? 'n += 1' : 'n -= 1';
+    const condition = `n ${comparisonOp} m`;
+    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile ${condition}:\n    total += n\n    ${step}\nprint(total)`;
   },
   /** Formats a medium while loop summation question with an exclusion condition. */
-  formatWhileLoopSumMedium: (n, m, excludeDivisor) => {
-    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile n <= m:\n    if n % ${excludeDivisor} != 0:\n        total += n\n    n += 1\nprint(total)`;
-  }
+  formatWhileLoopSumMedium: (n, m, excludeDivisor, comparisonOp, direction) => {
+    const step = direction === 'increment' ? 'n += 1' : 'n -= 1';
+    const condition = `n ${comparisonOp} m`;
+    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile ${condition}:\n    if n % ${excludeDivisor} != 0:\n        total += n\n    ${step}\nprint(total)`;
+  },
+  /**
+   * Formats a hard while loop summation question with a conditional continue or break.
+   * @param {number} n - Loop start value.
+   * @param {number} m - Loop end value (or start for decrementing).
+   * @param {number} conditionValue - The value to check against 'n'.
+   * @param {'continue'|'break'} action - The action to take if n == conditionValue.
+   * @param {string} comparisonOp - The comparison operator (e.g., '<=', '>').
+   * @param {'increment'|'decrement'} direction - The loop direction.
+   * @returns {string} Formatted Python code snippet.
+   */
+  formatWhileLoopSumHard: (n, m, conditionValue, action, comparisonOp, direction) => {
+    const step = direction === 'increment' ? 'n += 1' : 'n -= 1';
+    const condition = `n ${comparisonOp} m`;
+    const conditionCheck = `if n == ${conditionValue}:`;
+    // Important: The 'continue' action needs to include the step *before* continuing
+    const actionStatement = action === 'continue' ? `    ${step}\n        continue` : `    break`;
+    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile ${condition}:\n    ${conditionCheck}\n    ${actionStatement}\n    total += n\n    ${step}\nprint(total)`;
+  },
 };
 
 /**
@@ -103,16 +162,22 @@ const QuestionGenerator = {
 
   /** Generates an 'easy' while loop summation question. */
   genWhileLoopSumEasy: function(params) {
-    const { n, m } = params;
-    log(`Generating while loop sum (easy) question with n=${n}, m=${m}`);
+    const { n, m, comparisonOp, direction } = params;
+    log(`Generating while loop sum (easy) question with n=${n}, m=${m}, op=${comparisonOp}, dir=${direction}`);
 
-    // Calculate the correct sum
+    // Calculate the correct sum by simulating the loop
     let total = 0;
-    for (let i = n; i <= m; i++) {
-        total += i;
+    let currentN = n;
+    while (NumberUtils.evaluateCondition(currentN, comparisonOp, m)) {
+        total += currentN;
+        if (direction === 'increment') {
+            currentN += 1;
+        } else {
+            currentN -= 1;
+        }
     }
 
-    const questionText = QuestionFormatter.formatWhileLoopSumEasy(n, m);
+    const questionText = QuestionFormatter.formatWhileLoopSumEasy(n, m, comparisonOp, direction);
     const answer = String(total);
 
     return QuestionGenerator.createQuestionEntry(questionText, answer, 'easy');
@@ -120,37 +185,105 @@ const QuestionGenerator = {
 
   /** Generates a 'medium' while loop summation question with exclusion. */
   genWhileLoopSumMedium: function(params) {
-    const { n, m, excludeDivisor } = params;
-    log(`Generating while loop sum (medium) question with n=${n}, m=${m}, exclude=${excludeDivisor}`);
+    const { n, m, excludeDivisor, comparisonOp, direction } = params;
+    log(`Generating while loop sum (medium) question with n=${n}, m=${m}, exclude=${excludeDivisor}, op=${comparisonOp}, dir=${direction}`);
 
-    // Calculate the correct sum, excluding multiples of excludeDivisor
+    // Calculate the correct sum, excluding multiples of excludeDivisor, by simulating the loop
     let total = 0;
-    for (let i = n; i <= m; i++) {
-        if (i % excludeDivisor !== 0) {
-            total += i;
+    let currentN = n;
+    while (NumberUtils.evaluateCondition(currentN, comparisonOp, m)) {
+        if (currentN % excludeDivisor !== 0) {
+            total += currentN;
+        }
+        if (direction === 'increment') {
+            currentN += 1;
+        } else {
+            currentN -= 1;
         }
     }
 
-    const questionText = QuestionFormatter.formatWhileLoopSumMedium(n, m, excludeDivisor);
+    const questionText = QuestionFormatter.formatWhileLoopSumMedium(n, m, excludeDivisor, comparisonOp, direction);
     const answer = String(total);
 
     return QuestionGenerator.createQuestionEntry(questionText, answer, 'medium');
+  },
+
+  /** Generates a 'hard' while loop summation question with conditional continue/break. */
+  genWhileLoopSumHard: function(params) {
+    const { n, m, conditionValue, action, comparisonOp, direction } = params;
+    log(`Generating while loop sum (hard) question with n=${n}, m=${m}, conditionValue=${conditionValue}, action=${action}, op=${comparisonOp}, dir=${direction}`);
+
+    // Calculate the correct sum, considering continue or break, by simulating the loop
+    let total = 0;
+    let currentN = n; // Use a temporary variable for calculation
+    while (NumberUtils.evaluateCondition(currentN, comparisonOp, m)) {
+        if (currentN == conditionValue) {
+            if (action === 'continue') {
+                // Simulate the step happening *before* continue in the formatted code
+                if (direction === 'increment') {
+                    currentN += 1;
+                } else {
+                    currentN -= 1;
+                }
+                continue; // Skip the rest of the loop body for this iteration
+            } else { // action === 'break'
+                break; // Exit the loop immediately
+            }
+        }
+        total += currentN;
+        // Simulate the step at the end of the loop body
+        if (direction === 'increment') {
+            currentN += 1;
+        } else {
+            currentN -= 1;
+        }
+    }
+
+    const questionText = QuestionFormatter.formatWhileLoopSumHard(n, m, conditionValue, action, comparisonOp, direction);
+    const answer = String(total);
+
+    return QuestionGenerator.createQuestionEntry(questionText, answer, 'hard');
   }
 };
 
 /**
- * Generates parameters for While Loop questions (n, m, excludeDivisor).
- * @returns {object} An object containing n, m, and excludeDivisor.
+ * Generates parameters for While Loop questions.
+ * Includes n, m, excludeDivisor, conditionValue, action, direction, and comparisonOp.
+ * @returns {object} An object containing the generated parameters.
  */
 function getRandomWhileLoopParams() {
-    log(`Entering getRandomWhileLoopParams`);
-    const n = NumberUtils.getRandomInt(LOOP_RANGE_MIN, LOOP_RANGE_MAX);
-    // Ensure m > n and m - n <= MAX_DIFF, and m <= LOOP_END_MAX
-    const m = NumberUtils.getRandomInt(n + 1, Math.min(n + LOOP_MAX_DIFF, LOOP_END_MAX));
-    const excludeDivisor = NumberUtils.getRandomElement(EXCLUDE_DIVISORS);
+  log(`Entering getRandomWhileLoopParams`);
+  let n, m, comparisonOp, direction, conditionValue;
 
-    log(`Exiting getRandomWhileLoopParams with n=${n}, m=${m}, exclude=${excludeDivisor}`);
-    return { n, m, excludeDivisor };
+  // Decide direction first (50/50 chance)
+  direction = NumberUtils.getRandomElement(['increment', 'decrement']);
+
+  if (direction === 'increment') {
+      // Generate n and m for incrementing loop (n < m)
+      n = NumberUtils.getRandomInt(LOOP_RANGE_MIN, LOOP_RANGE_MAX);
+      // Ensure m > n and m - n <= MAX_DIFF, and m <= LOOP_END_MAX
+      m = NumberUtils.getRandomInt(n + 1, Math.min(n + LOOP_MAX_DIFF, LOOP_END_MAX));
+      comparisonOp = NumberUtils.getRandomElement(INCREMENTING_OPS);
+      // Ensure conditionValue is within the loop's intended range [n, m]
+      // For '<', the loop might not reach m, but the condition check can still use m.
+      conditionValue = NumberUtils.getRandomInt(n, m);
+  } else { // direction === 'decrement'
+      // Generate n and m for decrementing loop (n > m)
+      // Let m be the lower bound (target)
+      m = NumberUtils.getRandomInt(LOOP_RANGE_MIN, LOOP_RANGE_MAX);
+      // Ensure n > m and n - m <= MAX_DIFF, and n <= LOOP_END_MAX
+      n = NumberUtils.getRandomInt(m + 1, Math.min(m + LOOP_MAX_DIFF, LOOP_END_MAX));
+      comparisonOp = NumberUtils.getRandomElement(DECREMENTING_OPS);
+      // Ensure conditionValue is within the loop's intended range [m, n]
+      // For '>', the loop might not reach m, but the condition check can still use m.
+      conditionValue = NumberUtils.getRandomInt(m, n);
+  }
+
+  const excludeDivisor = NumberUtils.getRandomElement(EXCLUDE_DIVISORS);
+  const action = NumberUtils.getRandomElement(LOOP_ACTIONS);
+
+  log(`Exiting getRandomWhileLoopParams with n=${n}, m=${m}, exclude=${excludeDivisor}, conditionValue=${conditionValue}, action=${action}, op=${comparisonOp}, dir=${direction}`);
+  return { n, m, excludeDivisor, conditionValue, action, comparisonOp, direction };
 }
 
 /**
@@ -160,27 +293,35 @@ function getRandomWhileLoopParams() {
  * @alias module:while_qn_gen.genWhileQns
  */
 function genWhileQns(numQuestions) {
-  log(`Generating ${numQuestions} while loop questions...`);
+  log(`Generating ${numQuestions} while loop questions (attempting all difficulties per param set)...`);
   const questions = [];
   let attempts = 0;
-  const maxAttempts = numQuestions * MAX_GENERATION_ATTEMPTS_MULTIPLIER;
+  // Adjust maxAttempts slightly, as each attempt tries to generate 3 questions
+  const maxAttempts = Math.ceil(numQuestions / 3) * MAX_GENERATION_ATTEMPTS_MULTIPLIER;
 
   while (questions.length < numQuestions && attempts < maxAttempts) {
     attempts++;
     const loopParams = getRandomWhileLoopParams();
     if (!loopParams) continue; // Should not happen here, but good practice
 
-    // Generate easy question
-    let nextEntry = QuestionGenerator.genWhileLoopSumEasy(loopParams);
-    if (nextEntry) {
-        questions.push(nextEntry);
+    log(`Attempt ${attempts}: Using params n=${loopParams.n}, m=${loopParams.m}, op=${loopParams.comparisonOp}, dir=${loopParams.direction}`);
+
+    // Attempt to generate one of each difficulty using the same parameters
+    const easyEntry = QuestionGenerator.genWhileLoopSumEasy(loopParams);
+    if (easyEntry && questions.length < numQuestions) {
+        questions.push(easyEntry);
     }
 
-    // Generate medium question
-    nextEntry = QuestionGenerator.genWhileLoopSumMedium(loopParams);
-    if (nextEntry) {
-        questions.push(nextEntry);
+    const mediumEntry = QuestionGenerator.genWhileLoopSumMedium(loopParams);
+    if (mediumEntry && questions.length < numQuestions) {
+        questions.push(mediumEntry);
     }
+
+    const hardEntry = QuestionGenerator.genWhileLoopSumHard(loopParams);
+    if (hardEntry && questions.length < numQuestions) {
+        questions.push(hardEntry);
+    }
+
   } // End while loop
 
   if (attempts >= maxAttempts && questions.length < numQuestions) {
@@ -191,7 +332,7 @@ function genWhileQns(numQuestions) {
   // Shuffle the final list to mix difficulties just before returning
   questions.sort(() => Math.random() - 0.5);
 
-  // Return exactly numQuestions if more were generated
+  // Return exactly numQuestions
   return questions.slice(0, numQuestions);
 }
 

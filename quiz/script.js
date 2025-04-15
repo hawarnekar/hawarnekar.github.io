@@ -204,6 +204,50 @@ function shuffle(array) {
     return shuffledArray;
 }
 
+// --- Add input listener to enable/disable submit button ---
+fillBlankInput.addEventListener('input', function() {
+    // Enable submit button only if the input is not empty (after trimming)
+    submitAnswer.disabled = fillBlankInput.value.trim() === '';
+    log(`Fill-blank input changed. Submit button disabled: ${submitAnswer.disabled}`);
+});
+// --- End of input listener ---
+
+// --- Add global listener for Enter key to trigger Next Question ---
+document.addEventListener('keypress', function(event) {
+    // Check if the key pressed is 'Enter'
+    if (event.key === 'Enter' || event.keyCode === 13) {
+
+        const isSubmitVisible = !submitAnswer.classList.contains('hidden');
+        const isNextButtonVisible = !nextQuestionButton.classList.contains('hidden');
+
+        // Scenario 1: Submit button is visible and enabled
+        if (isSubmitVisible && !submitAnswer.disabled) {
+            // Check if the event originated from the input field where the user types the answer
+            if (event.target === fillBlankInput) {
+                 event.preventDefault(); // Prevent default actions (like potential form submission)
+                 log("Enter key pressed in input. Triggering submit.");
+                 submitAnswer.click(); // Simulate clicking the submit button
+                 // IMPORTANT: Stop processing this specific Enter event further.
+                 // This prevents it from immediately triggering the "Next Question" button
+                 // after the UI updates in the checkAnswer function.
+                 return;
+            }
+        }
+
+        // Scenario 2: Next Question button is visible
+        // This condition is only reached if the Enter press didn't trigger submission above.
+        if (isNextButtonVisible) {
+             // We can assume the submit button is hidden because checkAnswer hides it
+             // before showing the next button.
+             event.preventDefault(); // Prevent default actions
+             log("Enter key pressed. Triggering next question.");
+             nextQuestionButton.click(); // Simulate clicking the next question button
+        }
+    }
+});
+// --- End of global Enter key listener ---
+
+
 function showQuestion() {
     log("Showing question:", currentQuestion + 1);
     const q = quizQuestions[currentQuestion];
@@ -219,6 +263,7 @@ function showQuestion() {
 
     if (q.type === 'multiple') {
         optionsDiv.classList.remove('hidden');
+        submitAnswer.disabled = false; // Ensure submit is enabled for multiple choice initially
         const correctOption = q.options[q.correct];
 
         // Randomize options
@@ -235,9 +280,13 @@ function showQuestion() {
             div.onclick = () => selectAnswer(index);
             optionsDiv.appendChild(div);
         });
-    } else {
+        // For multiple choice, the button click is handled by selectAnswer
+        submitAnswer.onclick = null; // Clear previous fill-blank handler if any
+    } else { // Fill-in-the-blank
         fillBlankInput.type = 'text';
-        submitAnswer.onclick = () => checkAnswer();
+        submitAnswer.disabled = true; // Initially disable submit for fill-blank
+        submitAnswer.onclick = () => checkAnswer(); // Set the handler
+        fillBlankInput.focus(); // Automatically focus the input field
     }
 
     // Show the "Submit" button and hide the "Next Question" button
@@ -261,7 +310,8 @@ function selectAnswer(index) {
     const options = document.querySelectorAll('.option');
     options.forEach(opt => opt.style.background = '');
     options[index].style.background = '#ddd';
-    submitAnswer.onclick = () => checkAnswer(index);
+    submitAnswer.disabled = false; // Enable submit once an option is selected
+    submitAnswer.onclick = () => checkAnswer(index); // Set the handler with the selected index
 }
 
 function checkAnswer(answer) {
@@ -274,14 +324,16 @@ function checkAnswer(answer) {
     if (q.type === 'multiple') {
         if (answer === undefined) {
             log("No answer selected for multiple choice.");
+            // This check might be redundant now since submit is disabled until selection
             alert("Please select an answer.");
             return;
         }
         userAnswer = q.options[answer];
         log(`User's Multiple Choice answer is: ${userAnswer}`);
-    } else {
+    } else { // Fill-in-the-blank
         userAnswer = fillBlankInput.value.trim();
         log(`User's fill in the blank answer: ${userAnswer}`);
+        // This check might be redundant now since submit is disabled when empty
         if (userAnswer === "") {
             log("Fill in the blank was empty.");
             alert("Please fill in the blank.");
@@ -305,15 +357,15 @@ function checkAnswer(answer) {
         `;
     }
     resultDiv.classList.remove('hidden');
-    submitAnswer.classList.add('hidden');
-    // Show the "Next Question" button and hide the "Submit" button
+    submitAnswer.classList.add('hidden'); // Hide submit after checking
+    // Show the "Next Question" button
     nextQuestionButton.classList.remove('hidden');
 
     if (currentQuestion < 14) {
         nextQuestionButton.textContent = "Next Question";
         nextQuestionButton.onclick = () => {
             resultDiv.classList.add('hidden');
-            nextQuestionButton.classList.add('hidden');
+            // nextQuestionButton.classList.add('hidden'); // Keep visible until next question loads
             currentQuestion++;
             showQuestion();
         };
@@ -321,12 +373,13 @@ function checkAnswer(answer) {
         nextQuestionButton.textContent = "Show Score";
         nextQuestionButton.onclick = () => {
             resultDiv.classList.add('hidden');
-            nextQuestionButton.classList.add('hidden');
-            currentQuestion++;
+            // nextQuestionButton.classList.add('hidden'); // Keep visible until results show
+            currentQuestion++; // Increment to signal end
             showResults();
         };
     }
 
+    // Optional: Add visual feedback to submit button (already present)
     submitAnswer.classList.add('submitted');
     setTimeout(() => {
         submitAnswer.classList.remove('submitted');
@@ -348,7 +401,7 @@ function showResults() {
             <p>Correct Answer: ${a.correctAnswer}</p>
         </div>
     `).join('');
-    
+
     //2. Display final score
     document.getElementById('final-score').innerHTML = `<strong>${userName}</strong>, your score is: ${score}/15`;
 
@@ -357,6 +410,7 @@ function showResults() {
         // 4. Display the result screen
         quizScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
+        nextQuestionButton.classList.add('hidden'); // Hide next button on results screen
 
         // 5. Scroll to the top.
         window.scrollTo(0, 0);
@@ -395,11 +449,24 @@ function resetQuiz(resetUser = false){
 
     resultScreen.classList.add('hidden');
     selectionScreen.classList.remove('hidden');
+    progressBar.style.width = `0%`; // Reset progress bar visually
+
     if(resetUser){
       usernameInput.disabled = false;
-      nextButton.classList.remove('hidden');
+      startButton.classList.add('hidden'); // Hide start until name is entered
+      nextButton.classList.remove('hidden'); // Show next (name entry) button
       isQuizStarted = false;
       usernameInput.value = "";
+      // Reset dropdowns to initial state
+      topicSelect.value = "";
+      subtopicSelect.innerHTML = '<option value="">Select Subtopic</option>';
+      subtopicSelect.disabled = true;
+      difficultySelect.innerHTML = '<option value="">Select Difficulty</option>';
+      difficultySelect.disabled = true;
+    } else {
+        // If continuing as same user, just go back to selection
+        startButton.classList.remove('hidden'); // Ensure start button is visible
+        nextButton.classList.add('hidden'); // Hide name entry button
     }
-    showQuestion();
+    // No need to call showQuestion() here, wait for user to start
 }
