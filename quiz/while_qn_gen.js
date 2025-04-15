@@ -19,8 +19,8 @@ function log(...args) {
 
 // --- Constants ---
 const LOOP_RANGE_MIN = 1; // Min value for loop start (n)
-const LOOP_RANGE_MAX = 20; // Max value for loop start (n) - Increased range slightly
-const LOOP_MAX_DIFF = 6; // Max difference (m - n) for loops (so m-n <= 6)
+const LOOP_RANGE_MAX = 10; // Max value for loop start (n) - Increased range slightly
+const LOOP_MAX_DIFF = 5; // Max difference (m - n) for loops (so m-n <= 6)
 const LOOP_END_MAX = LOOP_RANGE_MAX + LOOP_MAX_DIFF; // Absolute max for m
 const EXCLUDE_DIVISORS = Object.freeze([2, 3, 5]);
 const MAX_GENERATION_ATTEMPTS_MULTIPLIER = 5;
@@ -66,11 +66,11 @@ const NumberUtils = {
 const QuestionFormatter = {
   /** Formats an easy while loop summation question. */
   formatWhileLoopSumEasy: (n, m) => {
-    return `n = ${n}\nm = ${m}\ntotal = 0\ni = n\nwhile i <= m:\n    total += i\n    i += 1\nprint(total)`;
+    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile n <= m:\n    total += n\n    n += 1\nprint(total)`;
   },
   /** Formats a medium while loop summation question with an exclusion condition. */
   formatWhileLoopSumMedium: (n, m, excludeDivisor) => {
-    return `n = ${n}\nm = ${m}\nexclude = ${excludeDivisor}\ntotal = 0\ni = n\nwhile i <= m:\n    if i % exclude != 0:\n        total += i\n    i += 1\nprint(total)`;
+    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile n <= m:\n    if n % ${excludeDivisor} != 0:\n        total += n\n    n += 1\nprint(total)`;
   }
 };
 
@@ -94,7 +94,7 @@ const QuestionGenerator = {
       difficulty: difficulty,
       type: 'fill',
       // Added 'python' tag for markdown code block highlighting
-      question: `What will be the output of the following code?\n\n\`\`\`python\n${questionText}\n\`\`\``,
+      question: `What will be the output of the following code?\n\n\`\`\`${questionText}\n\`\`\``,
       answer: finalAnswer,
     };
     log(`Generated while loop entry: ${JSON.stringify(entry)}`);
@@ -171,13 +171,13 @@ function genWhileQns(numQuestions) {
     if (!loopParams) continue; // Should not happen here, but good practice
 
     // Generate easy question
-    let nextEntry = 'easy'.generator(loopParams);
+    let nextEntry = QuestionGenerator.genWhileLoopSumEasy(loopParams);
     if (nextEntry) {
         questions.push(nextEntry);
     }
 
     // Generate medium question
-    nextEntry = 'medium'.generator(loopParams);
+    nextEntry = QuestionGenerator.genWhileLoopSumMedium(loopParams);
     if (nextEntry) {
         questions.push(nextEntry);
     }
