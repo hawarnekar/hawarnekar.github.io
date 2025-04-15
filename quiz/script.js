@@ -204,22 +204,6 @@ function shuffle(array) {
     return shuffledArray;
 }
 
-// --- Add event listener for Enter key on fill-blank input ---
-// fillBlankInput.addEventListener('keypress', function(event) {
-//     // Check if the key pressed is 'Enter'
-//     if (event.key === 'Enter' || event.keyCode === 13) {
-//         event.preventDefault(); // Prevent default form submission if it's inside a form
-//         // Trigger the submit button's click event only if it's not disabled
-//         // AND only if the submit button is actually visible
-//         const isSubmitVisible = !submitAnswer.classList.contains('hidden');
-//         if (!submitAnswer.disabled && isSubmitVisible) {
-//             log("Enter key pressed in fill-blank. Triggering submit.");
-//             submitAnswer.click();
-//         }
-//     }
-// });
-// --- End of Enter key listener ---
-
 // --- Add input listener to enable/disable submit button ---
 fillBlankInput.addEventListener('input', function() {
     // Enable submit button only if the input is not empty (after trimming)
