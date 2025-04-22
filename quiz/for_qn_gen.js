@@ -2,6 +2,10 @@
  * for_qn_gen.js
  * Generates quiz questions for Python basic for loops using range() (summation).
  * Includes incrementing/decrementing loops, variable steps, and continue/break statements.
+ * Uses randomized variable names for loop control and accumulator.
+ * Initializes accumulator with a random value between -4 and 9.
+ * Medium questions include an else block to modify the accumulator.
+ * Accumulates the loop variable. Range uses literal values.
  * @module for_qn_gen
  */
 
@@ -22,13 +26,22 @@ function log(...args) {
 // Using similar ranges as while_qn_gen for consistency
 const LOOP_RANGE_MIN = 1; // Min value for loop start/end boundary
 const LOOP_RANGE_MAX = 15; // Max value for loop start/end boundary
-const LOOP_MAX_DIFF = 6; // Max difference between start and end
+const LOOP_MAX_DIFF = 5; // Max difference between start and end
 const LOOP_END_MAX = LOOP_RANGE_MAX + LOOP_MAX_DIFF; // Absolute max boundary
 const EXCLUDE_DIVISORS = Object.freeze([2, 3, 5]);
 const LOOP_ACTIONS = Object.freeze(['continue', 'break']); // Actions for hard questions
 const INCREMENT_STEPS = Object.freeze([1, 2]); // Possible steps for incrementing loops
 const DECREMENT_STEPS = Object.freeze([-1, -2]); // Possible steps for decrementing loops
 const MAX_GENERATION_ATTEMPTS_MULTIPLIER = 10; // Increased slightly due to more complex generation
+const ACCUMULATOR_INIT_MIN = -4; // Min initial value for accumulator
+const ACCUMULATOR_INIT_MAX = 9;  // Max initial value for accumulator
+const MEDIUM_ELSE_ACTIONS = Object.freeze(['increment', 'decrement']); // Actions for medium else block
+const MEDIUM_ELSE_VALUE_MIN = 1; // Min value for medium else modification
+const MEDIUM_ELSE_VALUE_MAX = 5;  // Max value for medium else modification
+
+// --- Variable Names ---
+const LOOP_VAR_NAMES = Object.freeze(['a', 'b', 'c', 'd', 'm', 'n', 'p', 'q', 'x', 'y', 'z']);
+const ACCUMULATOR_VAR_NAMES = Object.freeze(['sum', 'total']);
 
 // --- Modules ---
 
@@ -65,6 +78,23 @@ const NumberUtils = {
     return list[Math.floor(Math.random() * list.length)];
   },
 
+   /**
+   * Selects N distinct random elements from an array.
+   * @template T
+   * @param {T[]} list - The array to choose from.
+   * @param {number} count - The number of distinct elements to select.
+   * @returns {T[]} An array containing N distinct random elements.
+   * @throws {Error} If the list has fewer than N elements or count is invalid.
+   */
+   getNDistinctRandomElements: function(list, count) {
+    if (!list || list.length < count || count < 1) {
+        throw new Error(`Cannot get ${count} distinct random elements from a list with ${list?.length ?? 0} items.`);
+    }
+    const shuffled = [...list].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  },
+
+
   /**
    * Simulates Python's range function to generate the sequence of numbers.
    * @param {number} start - The starting value.
@@ -98,6 +128,7 @@ const NumberUtils = {
 const QuestionFormatter = {
   /**
    * Formats the range arguments based on start, end (inclusive), and step.
+   * Uses literal numeric values.
    * @param {number} n - The starting value of the loop.
    * @param {number} m - The ending value (inclusive) of the loop.
    * @param {number} step - The step value.
@@ -115,24 +146,27 @@ const QuestionFormatter = {
   },
 
   /** Formats an easy for loop summation question using range(). */
-  formatForLoopSumEasy: (n, m, step) => {
+  formatForLoopSumEasy: (loopVarName, accumulatorName, initialAccumulatorValue, n, m, step) => {
     const rangeArgs = QuestionFormatter.formatRangeArgs(n, m, step);
-    return `total = 0\nfor i in range(${rangeArgs}):\n    total += i\nprint(total)`;
+    // Accumulate loopVarName
+    return `${accumulatorName} = ${initialAccumulatorValue}\nfor ${loopVarName} in range(${rangeArgs}):\n    ${accumulatorName} += ${loopVarName}\nprint(${accumulatorName})`;
   },
 
-  /** Formats a medium for loop summation question using range() with an exclusion condition. */
-  formatForLoopSumMedium: (n, m, step, excludeDivisor) => {
+  /** Formats a medium for loop summation question using range() with an exclusion condition and else modification. */
+  formatForLoopSumMedium: (loopVarName, accumulatorName, initialAccumulatorValue, n, m, step, excludeDivisor, elseAction, elseValue) => {
     const rangeArgs = QuestionFormatter.formatRangeArgs(n, m, step);
-    return `total = 0\nfor i in range(${rangeArgs}):\n    if i % ${excludeDivisor} != 0:\n        total += i\nprint(total)`;
+    const elseOperator = elseAction === 'increment' ? '+=' : '-=';
+    // Accumulate loopVarName in the 'if' block
+    return `${accumulatorName} = ${initialAccumulatorValue}\nfor ${loopVarName} in range(${rangeArgs}):\n    if ${loopVarName} % ${excludeDivisor} != 0:\n        ${accumulatorName} += ${loopVarName}\n    else:\n        ${accumulatorName} ${elseOperator} ${elseValue}\nprint(${accumulatorName})`;
   },
 
   /** Formats a hard for loop summation question using range() with conditional continue/break. */
-  formatForLoopSumHard: (n, m, step, conditionValue, action) => {
+  formatForLoopSumHard: (loopVarName, accumulatorName, initialAccumulatorValue, n, m, step, conditionValue, action) => {
     const rangeArgs = QuestionFormatter.formatRangeArgs(n, m, step);
-    const conditionCheck = `if i == ${conditionValue}:`;
-    // Note: 'continue' in for loop automatically goes to the next iteration based on range step
+    const conditionCheck = `if ${loopVarName} == ${conditionValue}:`;
     const actionStatement = action === 'continue' ? `    continue` : `    break`;
-    return `total = 0\nfor i in range(${rangeArgs}):\n    ${conditionCheck}\n    ${actionStatement}\n    total += i\nprint(total)`;
+    // Accumulate loopVarName
+    return `${accumulatorName} = ${initialAccumulatorValue}\nfor ${loopVarName} in range(${rangeArgs}):\n    ${conditionCheck}\n    ${actionStatement}\n    ${accumulatorName} += ${loopVarName}\nprint(${accumulatorName})`;
   }
 };
 
@@ -156,7 +190,7 @@ const QuestionGenerator = {
       difficulty: difficulty,
       type: 'fill',
       // Added 'python' tag for markdown code block highlighting
-      question: `What will be the output of the following code?\n\n\`\`\`python\n${questionText}\n\`\`\``,
+      question: `What will be the output of the following code?\n\n\`\`\`${questionText}\n\`\`\``,
       answer: finalAnswer,
     };
     log(`Generated for loop entry: ${JSON.stringify(entry)}`);
@@ -165,39 +199,48 @@ const QuestionGenerator = {
 
   /** Generates an 'easy' for loop summation question. */
   genForLoopSumEasy: function(params) {
-    const { n, m, step } = params;
-    log(`Generating for loop sum (easy) question with n=${n}, m=${m}, step=${step}`);
+    const { loopVarName, accumulatorName, initialAccumulatorValue, n, m, step } = params;
+    log(`Generating for loop sum (easy) question with ${loopVarName}, ${accumulatorName}=${initialAccumulatorValue}, n=${n}, m=${m}, step=${step}`);
 
-    // Calculate the correct sum by simulating the range
-    let total = 0;
+    // Calculate the correct sum by simulating the range, starting with initial value
+    let total = initialAccumulatorValue; // Start simulation with the initial value
     const stop = step > 0 ? m + 1 : m - 1;
     const sequence = NumberUtils.simulateRange(n, stop, step);
+
     for (const i of sequence) {
-        total += i;
+        total += i; // Always add the loop variable value
     }
 
-    const questionText = QuestionFormatter.formatForLoopSumEasy(n, m, step);
+    const questionText = QuestionFormatter.formatForLoopSumEasy(loopVarName, accumulatorName, initialAccumulatorValue, n, m, step);
     const answer = String(total);
 
     return QuestionGenerator.createQuestionEntry(questionText, answer, 'easy');
   },
 
-  /** Generates a 'medium' for loop summation question with exclusion. */
+  /** Generates a 'medium' for loop summation question with exclusion and else modification. */
   genForLoopSumMedium: function(params) {
-    const { n, m, step, excludeDivisor } = params;
-    log(`Generating for loop sum (medium) question with n=${n}, m=${m}, step=${step}, exclude=${excludeDivisor}`);
+    const { loopVarName, accumulatorName, initialAccumulatorValue, n, m, step, excludeDivisor, elseAction, elseValue } = params;
+    log(`Generating for loop sum (medium) question with ${loopVarName}, ${accumulatorName}=${initialAccumulatorValue}, n=${n}, m=${m}, step=${step}, exclude=${excludeDivisor}, elseAction=${elseAction}, elseValue=${elseValue}`);
 
-    // Calculate the correct sum, excluding multiples, by simulating the range
-    let total = 0;
+    // Calculate the correct sum, excluding multiples, applying else modification, starting with initial value
+    let total = initialAccumulatorValue; // Start simulation with the initial value
     const stop = step > 0 ? m + 1 : m - 1;
     const sequence = NumberUtils.simulateRange(n, stop, step);
+
     for (const i of sequence) {
         if (i % excludeDivisor !== 0) {
-            total += i;
+            total += i; // Always add the loop variable value
+        } else {
+            // Apply the else modification
+            if (elseAction === 'increment') {
+                total += elseValue;
+            } else { // decrement
+                total -= elseValue;
+            }
         }
     }
 
-    const questionText = QuestionFormatter.formatForLoopSumMedium(n, m, step, excludeDivisor);
+    const questionText = QuestionFormatter.formatForLoopSumMedium(loopVarName, accumulatorName, initialAccumulatorValue, n, m, step, excludeDivisor, elseAction, elseValue);
     const answer = String(total);
 
     return QuestionGenerator.createQuestionEntry(questionText, answer, 'medium');
@@ -205,13 +248,14 @@ const QuestionGenerator = {
 
   /** Generates a 'hard' for loop summation question with conditional continue/break. */
   genForLoopSumHard: function(params) {
-    const { n, m, step, conditionValue, action } = params;
-    log(`Generating for loop sum (hard) question with n=${n}, m=${m}, step=${step}, conditionValue=${conditionValue}, action=${action}`);
+    const { loopVarName, accumulatorName, initialAccumulatorValue, n, m, step, conditionValue, action } = params;
+    log(`Generating for loop sum (hard) question with ${loopVarName}, ${accumulatorName}=${initialAccumulatorValue}, n=${n}, m=${m}, step=${step}, conditionValue=${conditionValue}, action=${action}`);
 
-    // Calculate the correct sum, considering continue/break, by simulating the range
-    let total = 0;
+    // Calculate the correct sum, considering continue/break, starting with initial value
+    let total = initialAccumulatorValue; // Start simulation with the initial value
     const stop = step > 0 ? m + 1 : m - 1;
     const sequence = NumberUtils.simulateRange(n, stop, step);
+
     for (const i of sequence) {
         if (i == conditionValue) {
             if (action === 'continue') {
@@ -220,10 +264,10 @@ const QuestionGenerator = {
                 break; // Exit the loop immediately
             }
         }
-        total += i;
+        total += i; // Always add the loop variable value
     }
 
-    const questionText = QuestionFormatter.formatForLoopSumHard(n, m, step, conditionValue, action);
+    const questionText = QuestionFormatter.formatForLoopSumHard(loopVarName, accumulatorName, initialAccumulatorValue, n, m, step, conditionValue, action);
     const answer = String(total);
 
     return QuestionGenerator.createQuestionEntry(questionText, answer, 'hard');
@@ -232,84 +276,106 @@ const QuestionGenerator = {
 
 /**
  * Generates parameters for For Loop questions.
- * Includes n, m, step, direction, excludeDivisor, conditionValue, and action.
+ * Includes n, m, step, direction, excludeDivisor, conditionValue, action,
+ * randomized variable names (loopVarName, accumulatorName),
+ * a random initial accumulator value, and parameters for the medium else block.
  * @returns {object|null} An object containing the generated parameters, or null if generation fails.
  */
 function getRandomForLoopParams() {
     log(`Entering getRandomForLoopParams`);
     let n, m, step, direction, conditionValue;
+    let loopVarName, accumulatorName;
+
+    // Select loop and accumulator variable names (must be distinct)
+    [loopVarName] = NumberUtils.getNDistinctRandomElements(LOOP_VAR_NAMES, 1);
+    [accumulatorName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 1);
+    // Ensure loopVarName and accumulatorName are distinct (though unlikely with current lists)
+    if (loopVarName === accumulatorName) {
+        log("Warning: loopVarName and accumulatorName collided, retrying parameter generation.");
+        return null; // Retry if names collide
+    }
+
+    // Generate random initial value for the accumulator
+    const initialAccumulatorValue = NumberUtils.getRandomInt(ACCUMULATOR_INIT_MIN, ACCUMULATOR_INIT_MAX);
+
+    // Generate parameters for the medium else block
+    const elseAction = NumberUtils.getRandomElement(MEDIUM_ELSE_ACTIONS);
+    const elseValue = NumberUtils.getRandomInt(MEDIUM_ELSE_VALUE_MIN, MEDIUM_ELSE_VALUE_MAX);
 
     // Decide direction first (50/50 chance)
     direction = NumberUtils.getRandomElement(['increment', 'decrement']);
 
+    // --- Generate Loop Boundaries (n, m, step) ---
     if (direction === 'increment') {
         step = NumberUtils.getRandomElement(INCREMENT_STEPS);
-        // Generate n and m for incrementing loop (n < m)
-        n = NumberUtils.getRandomInt(LOOP_RANGE_MIN, LOOP_RANGE_MAX);
-        // Ensure m > n, m - n <= MAX_DIFF, and m <= LOOP_END_MAX
-        // Also ensure the range is valid for the step (at least one iteration possible)
-        const minM = n + step; // m must be at least n + step to have a loop body execute
+        n = NumberUtils.getRandomInt(LOOP_RANGE_MIN, LOOP_RANGE_MAX); // This is the start value
+        const minM = n;
         const maxM = Math.min(n + LOOP_MAX_DIFF, LOOP_END_MAX);
         if (minM > maxM) {
-             log("Cannot generate valid incrementing range, retrying...");
-             return null; // Indicate failure to generate valid params
+             log("Cannot generate valid incrementing range (minM > maxM), retrying...");
+             return null;
         }
         m = NumberUtils.getRandomInt(minM, maxM);
-        // Ensure conditionValue is potentially reachable within the loop's range [n, m]
+        const stopSimCheck = m + 1;
+        if (NumberUtils.simulateRange(n, stopSimCheck, step).length === 0) {
+            log(`Generated incrementing range (n=${n}, m=${m}, step=${step}) is empty, retrying...`);
+            return null;
+        }
         conditionValue = NumberUtils.getRandomInt(n, m);
+
     } else { // direction === 'decrement'
         step = NumberUtils.getRandomElement(DECREMENT_STEPS);
-        // Generate n and m for decrementing loop (n > m)
-        // Let m be the lower bound (target)
-        m = NumberUtils.getRandomInt(LOOP_RANGE_MIN, LOOP_RANGE_MAX);
-        // Ensure n > m, n - m <= MAX_DIFF, and n <= LOOP_END_MAX
-        // Also ensure the range is valid for the step (at least one iteration possible)
-        const minN = m - step; // n must be at least m - step (e.g., m + 1 or m + 2)
+        m = NumberUtils.getRandomInt(LOOP_RANGE_MIN, LOOP_RANGE_MAX); // This is the end value
+        const minN = m;
         const maxN = Math.min(m + LOOP_MAX_DIFF, LOOP_END_MAX);
          if (minN > maxN) {
-             log("Cannot generate valid decrementing range, retrying...");
-             return null; // Indicate failure to generate valid params
+             log("Cannot generate valid decrementing range (minN > maxN), retrying...");
+             return null;
         }
-        n = NumberUtils.getRandomInt(minN, maxN);
-        // Ensure conditionValue is potentially reachable within the loop's range [m, n]
+        n = NumberUtils.getRandomInt(minN, maxN); // This is the start value
+        const stopSimCheck = m - 1;
+        if (NumberUtils.simulateRange(n, stopSimCheck, step).length === 0) {
+            log(`Generated decrementing range (n=${n}, m=${m}, step=${step}) is empty, retrying...`);
+            return null;
+        }
         conditionValue = NumberUtils.getRandomInt(m, n);
     }
+    // const startValue = n; // No longer needed as a separate variable for accumulation logic
 
-    // Ensure conditionValue is actually reachable with the chosen step
-    // Check if (conditionValue - n) is a multiple of step
-    if ((conditionValue - n) % step !== 0) {
-        // Adjust conditionValue to the nearest reachable value within the range
-        const diff = conditionValue - n;
-        const remainder = diff % step;
-        // Find the closest value <= conditionValue that is reachable
-        let adjustedValue = conditionValue - remainder;
-        // If the step is negative, the remainder logic might need adjustment,
-        // but usually, we want a value *within* the generated sequence.
-        // Let's try finding a value within the simulated sequence instead.
-        const stopSim = step > 0 ? m + 1 : m - 1;
-        const possibleValues = NumberUtils.simulateRange(n, stopSim, step);
-        if (possibleValues.length === 0) {
-             log("Generated range is empty, retrying...");
-             return null; // Empty range, cannot set conditionValue
-        }
-        // Find the value in the sequence closest to the original random conditionValue
+    // --- Ensure conditionValue is reachable ---
+    const stopSim = step > 0 ? m + 1 : m - 1;
+    const possibleValues = NumberUtils.simulateRange(n, stopSim, step);
+    if (possibleValues.length === 0) {
+         log("Generated range is unexpectedly empty after parameter selection, retrying...");
+         return null;
+    }
+    if (!possibleValues.includes(conditionValue)) {
+        // Adjust conditionValue to the nearest reachable value within the sequence
         conditionValue = possibleValues.reduce((prev, curr) => {
             return (Math.abs(curr - conditionValue) < Math.abs(prev - conditionValue) ? curr : prev);
         });
         log(`Adjusted conditionValue to be reachable: ${conditionValue}`);
     }
 
-
+    // --- Other Parameters ---
     const excludeDivisor = NumberUtils.getRandomElement(EXCLUDE_DIVISORS);
-    const action = NumberUtils.getRandomElement(LOOP_ACTIONS);
+    const action = NumberUtils.getRandomElement(LOOP_ACTIONS); // For hard questions
 
-    log(`Exiting getRandomForLoopParams with n=${n}, m=${m}, step=${step}, dir=${direction}, exclude=${excludeDivisor}, conditionValue=${conditionValue}, action=${action}`);
-    return { n, m, step, direction, excludeDivisor, conditionValue, action };
+    log(`Exiting getRandomForLoopParams with loopVar=${loopVarName}, acc=${accumulatorName}, init=${initialAccumulatorValue}, n=${n}, m=${m}, step=${step}, dir=${direction}, exclude=${excludeDivisor}, conditionValue=${conditionValue}, action=${action}, elseAction=${elseAction}, elseValue=${elseValue}`);
+    return {
+        loopVarName, accumulatorName, initialAccumulatorValue,
+        n, m, step, direction, excludeDivisor, conditionValue, action,
+        elseAction, elseValue,
+        // Removed accumulateTargetName, startVarName, startValue
+    };
 }
 
 /**
  * Generates a specified number of random for loop questions covering all difficulties.
  * Ensures an attempt to generate one of each difficulty (easy, medium, hard) per parameter set.
+ * Uses randomized variable names and initial accumulator values.
+ * Medium questions include an else block modification.
+ * Accumulates the loop variable. Range uses literal values.
  * @param {number} numQuestions - The total number of questions to generate.
  * @returns {Array<object>} An array of generated question objects.
  * @alias module:for_qn_gen.genForQns
@@ -324,13 +390,13 @@ function genForQns(numQuestions) {
   while (questions.length < numQuestions && attempts < maxAttempts) {
     attempts++;
     const loopParams = getRandomForLoopParams();
-    // Retry if parameter generation failed (e.g., couldn't create a valid range)
+    // Retry if parameter generation failed (e.g., couldn't create a valid range or names)
     if (!loopParams) {
         log(`Parameter generation failed on attempt ${attempts}, retrying...`);
         continue;
     }
 
-    log(`Attempt ${attempts}: Using params n=${loopParams.n}, m=${loopParams.m}, step=${loopParams.step}, dir=${loopParams.direction}`);
+    log(`Attempt ${attempts}: Using params loopVar=${loopParams.loopVarName}, acc=${loopParams.accumulatorName}, init=${loopParams.initialAccumulatorValue}, n=${loopParams.n}, m=${loopParams.m}, step=${loopParams.step}, dir=${loopParams.direction}, elseAction=${loopParams.elseAction}, elseValue=${loopParams.elseValue}`);
 
     // Attempt to generate one of each difficulty using the same parameters
     const easyEntry = QuestionGenerator.genForLoopSumEasy(loopParams);

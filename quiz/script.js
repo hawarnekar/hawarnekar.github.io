@@ -121,28 +121,49 @@ function populateSubtopics(selectedTopic) {
 function populateDifficulties(selectedTopic, selectedSubtopic) {
     log("Populating difficulties for topic:", selectedTopic, "and subtopic:", selectedSubtopic);
     difficultySelect.innerHTML = '<option value="">Select Difficulty</option>';
+    difficultySelect.disabled = true; // Disable initially
+
+    // Define the desired order
+    const difficultyOrder = ['easy', 'medium', 'hard'];
 
     if (selectedSubtopic) {
-        // Get difficulties for selected topic and subtopic
-        const difficulties = [...new Set(allQuestions
+        // Get available difficulties for selected topic and subtopic
+        const availableDifficulties = new Set(allQuestions
             .filter(q => q.topic === selectedTopic && q.subtopic === selectedSubtopic)
-            .map(q => q.difficulty))];
-        log("Found difficulties:", difficulties);
-        difficulties.forEach(diff => {
-            const option = document.createElement('option');
-            option.value = diff;
-            option.textContent = diff.charAt(0).toUpperCase() + diff.slice(1);
-            difficultySelect.appendChild(option);
+            .map(q => q.difficulty));
+        log("Available difficulties:", availableDifficulties);
+
+        let availableCount = 0;
+        let lastAvailableDifficulty = '';
+
+        // Iterate through the defined order and add options if available
+        difficultyOrder.forEach(diff => {
+            if (availableDifficulties.has(diff)) {
+                const option = document.createElement('option');
+                option.value = diff;
+                option.textContent = diff.charAt(0).toUpperCase() + diff.slice(1);
+                difficultySelect.appendChild(option);
+                availableCount++;
+                lastAvailableDifficulty = diff; // Keep track of the last one added
+            }
         });
 
-        // Enable difficulty dropdown and auto-select if only one difficulty
-        if (difficulties.length === 1) {
-            log("Only one difficulty found. Auto-selecting:", difficulties[0]);
-            difficultySelect.value = difficulties[0];
+        // Enable dropdown if any difficulties were found
+        if (availableCount > 0) {
+            difficultySelect.disabled = false;
+            log("Found difficulties:", Array.from(availableDifficulties)); // Log the ones actually found
+
+            // Auto-select if only one difficulty is available for this selection
+            if (availableCount === 1) {
+                log("Only one difficulty available. Auto-selecting:", lastAvailableDifficulty);
+                difficultySelect.value = lastAvailableDifficulty;
+            }
+        } else {
+             log("No difficulties found for this selection.");
         }
+
     } else {
-        log("No subtopic selected. Disabling difficulty dropdown.");
-        difficultySelect.disabled = true;
+        log("No subtopic selected. Difficulty dropdown remains disabled.");
     }
 }
 

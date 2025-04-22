@@ -1,6 +1,10 @@
 /**
  * while_qn_gen.js
  * Generates quiz questions for Python basic while loops (summation).
+ * Uses randomized variable names for loop control and accumulator.
+ * Initializes accumulator with a random value between -4 and 9.
+ * Medium questions include an else block to modify the accumulator.
+ * Randomly accumulates either the loop variable or the limit variable.
  * @module while_qn_gen
  */
 
@@ -18,15 +22,24 @@ function log(...args) {
 }
 
 // --- Constants ---
-const LOOP_RANGE_MIN = 1; // Min value for loop start (n)
-const LOOP_RANGE_MAX = 10; // Max value for loop start (n) - Increased range slightly
-const LOOP_MAX_DIFF = 5; // Max difference (m - n) for loops (so m-n <= 6)
-const LOOP_END_MAX = LOOP_RANGE_MAX + LOOP_MAX_DIFF; // Absolute max for m
+const LOOP_RANGE_MIN = 1; // Min value for loop start
+const LOOP_RANGE_MAX = 10; // Max value for loop start - Increased range slightly
+const LOOP_MAX_DIFF = 4; // Max difference between loop boundaries
+const LOOP_END_MAX = LOOP_RANGE_MAX + LOOP_MAX_DIFF; // Absolute max boundary
 const EXCLUDE_DIVISORS = Object.freeze([2, 3, 5]);
 const LOOP_ACTIONS = Object.freeze(['continue', 'break']); // Actions for hard questions
 const INCREMENTING_OPS = Object.freeze(['<', '<=']);
 const DECREMENTING_OPS = Object.freeze(['>', '>=']);
 const MAX_GENERATION_ATTEMPTS_MULTIPLIER = 5;
+const ACCUMULATOR_INIT_MIN = -4;
+const ACCUMULATOR_INIT_MAX = 9;
+const MEDIUM_ELSE_ACTIONS = Object.freeze(['increment', 'decrement']); // Actions for medium else block
+const MEDIUM_ELSE_VALUE_MIN = 1; // Min value for medium else modification
+const MEDIUM_ELSE_VALUE_MAX = 5;  // Max value for medium else modification
+
+// --- Variable Names ---
+const LOOP_VAR_NAMES = Object.freeze(['a', 'b', 'c', 'd', 'm', 'n', 'p', 'q', 'x', 'y', 'z']);
+const ACCUMULATOR_VAR_NAMES = Object.freeze(['sum', 'total']);
 
 // --- Modules ---
 
@@ -44,6 +57,10 @@ const NumberUtils = {
   getRandomInt: function (min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
+    // Handle case where min might be greater than max after ceiling/flooring
+    if (min > max) {
+        [min, max] = [max, min]; // Swap them
+    }
     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
 
@@ -58,6 +75,22 @@ const NumberUtils = {
         throw new Error("Cannot get random element from empty or invalid list.");
     }
     return list[Math.floor(Math.random() * list.length)];
+  },
+
+  /**
+   * Selects N distinct random elements from an array.
+   * @template T
+   * @param {T[]} list - The array to choose from.
+   * @param {number} count - The number of distinct elements to select.
+   * @returns {T[]} An array containing N distinct random elements.
+   * @throws {Error} If the list has fewer than N elements or count is invalid.
+   */
+   getNDistinctRandomElements: function(list, count) {
+    if (!list || list.length < count || count < 1) {
+        throw new Error(`Cannot get ${count} distinct random elements from a list with ${list?.length ?? 0} items.`);
+    }
+    const shuffled = [...list].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
   },
 
   /**
@@ -102,34 +135,43 @@ const NumberUtils = {
  */
 const QuestionFormatter = {
   /** Formats an easy while loop summation question. */
-  formatWhileLoopSumEasy: (n, m, comparisonOp, direction) => {
-    const step = direction === 'increment' ? 'n += 1' : 'n -= 1';
-    const condition = `n ${comparisonOp} m`;
-    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile ${condition}:\n    total += n\n    ${step}\nprint(total)`;
+  formatWhileLoopSumEasy: (loopVarName, limitVarName, n, m, comparisonOp, direction, accumulatorName, initialAccumulatorValue, accumulateTargetName) => {
+    const step = direction === 'increment' ? `${loopVarName} += 1` : `${loopVarName} -= 1`;
+    const condition = `${loopVarName} ${comparisonOp} ${limitVarName}`;
+    // Use the initialAccumulatorValue and accumulateTargetName here
+    return `${loopVarName} = ${n}\n${limitVarName} = ${m}\n${accumulatorName} = ${initialAccumulatorValue}\nwhile ${condition}:\n    ${accumulatorName} += ${accumulateTargetName}\n    ${step}\nprint(${accumulatorName})`;
   },
-  /** Formats a medium while loop summation question with an exclusion condition. */
-  formatWhileLoopSumMedium: (n, m, excludeDivisor, comparisonOp, direction) => {
-    const step = direction === 'increment' ? 'n += 1' : 'n -= 1';
-    const condition = `n ${comparisonOp} m`;
-    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile ${condition}:\n    if n % ${excludeDivisor} != 0:\n        total += n\n    ${step}\nprint(total)`;
+  /** Formats a medium while loop summation question with an exclusion condition and else modification. */
+  formatWhileLoopSumMedium: (loopVarName, limitVarName, n, m, excludeDivisor, comparisonOp, direction, accumulatorName, initialAccumulatorValue, elseAction, elseValue, accumulateTargetName) => {
+    const step = direction === 'increment' ? `${loopVarName} += 1` : `${loopVarName} -= 1`;
+    const condition = `${loopVarName} ${comparisonOp} ${limitVarName}`;
+    const elseOperator = elseAction === 'increment' ? '+=' : '-=';
+    // Use the initialAccumulatorValue and accumulateTargetName here
+    return `${loopVarName} = ${n}\n${limitVarName} = ${m}\n${accumulatorName} = ${initialAccumulatorValue}\nwhile ${condition}:\n    if ${loopVarName} % ${excludeDivisor} != 0:\n        ${accumulatorName} += ${accumulateTargetName}\n    else:\n        ${accumulatorName} ${elseOperator} ${elseValue}\n    ${step}\nprint(${accumulatorName})`;
   },
   /**
    * Formats a hard while loop summation question with a conditional continue or break.
+   * @param {string} loopVarName - Name of the loop control variable.
+   * @param {string} limitVarName - Name of the loop limit variable.
    * @param {number} n - Loop start value.
    * @param {number} m - Loop end value (or start for decrementing).
-   * @param {number} conditionValue - The value to check against 'n'.
-   * @param {'continue'|'break'} action - The action to take if n == conditionValue.
+   * @param {number} conditionValue - The value to check against the loop variable.
+   * @param {'continue'|'break'} action - The action to take if loopVar == conditionValue.
    * @param {string} comparisonOp - The comparison operator (e.g., '<=', '>').
    * @param {'increment'|'decrement'} direction - The loop direction.
+   * @param {string} accumulatorName - Name of the accumulator variable.
+   * @param {number} initialAccumulatorValue - The starting value for the accumulator.
+   * @param {string} accumulateTargetName - The name of the variable to add to the accumulator.
    * @returns {string} Formatted Python code snippet.
    */
-  formatWhileLoopSumHard: (n, m, conditionValue, action, comparisonOp, direction) => {
-    const step = direction === 'increment' ? 'n += 1' : 'n -= 1';
-    const condition = `n ${comparisonOp} m`;
-    const conditionCheck = `if n == ${conditionValue}:`;
+  formatWhileLoopSumHard: (loopVarName, limitVarName, n, m, conditionValue, action, comparisonOp, direction, accumulatorName, initialAccumulatorValue, accumulateTargetName) => {
+    const step = direction === 'increment' ? `${loopVarName} += 1` : `${loopVarName} -= 1`;
+    const condition = `${loopVarName} ${comparisonOp} ${limitVarName}`;
+    const conditionCheck = `if ${loopVarName} == ${conditionValue}:`;
     // Important: The 'continue' action needs to include the step *before* continuing
     const actionStatement = action === 'continue' ? `    ${step}\n        continue` : `    break`;
-    return `n = ${n}\nm = ${m}\ntotal = 0\nwhile ${condition}:\n    ${conditionCheck}\n    ${actionStatement}\n    total += n\n    ${step}\nprint(total)`;
+    // Use the initialAccumulatorValue and accumulateTargetName here
+    return `${loopVarName} = ${n}\n${limitVarName} = ${m}\n${accumulatorName} = ${initialAccumulatorValue}\nwhile ${condition}:\n    ${conditionCheck}\n    ${actionStatement}\n    ${accumulatorName} += ${accumulateTargetName}\n    ${step}\nprint(${accumulatorName})`;
   },
 };
 
@@ -162,14 +204,17 @@ const QuestionGenerator = {
 
   /** Generates an 'easy' while loop summation question. */
   genWhileLoopSumEasy: function(params) {
-    const { n, m, comparisonOp, direction } = params;
-    log(`Generating while loop sum (easy) question with n=${n}, m=${m}, op=${comparisonOp}, dir=${direction}`);
+    const { loopVarName, limitVarName, n, m, comparisonOp, direction, accumulatorName, initialAccumulatorValue, accumulateTargetName } = params;
+    log(`Generating while loop sum (easy) question with ${loopVarName}=${n}, ${limitVarName}=${m}, op=${comparisonOp}, dir=${direction}, acc=${accumulatorName}, init=${initialAccumulatorValue}, target=${accumulateTargetName}`);
 
-    // Calculate the correct sum by simulating the loop
-    let total = 0;
+    // Calculate the correct sum by simulating the loop, starting with initial value
+    let total = initialAccumulatorValue; // Start simulation with the initial value
     let currentN = n;
-    while (NumberUtils.evaluateCondition(currentN, comparisonOp, m)) {
-        total += currentN;
+    const limitValue = m; // Store the constant limit value
+
+    while (NumberUtils.evaluateCondition(currentN, comparisonOp, limitValue)) {
+        const valueToAdd = (accumulateTargetName === loopVarName) ? currentN : limitValue;
+        total += valueToAdd;
         if (direction === 'increment') {
             currentN += 1;
         } else {
@@ -177,24 +222,35 @@ const QuestionGenerator = {
         }
     }
 
-    const questionText = QuestionFormatter.formatWhileLoopSumEasy(n, m, comparisonOp, direction);
+    const questionText = QuestionFormatter.formatWhileLoopSumEasy(loopVarName, limitVarName, n, m, comparisonOp, direction, accumulatorName, initialAccumulatorValue, accumulateTargetName);
     const answer = String(total);
 
     return QuestionGenerator.createQuestionEntry(questionText, answer, 'easy');
   },
 
-  /** Generates a 'medium' while loop summation question with exclusion. */
+  /** Generates a 'medium' while loop summation question with exclusion and else modification. */
   genWhileLoopSumMedium: function(params) {
-    const { n, m, excludeDivisor, comparisonOp, direction } = params;
-    log(`Generating while loop sum (medium) question with n=${n}, m=${m}, exclude=${excludeDivisor}, op=${comparisonOp}, dir=${direction}`);
+    const { loopVarName, limitVarName, n, m, excludeDivisor, comparisonOp, direction, accumulatorName, initialAccumulatorValue, elseAction, elseValue, accumulateTargetName } = params;
+    log(`Generating while loop sum (medium) question with ${loopVarName}=${n}, ${limitVarName}=${m}, exclude=${excludeDivisor}, op=${comparisonOp}, dir=${direction}, acc=${accumulatorName}, init=${initialAccumulatorValue}, elseAction=${elseAction}, elseValue=${elseValue}, target=${accumulateTargetName}`);
 
-    // Calculate the correct sum, excluding multiples of excludeDivisor, by simulating the loop
-    let total = 0;
+    // Calculate the correct sum, excluding multiples, starting with initial value, and applying else modification
+    let total = initialAccumulatorValue; // Start simulation with the initial value
     let currentN = n;
-    while (NumberUtils.evaluateCondition(currentN, comparisonOp, m)) {
+    const limitValue = m; // Store the constant limit value
+
+    while (NumberUtils.evaluateCondition(currentN, comparisonOp, limitValue)) {
         if (currentN % excludeDivisor !== 0) {
-            total += currentN;
+            const valueToAdd = (accumulateTargetName === loopVarName) ? currentN : limitValue;
+            total += valueToAdd;
+        } else {
+            // Apply the else modification
+            if (elseAction === 'increment') {
+                total += elseValue;
+            } else { // decrement
+                total -= elseValue;
+            }
         }
+        // Increment/decrement loop variable
         if (direction === 'increment') {
             currentN += 1;
         } else {
@@ -202,7 +258,7 @@ const QuestionGenerator = {
         }
     }
 
-    const questionText = QuestionFormatter.formatWhileLoopSumMedium(n, m, excludeDivisor, comparisonOp, direction);
+    const questionText = QuestionFormatter.formatWhileLoopSumMedium(loopVarName, limitVarName, n, m, excludeDivisor, comparisonOp, direction, accumulatorName, initialAccumulatorValue, elseAction, elseValue, accumulateTargetName);
     const answer = String(total);
 
     return QuestionGenerator.createQuestionEntry(questionText, answer, 'medium');
@@ -210,13 +266,15 @@ const QuestionGenerator = {
 
   /** Generates a 'hard' while loop summation question with conditional continue/break. */
   genWhileLoopSumHard: function(params) {
-    const { n, m, conditionValue, action, comparisonOp, direction } = params;
-    log(`Generating while loop sum (hard) question with n=${n}, m=${m}, conditionValue=${conditionValue}, action=${action}, op=${comparisonOp}, dir=${direction}`);
+    const { loopVarName, limitVarName, n, m, conditionValue, action, comparisonOp, direction, accumulatorName, initialAccumulatorValue, accumulateTargetName } = params;
+    log(`Generating while loop sum (hard) question with ${loopVarName}=${n}, ${limitVarName}=${m}, conditionValue=${conditionValue}, action=${action}, op=${comparisonOp}, dir=${direction}, acc=${accumulatorName}, init=${initialAccumulatorValue}, target=${accumulateTargetName}`);
 
-    // Calculate the correct sum, considering continue or break, by simulating the loop
-    let total = 0;
+    // Calculate the correct sum, considering continue/break, starting with initial value
+    let total = initialAccumulatorValue; // Start simulation with the initial value
     let currentN = n; // Use a temporary variable for calculation
-    while (NumberUtils.evaluateCondition(currentN, comparisonOp, m)) {
+    const limitValue = m; // Store the constant limit value
+
+    while (NumberUtils.evaluateCondition(currentN, comparisonOp, limitValue)) {
         if (currentN == conditionValue) {
             if (action === 'continue') {
                 // Simulate the step happening *before* continue in the formatted code
@@ -230,7 +288,8 @@ const QuestionGenerator = {
                 break; // Exit the loop immediately
             }
         }
-        total += currentN;
+        const valueToAdd = (accumulateTargetName === loopVarName) ? currentN : limitValue;
+        total += valueToAdd;
         // Simulate the step at the end of the loop body
         if (direction === 'increment') {
             currentN += 1;
@@ -239,7 +298,7 @@ const QuestionGenerator = {
         }
     }
 
-    const questionText = QuestionFormatter.formatWhileLoopSumHard(n, m, conditionValue, action, comparisonOp, direction);
+    const questionText = QuestionFormatter.formatWhileLoopSumHard(loopVarName, limitVarName, n, m, conditionValue, action, comparisonOp, direction, accumulatorName, initialAccumulatorValue, accumulateTargetName);
     const answer = String(total);
 
     return QuestionGenerator.createQuestionEntry(questionText, answer, 'hard');
@@ -248,12 +307,31 @@ const QuestionGenerator = {
 
 /**
  * Generates parameters for While Loop questions.
- * Includes n, m, excludeDivisor, conditionValue, action, direction, and comparisonOp.
+ * Includes n, m, excludeDivisor, conditionValue, action, direction, comparisonOp,
+ * randomized variable names (loopVarName, limitVarName, accumulatorName),
+ * a random initial accumulator value, parameters for the medium else block,
+ * and determines whether to accumulate the loop variable or the limit variable.
  * @returns {object} An object containing the generated parameters.
  */
 function getRandomWhileLoopParams() {
   log(`Entering getRandomWhileLoopParams`);
   let n, m, comparisonOp, direction, conditionValue;
+  let loopVarName, limitVarName, accumulatorName, accumulateTargetName;
+
+  // Select loop, limit, and accumulator variable names (must be distinct)
+  [loopVarName, limitVarName] = NumberUtils.getNDistinctRandomElements(LOOP_VAR_NAMES, 2);
+  [accumulatorName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 1);
+
+  // Decide whether to accumulate the loop variable or the limit variable (50/50 chance)
+  accumulateTargetName = (Math.random() < 0.5) ? loopVarName : limitVarName;
+  log(`Accumulation target set to: ${accumulateTargetName}`);
+
+  // Generate random initial value for the accumulator
+  const initialAccumulatorValue = NumberUtils.getRandomInt(ACCUMULATOR_INIT_MIN, ACCUMULATOR_INIT_MAX);
+
+  // Generate parameters for the medium else block
+  const elseAction = NumberUtils.getRandomElement(MEDIUM_ELSE_ACTIONS);
+  const elseValue = NumberUtils.getRandomInt(MEDIUM_ELSE_VALUE_MIN, MEDIUM_ELSE_VALUE_MAX);
 
   // Decide direction first (50/50 chance)
   direction = NumberUtils.getRandomElement(['increment', 'decrement']);
@@ -265,7 +343,6 @@ function getRandomWhileLoopParams() {
       m = NumberUtils.getRandomInt(n + 1, Math.min(n + LOOP_MAX_DIFF, LOOP_END_MAX));
       comparisonOp = NumberUtils.getRandomElement(INCREMENTING_OPS);
       // Ensure conditionValue is within the loop's intended range [n, m]
-      // For '<', the loop might not reach m, but the condition check can still use m.
       conditionValue = NumberUtils.getRandomInt(n, m);
   } else { // direction === 'decrement'
       // Generate n and m for decrementing loop (n > m)
@@ -275,19 +352,26 @@ function getRandomWhileLoopParams() {
       n = NumberUtils.getRandomInt(m + 1, Math.min(m + LOOP_MAX_DIFF, LOOP_END_MAX));
       comparisonOp = NumberUtils.getRandomElement(DECREMENTING_OPS);
       // Ensure conditionValue is within the loop's intended range [m, n]
-      // For '>', the loop might not reach m, but the condition check can still use m.
       conditionValue = NumberUtils.getRandomInt(m, n);
   }
 
   const excludeDivisor = NumberUtils.getRandomElement(EXCLUDE_DIVISORS);
-  const action = NumberUtils.getRandomElement(LOOP_ACTIONS);
+  const action = NumberUtils.getRandomElement(LOOP_ACTIONS); // For hard questions
 
-  log(`Exiting getRandomWhileLoopParams with n=${n}, m=${m}, exclude=${excludeDivisor}, conditionValue=${conditionValue}, action=${action}, op=${comparisonOp}, dir=${direction}`);
-  return { n, m, excludeDivisor, conditionValue, action, comparisonOp, direction };
+  log(`Exiting getRandomWhileLoopParams with loopVar=${loopVarName}(${n}), limitVar=${limitVarName}(${m}), acc=${accumulatorName}, init=${initialAccumulatorValue}, target=${accumulateTargetName}, exclude=${excludeDivisor}, conditionValue=${conditionValue}, action=${action}, op=${comparisonOp}, dir=${direction}, elseAction=${elseAction}, elseValue=${elseValue}`);
+  return {
+      loopVarName, limitVarName, n, m, excludeDivisor, conditionValue, action,
+      comparisonOp, direction, accumulatorName, initialAccumulatorValue,
+      elseAction, elseValue,
+      accumulateTargetName // Added new param
+    };
 }
 
 /**
- * Generates a specified number of random while loop questions (easy and medium).
+ * Generates a specified number of random while loop questions (easy, medium, hard).
+ * Uses randomized variable names and initial accumulator values.
+ * Medium questions include an else block modification.
+ * Randomly accumulates either the loop variable or the limit variable.
  * @param {number} numQuestions - The total number of questions to generate.
  * @returns {Array<object>} An array of generated question objects.
  * @alias module:while_qn_gen.genWhileQns
@@ -304,7 +388,7 @@ function genWhileQns(numQuestions) {
     const loopParams = getRandomWhileLoopParams();
     if (!loopParams) continue; // Should not happen here, but good practice
 
-    log(`Attempt ${attempts}: Using params n=${loopParams.n}, m=${loopParams.m}, op=${loopParams.comparisonOp}, dir=${loopParams.direction}`);
+    log(`Attempt ${attempts}: Using params loopVar=${loopParams.loopVarName}(${loopParams.n}), limitVar=${loopParams.limitVarName}(${loopParams.m}), op=${loopParams.comparisonOp}, dir=${loopParams.direction}, acc=${loopParams.accumulatorName}, init=${loopParams.initialAccumulatorValue}, target=${loopParams.accumulateTargetName}, elseAction=${loopParams.elseAction}, elseValue=${loopParams.elseValue}`);
 
     // Attempt to generate one of each difficulty using the same parameters
     const easyEntry = QuestionGenerator.genWhileLoopSumEasy(loopParams);
