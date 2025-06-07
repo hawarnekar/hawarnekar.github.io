@@ -220,7 +220,7 @@ const QuestionGenerator = {
       difficulty: difficulty,
       type: 'fill', // All conditional questions are fill-in-the-blank for the output
       // Added 'python' tag for markdown code block highlighting
-      question: `What will be the output of the following code?\n\n\`\`\`python\n${questionText}\n\`\`\``,
+      question: `What will be the output of the following code?\n\n\`\`\`${questionText}\n\`\`\``,
       answer: finalAnswer,
     };
     log(`Generated entry: ${JSON.stringify(entry)}`);
