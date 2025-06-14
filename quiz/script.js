@@ -35,6 +35,7 @@ import { genConvQns } from './num_conv_qn_gen.js';
 import { genCondQns } from './cond_qn_gen.js';
 import { genWhileQns } from './while_qn_gen.js';
 import { genForQns } from './for_qn_gen.js';
+import { genListQns } from './list_qn_gen.js';
 
 // Generate 100 random questions on page load
 window.onload = () => {
@@ -44,8 +45,9 @@ window.onload = () => {
     const condQuestions = genCondQns(600);
     const whileQuestions = genWhileQns(600);
     const forQuestions = genForQns(600);
+    const listQuestions = genListQns(600);
 
-    allQuestions = [...forQuestions, ...whileQuestions, ...condQuestions, ...arithQuestions, ...convQuestions];
+    allQuestions = [...listQuestions, ...forQuestions, ...whileQuestions, ...condQuestions, ...arithQuestions, ...convQuestions];
     log("All questions:", allQuestions);
     populateDropdowns();
 };
