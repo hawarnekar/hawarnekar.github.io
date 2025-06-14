@@ -5,8 +5,12 @@ let score = 0;
 let userAnswers = [];
 let quizQuestions = [];
 let allQuestions = [];
+let maxQuizQuestions = 15; // Default number of questions
 let userName = '';
 let isQuizStarted = false;
+
+const ALL_SUBTOPICS_VALUE = "__all__";
+const ALL_SUBTOPICS_TEXT = "All Together";
 
 const topicSelect = document.getElementById('topic');
 const subtopicSelect = document.getElementById('subtopic');
@@ -40,14 +44,14 @@ import { genListQns } from './list_qn_gen.js';
 // Generate 100 random questions on page load
 window.onload = () => {
     log("Window loaded. Generating questions...");
-    const arithQuestions = genArithQns(600);
+    const arithQuestions = genArithQns(100);
     const convQuestions = genConvQns();
-    const condQuestions = genCondQns(600);
-    const whileQuestions = genWhileQns(600);
-    const forQuestions = genForQns(600);
-    const listQuestions = genListQns(600);
+    const condQuestions = genCondQns(900);
+    const whileQuestions = genWhileQns(900);
+    const forQuestions = genForQns(900);
+    const listQuestions = genListQns(900);
 
-    allQuestions = [...listQuestions, ...forQuestions, ...whileQuestions, ...condQuestions, ...arithQuestions, ...convQuestions];
+    allQuestions = [...convQuestions, ...arithQuestions, ...condQuestions, ...whileQuestions, ...forQuestions, ...listQuestions];
     log("All questions:", allQuestions);
     populateDropdowns();
 };
@@ -99,6 +103,22 @@ function populateSubtopics(selectedTopic) {
             subtopicSelect.appendChild(option);
         });
 
+        // Add delimiter and "All Together" option if there are multiple regular subtopics
+        if (subtopics.length > 1) {
+            // Add delimiter
+            const delimiterOption = document.createElement('option');
+            delimiterOption.textContent = '──────────';
+            delimiterOption.disabled = true; // Make it non-selectable
+            delimiterOption.value = ""; // Ensure it has no selectable value
+            subtopicSelect.appendChild(delimiterOption);
+
+            // Add "All Together" option
+            const allOption = document.createElement('option');
+            allOption.value = ALL_SUBTOPICS_VALUE;
+            allOption.textContent = ALL_SUBTOPICS_TEXT;
+            subtopicSelect.appendChild(allOption);
+        }
+
         // Enable subtopic dropdown and auto-select if only one subtopic
         if (subtopics.length === 1) {
             log("Only one subtopic found. Auto-selecting:", subtopics[0]);
@@ -131,7 +151,12 @@ function populateDifficulties(selectedTopic, selectedSubtopic) {
     if (selectedSubtopic) {
         // Get available difficulties for selected topic and subtopic
         const availableDifficulties = new Set(allQuestions
-            .filter(q => q.topic === selectedTopic && q.subtopic === selectedSubtopic)
+            .filter(q => {
+                if (selectedSubtopic === ALL_SUBTOPICS_VALUE) {
+                    return q.topic === selectedTopic;
+                }
+                return q.topic === selectedTopic && q.subtopic === selectedSubtopic;
+            })
             .map(q => q.difficulty));
         log("Available difficulties:", availableDifficulties);
 
@@ -196,24 +221,32 @@ startButton.addEventListener('click', startQuiz);
 function startQuiz() {
     log("Start Quiz button clicked.");
     const topic = topicSelect.value;
-    const subtopic = subtopicSelect.value;
+    const subtopicValue = subtopicSelect.value;
     const difficulty = difficultySelect.value;
 
-    log("Selected topic:", topic, "subtopic:", subtopic, "difficulty:", difficulty);
+    log("Selected topic:", topic, "subtopic:", subtopicValue, "difficulty:", difficulty);
 
-    if (!topic || !subtopic || !difficulty) {
+    if (!topic || !subtopicValue || !difficulty) {
         log("Missing selection(s). Alerting user.");
         alert('Please select all options');
         return;
     }
 
+    const isAllSubtopics = subtopicValue === ALL_SUBTOPICS_VALUE;
+
+    if (isAllSubtopics) {
+        maxQuizQuestions = 30;
+    } else {
+        maxQuizQuestions = 15;
+    }
+
     const filteredQuestions = allQuestions.filter(q =>
         q.topic === topic &&
-        q.subtopic === subtopic &&
+        (isAllSubtopics || q.subtopic === subtopicValue) && // Use subtopicValue here
         q.difficulty === difficulty
     );
     log("Filtered questions:", filteredQuestions);
-    quizQuestions = shuffle(filteredQuestions).slice(0, 15);
+    quizQuestions = shuffle(filteredQuestions).slice(0, maxQuizQuestions);
     log("Quiz questions:", quizQuestions);
     selectionScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
@@ -275,7 +308,7 @@ function showQuestion() {
     log("Showing question:", currentQuestion + 1);
     const q = quizQuestions[currentQuestion];
     log("Question data:", q);
-    document.getElementById('question-number').textContent = `Question ${currentQuestion + 1} of 15`;
+    document.getElementById('question-number').textContent = `Question ${currentQuestion + 1} of ${maxQuizQuestions}`;
     document.getElementById('question-text').innerHTML = q.question.replace(/\n/g, '<br>').replace(/```([\s\S]*?)```/g, '<pre>$1</pre>');
 
     fillBlankInput.type = 'hidden';
@@ -323,7 +356,7 @@ function showQuestion() {
 }
 
 function updateProgressBar() {
-    const progress = ((currentQuestion + 1) / 15) * 100;
+    const progress = ((currentQuestion + 1) / maxQuizQuestions) * 100;
     log("Updating progress bar to:", progress);
     progressBar.style.width = `${progress}%`;
 }
@@ -384,7 +417,7 @@ function checkAnswer(answer) {
     // Show the "Next Question" button
     nextQuestionButton.classList.remove('hidden');
 
-    if (currentQuestion < 14) {
+    if (currentQuestion < maxQuizQuestions - 1) {
         nextQuestionButton.textContent = "Next Question";
         nextQuestionButton.onclick = () => {
             resultDiv.classList.add('hidden');
@@ -426,7 +459,7 @@ function showResults() {
     `).join('');
 
     //2. Display final score
-    document.getElementById('final-score').innerHTML = `<strong>${userName}</strong>, your score is: ${score}/15`;
+    document.getElementById('final-score').innerHTML = `<strong>${userName}</strong>, your score is: ${score}/${maxQuizQuestions}`;
 
     // 3. Wait for the next animation frame to ensure the DOM is updated
     requestAnimationFrame(() => {
@@ -469,6 +502,7 @@ function resetQuiz(resetUser = false){
     score = 0;
     userAnswers = [];
     quizQuestions = [];
+    maxQuizQuestions = 15; // Reset to default
 
     resultScreen.classList.add('hidden');
     selectionScreen.classList.remove('hidden');

@@ -19,7 +19,7 @@ const QuestionGenerator = {
         let question;
         let answer;
         const topic = 'python';
-        const subtopic = 'number base conversions';
+        const subtopic = 'Number - Base conversions';
         let difficulty = 'easy';
         const type = "fill";
 
