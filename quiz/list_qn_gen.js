@@ -214,6 +214,42 @@ const QuestionFormatter = {
   formatListProdSmallestWithIndex: (listVarName, listPyString, itemVarName, smallestVarName, idxVarName, targetIndexValue, resultVarName) =>
     `${listVarName} = ${listPyString}\n\n${smallestVarName} = ${listVarName}[0]\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} < ${smallestVarName}:\n        ${smallestVarName} = ${itemVarName}\n\n${idxVarName} = ${targetIndexValue}\n${resultVarName} = ${smallestVarName} * ${listVarName}[${idxVarName}]\n\nprint(${resultVarName})`,
 
+  formatListSumProdLargestSmallestWithIndicesSingleForLoopHard: (listVarName, listPyString, itemVarName, smallestVarName, largestVarName, idxVarName1, idxVarName2, targetIndex1, targetIndex2, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${smallestVarName} = ${listVarName}[0]\n${largestVarName} = ${listVarName}[0]\n\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} < ${smallestVarName}:\n        ${smallestVarName} = ${itemVarName}\n    if ${itemVarName} > ${largestVarName}:\n        ${largestVarName} = ${itemVarName}\n\n${idxVarName1} = ${targetIndex1}\n${idxVarName2} = ${targetIndex2}\n${resultVarName} = (${largestVarName} * ${listVarName}[${idxVarName1}]) + (${smallestVarName} * ${listVarName}[${idxVarName2}])\n\nprint(${resultVarName})`,
+
+  formatListSumProdLargestSmallestWithIndicesSeparateForLoopsHard: (listVarName, listPyString, itemVarName, smallestVarName, largestVarName, idxVarName1, idxVarName2, targetIndex1, targetIndex2, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${smallestVarName} = ${listVarName}[0]\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} < ${smallestVarName}:\n        ${smallestVarName} = ${itemVarName}\n\n${largestVarName} = ${listVarName}[0]\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} > ${largestVarName}:\n        ${largestVarName} = ${itemVarName}\n\n${idxVarName1} = ${targetIndex1}\n${idxVarName2} = ${targetIndex2}\n${resultVarName} = (${largestVarName} * ${listVarName}[${idxVarName1}]) + (${smallestVarName} * ${listVarName}[${idxVarName2}])\n\nprint(${resultVarName})`,
+
+  formatListSumProdLargestSmallestWithIndicesSingleWhileLoopHard: (listVarName, listPyString, idxVarName, smallestVarName, largestVarName, idxVarName1, idxVarName2, targetIndex1, targetIndex2, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${smallestVarName} = ${listVarName}[0]\n${largestVarName} = ${listVarName}[0]\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    item = ${listVarName}[${idxVarName}]\n    if item < ${smallestVarName}:\n        ${smallestVarName} = item\n    if item > ${largestVarName}:\n        ${largestVarName} = item\n    ${idxVarName} += 1\n\n${idxVarName1} = ${targetIndex1}\n${idxVarName2} = ${targetIndex2}\n${resultVarName} = (${largestVarName} * ${listVarName}[${idxVarName1}]) + (${smallestVarName} * ${listVarName}[${idxVarName2}])\n\nprint(${resultVarName})`,
+
+  formatListSumProdLargestSmallestWithIndicesSeparateWhileLoopsHard: (listVarName, listPyString, idxVarName, smallestVarName, largestVarName, idxVarName1, idxVarName2, targetIndex1, targetIndex2, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${smallestVarName} = ${listVarName}[0]\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    if ${listVarName}[${idxVarName}] < ${smallestVarName}:\n        ${smallestVarName} = ${listVarName}[${idxVarName}]\n    ${idxVarName} += 1\n\n${largestVarName} = ${listVarName}[0]\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    if ${listVarName}[${idxVarName}] > ${largestVarName}:\n        ${largestVarName} = ${listVarName}[${idxVarName}]\n    ${idxVarName} += 1\n\n${idxVarName1} = ${targetIndex1}\n${idxVarName2} = ${targetIndex2}\n${resultVarName} = (${largestVarName} * ${listVarName}[${idxVarName1}]) + (${smallestVarName} * ${listVarName}[${idxVarName2}])\n\nprint(${resultVarName})`,
+
+  formatListEvenMinusOddSumSingleForLoopHard: (listVarName, listPyString, itemVarName, evenSumVarName, oddSumVarName, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${evenSumVarName} = 0\n${oddSumVarName} = 0\n\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} % 2 == 0:\n        ${evenSumVarName} += ${itemVarName}\n    else:\n        ${oddSumVarName} += ${itemVarName}\n\n${resultVarName} = ${evenSumVarName} - ${oddSumVarName}\n\nprint(${resultVarName})`,
+
+  formatListEvenMinusOddSumSeparateForLoopsHard: (listVarName, listPyString, itemVarName, evenSumVarName, oddSumVarName, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${evenSumVarName} = 0\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} % 2 == 0:\n        ${evenSumVarName} += ${itemVarName}\n\n${oddSumVarName} = 0\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} % 2 != 0:\n        ${oddSumVarName} += ${itemVarName}\n\n${resultVarName} = ${evenSumVarName} - ${oddSumVarName}\n\nprint(${resultVarName})`,
+
+  formatListEvenMinusOddSumSingleWhileLoopHard: (listVarName, listPyString, idxVarName, evenSumVarName, oddSumVarName, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${evenSumVarName} = 0\n${oddSumVarName} = 0\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    item = ${listVarName}[${idxVarName}]\n    if item % 2 == 0:\n        ${evenSumVarName} += item\n    else:\n        ${oddSumVarName} += item\n    ${idxVarName} += 1\n\n${resultVarName} = ${evenSumVarName} - ${oddSumVarName}\n\nprint(${resultVarName})`,
+
+  formatListEvenMinusOddSumSeparateWhileLoopsHard: (listVarName, listPyString, idxVarName, evenSumVarName, oddSumVarName, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${evenSumVarName} = 0\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    if ${listVarName}[${idxVarName}] % 2 == 0:\n        ${evenSumVarName} += ${listVarName}[${idxVarName}]\n    ${idxVarName} += 1\n\n${oddSumVarName} = 0\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    if ${listVarName}[${idxVarName}] % 2 != 0:\n        ${oddSumVarName} += ${listVarName}[${idxVarName}]\n    ${idxVarName} += 1\n\n${resultVarName} = ${evenSumVarName} - ${oddSumVarName}\n\nprint(${resultVarName})`,
+
+  formatListOddMinusEvenSumSingleForLoopHard: (listVarName, listPyString, itemVarName, evenSumVarName, oddSumVarName, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${evenSumVarName} = 0\n${oddSumVarName} = 0\n\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} % 2 == 0:\n        ${evenSumVarName} += ${itemVarName}\n    else:\n        ${oddSumVarName} += ${itemVarName}\n\n${resultVarName} = ${oddSumVarName} - ${evenSumVarName}\n\nprint(${resultVarName})`,
+
+  formatListOddMinusEvenSumSeparateForLoopsHard: (listVarName, listPyString, itemVarName, evenSumVarName, oddSumVarName, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${evenSumVarName} = 0\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} % 2 == 0:\n        ${evenSumVarName} += ${itemVarName}\n\n${oddSumVarName} = 0\nfor ${itemVarName} in ${listVarName}:\n    if ${itemVarName} % 2 != 0:\n        ${oddSumVarName} += ${itemVarName}\n\n${resultVarName} = ${oddSumVarName} - ${evenSumVarName}\n\nprint(${resultVarName})`,
+
+  formatListOddMinusEvenSumSingleWhileLoopHard: (listVarName, listPyString, idxVarName, evenSumVarName, oddSumVarName, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${evenSumVarName} = 0\n${oddSumVarName} = 0\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    item = ${listVarName}[${idxVarName}]\n    if item % 2 == 0:\n        ${evenSumVarName} += item\n    else:\n        ${oddSumVarName} += item\n    ${idxVarName} += 1\n\n${resultVarName} = ${oddSumVarName} - ${evenSumVarName}\n\nprint(${resultVarName})`,
+
+  formatListOddMinusEvenSumSeparateWhileLoopsHard: (listVarName, listPyString, idxVarName, evenSumVarName, oddSumVarName, resultVarName) =>
+    `${listVarName} = ${listPyString}\n\n${evenSumVarName} = 0\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    if ${listVarName}[${idxVarName}] % 2 == 0:\n        ${evenSumVarName} += ${listVarName}[${idxVarName}]\n    ${idxVarName} += 1\n\n${oddSumVarName} = 0\n${idxVarName} = 0\nwhile ${idxVarName} < len(${listVarName}):\n    if ${listVarName}[${idxVarName}] % 2 != 0:\n        ${oddSumVarName} += ${listVarName}[${idxVarName}]\n    ${idxVarName} += 1\n\n${resultVarName} = ${oddSumVarName} - ${evenSumVarName}\n\nprint(${resultVarName})`,
+
 };
 
 /**
@@ -757,6 +793,230 @@ const QuestionGenerator = {
     const questionText = QuestionFormatter.formatListProdSmallestWithIndex(listVarName, listPyString, itemVarName, smallestVarName, idxVarNamePy, targetIndexValue, resultVarName);
     return QuestionGenerator.createQuestionEntry(questionText, result, 'medium');
   },
+
+  genListSumProdLargestSmallestWithIndicesSingleForLoopHard: function(params) {
+    const { listVarName, actualList, itemVarName } = params;
+    const allVarNames = [...new Set([...ACCUMULATOR_VAR_NAMES, ...TARGET_VAR_NAMES, ...ITEM_VAR_NAMES])];
+    const [smallestVarName, largestVarName, idxVarName1, idxVarName2, resultVarName] = NumberUtils.getNDistinctRandomElements(allVarNames, 5);
+    log(`Generating list sum of prods single for loop (hard)`);
+
+    if (actualList.length < 2) return null;
+
+    let smallest = actualList[0];
+    let largest = actualList[0];
+    for (const num of actualList) {
+      if (num < smallest) smallest = num;
+      if (num > largest) largest = num;
+    }
+
+    const indices = Array.from({ length: actualList.length }, (_, i) => i);
+    const [targetIndex1, targetIndex2] = NumberUtils.getNDistinctRandomElements(indices, 2);
+
+    const result = (largest * actualList[targetIndex1]) + (smallest * actualList[targetIndex2]);
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListSumProdLargestSmallestWithIndicesSingleForLoopHard(listVarName, listPyString, itemVarName, smallestVarName, largestVarName, idxVarName1, idxVarName2, targetIndex1, targetIndex2, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListSumProdLargestSmallestWithIndicesSeparateForLoopsHard: function(params) {
+    const { listVarName, actualList, itemVarName } = params;
+    const allVarNames = [...new Set([...ACCUMULATOR_VAR_NAMES, ...TARGET_VAR_NAMES, ...ITEM_VAR_NAMES])];
+    const [smallestVarName, largestVarName, idxVarName1, idxVarName2, resultVarName] = NumberUtils.getNDistinctRandomElements(allVarNames, 5);
+    log(`Generating list sum of prods separate for loops (hard)`);
+
+    if (actualList.length < 2) return null;
+
+    let smallest = actualList[0];
+    for (const num of actualList) {
+      if (num < smallest) smallest = num;
+    }
+    let largest = actualList[0];
+    for (const num of actualList) {
+      if (num > largest) largest = num;
+    }
+
+    const indices = Array.from({ length: actualList.length }, (_, i) => i);
+    const [targetIndex1, targetIndex2] = NumberUtils.getNDistinctRandomElements(indices, 2);
+
+    const result = (largest * actualList[targetIndex1]) + (smallest * actualList[targetIndex2]);
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListSumProdLargestSmallestWithIndicesSeparateForLoopsHard(listVarName, listPyString, itemVarName, smallestVarName, largestVarName, idxVarName1, idxVarName2, targetIndex1, targetIndex2, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListSumProdLargestSmallestWithIndicesSingleWhileLoopHard: function(params) {
+    const { listVarName, actualList, idxVarName } = params;
+    const allVarNames = [...new Set([...ACCUMULATOR_VAR_NAMES, ...TARGET_VAR_NAMES, ...ITEM_VAR_NAMES])];
+    const [smallestVarName, largestVarName, idxVarName1, idxVarName2, resultVarName] = NumberUtils.getNDistinctRandomElements(allVarNames, 5);
+    log(`Generating list sum of prods single while loop (hard)`);
+
+    if (actualList.length < 2) return null;
+
+    let smallest = actualList[0];
+    let largest = actualList[0];
+    for (const num of actualList) {
+      if (num < smallest) smallest = num;
+      if (num > largest) largest = num;
+    }
+
+    const indices = Array.from({ length: actualList.length }, (_, i) => i);
+    const [targetIndex1, targetIndex2] = NumberUtils.getNDistinctRandomElements(indices, 2);
+
+    const result = (largest * actualList[targetIndex1]) + (smallest * actualList[targetIndex2]);
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListSumProdLargestSmallestWithIndicesSingleWhileLoopHard(listVarName, listPyString, idxVarName, smallestVarName, largestVarName, idxVarName1, idxVarName2, targetIndex1, targetIndex2, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListSumProdLargestSmallestWithIndicesSeparateWhileLoopsHard: function(params) {
+    const { listVarName, actualList, idxVarName } = params;
+    const allVarNames = [...new Set([...ACCUMULATOR_VAR_NAMES, ...TARGET_VAR_NAMES, ...ITEM_VAR_NAMES])];
+    const [smallestVarName, largestVarName, idxVarName1, idxVarName2, resultVarName] = NumberUtils.getNDistinctRandomElements(allVarNames, 5);
+    log(`Generating list sum of prods separate while loops (hard)`);
+
+    if (actualList.length < 2) return null;
+
+    let smallest = actualList[0];
+    for (const num of actualList) {
+      if (num < smallest) smallest = num;
+    }
+    let largest = actualList[0];
+    for (const num of actualList) {
+      if (num > largest) largest = num;
+    }
+
+    const indices = Array.from({ length: actualList.length }, (_, i) => i);
+    const [targetIndex1, targetIndex2] = NumberUtils.getNDistinctRandomElements(indices, 2);
+
+    const result = (largest * actualList[targetIndex1]) + (smallest * actualList[targetIndex2]);
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListSumProdLargestSmallestWithIndicesSeparateWhileLoopsHard(listVarName, listPyString, idxVarName, smallestVarName, largestVarName, idxVarName1, idxVarName2, targetIndex1, targetIndex2, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListEvenMinusOddSumSingleForLoopHard: function(params) {
+    const { listVarName, actualList, itemVarName } = params;
+    const [evenSumVarName, oddSumVarName, resultVarName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 3);
+    log(`Generating list even-odd sum diff single for loop (hard)`);
+
+    let evenSum = 0;
+    let oddSum = 0;
+    for (const num of actualList) {
+      if (num % 2 === 0) evenSum += num;
+      else oddSum += num;
+    }
+
+    const result = evenSum - oddSum;
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListEvenMinusOddSumSingleForLoopHard(listVarName, listPyString, itemVarName, evenSumVarName, oddSumVarName, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListEvenMinusOddSumSeparateForLoopsHard: function(params) {
+    const { listVarName, actualList, itemVarName } = params;
+    const [evenSumVarName, oddSumVarName, resultVarName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 3);
+    log(`Generating list even-odd sum diff separate for loops (hard)`);
+
+    let evenSum = 0;
+    for (const num of actualList) {
+      if (num % 2 === 0) evenSum += num;
+    }
+    let oddSum = 0;
+    for (const num of actualList) {
+      if (num % 2 !== 0) oddSum += num;
+    }
+
+    const result = evenSum - oddSum;
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListEvenMinusOddSumSeparateForLoopsHard(listVarName, listPyString, itemVarName, evenSumVarName, oddSumVarName, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListEvenMinusOddSumSingleWhileLoopHard: function(params) {
+    const { listVarName, actualList, idxVarName } = params;
+    const [evenSumVarName, oddSumVarName, resultVarName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 3);
+    log(`Generating list even-odd sum diff single while loop (hard)`);
+
+    let evenSum = 0;
+    let oddSum = 0;
+    for (const num of actualList) {
+      if (num % 2 === 0) evenSum += num;
+      else oddSum += num;
+    }
+
+    const result = evenSum - oddSum;
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListEvenMinusOddSumSingleWhileLoopHard(listVarName, listPyString, idxVarName, evenSumVarName, oddSumVarName, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListEvenMinusOddSumSeparateWhileLoopsHard: function(params) {
+    const { listVarName, actualList, idxVarName } = params;
+    const [evenSumVarName, oddSumVarName, resultVarName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 3);
+    log(`Generating list even-odd sum diff separate while loops (hard)`);
+
+    let evenSum = 0;
+    for (const num of actualList) {
+      if (num % 2 === 0) evenSum += num;
+    }
+    let oddSum = 0;
+    for (const num of actualList) {
+      if (num % 2 !== 0) oddSum += num;
+    }
+
+    const result = evenSum - oddSum;
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListEvenMinusOddSumSeparateWhileLoopsHard(listVarName, listPyString, idxVarName, evenSumVarName, oddSumVarName, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListOddMinusEvenSumSingleForLoopHard: function(params) {
+    const { listVarName, actualList, itemVarName } = params;
+    const [evenSumVarName, oddSumVarName, resultVarName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 3);
+    log(`Generating list odd-even sum diff single for loop (hard)`);
+    let evenSum = 0, oddSum = 0;
+    for (const num of actualList) { (num % 2 === 0) ? evenSum += num : oddSum += num; }
+    const result = oddSum - evenSum;
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListOddMinusEvenSumSingleForLoopHard(listVarName, listPyString, itemVarName, evenSumVarName, oddSumVarName, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListOddMinusEvenSumSeparateForLoopsHard: function(params) {
+    const { listVarName, actualList, itemVarName } = params;
+    const [evenSumVarName, oddSumVarName, resultVarName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 3);
+    log(`Generating list odd-even sum diff separate for loops (hard)`);
+    let evenSum = 0; for (const num of actualList) { if (num % 2 === 0) evenSum += num; }
+    let oddSum = 0; for (const num of actualList) { if (num % 2 !== 0) oddSum += num; }
+    const result = oddSum - evenSum;
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListOddMinusEvenSumSeparateForLoopsHard(listVarName, listPyString, itemVarName, evenSumVarName, oddSumVarName, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListOddMinusEvenSumSingleWhileLoopHard: function(params) {
+    const { listVarName, actualList, idxVarName } = params;
+    const [evenSumVarName, oddSumVarName, resultVarName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 3);
+    log(`Generating list odd-even sum diff single while loop (hard)`);
+    let evenSum = 0, oddSum = 0;
+    for (const num of actualList) { (num % 2 === 0) ? evenSum += num : oddSum += num; }
+    const result = oddSum - evenSum;
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListOddMinusEvenSumSingleWhileLoopHard(listVarName, listPyString, idxVarName, evenSumVarName, oddSumVarName, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
+
+  genListOddMinusEvenSumSeparateWhileLoopsHard: function(params) {
+    const { listVarName, actualList, idxVarName } = params;
+    const [evenSumVarName, oddSumVarName, resultVarName] = NumberUtils.getNDistinctRandomElements(ACCUMULATOR_VAR_NAMES, 3);
+    log(`Generating list odd-even sum diff separate while loops (hard)`);
+    let evenSum = 0; for (const num of actualList) { if (num % 2 === 0) evenSum += num; }
+    let oddSum = 0; for (const num of actualList) { if (num % 2 !== 0) oddSum += num; }
+    const result = oddSum - evenSum;
+    const listPyString = QuestionFormatter.formatPythonListString(listVarName, actualList, 'hard');
+    const questionText = QuestionFormatter.formatListOddMinusEvenSumSeparateWhileLoopsHard(listVarName, listPyString, idxVarName, evenSumVarName, oddSumVarName, resultVarName);
+    return QuestionGenerator.createQuestionEntry(questionText, result, 'hard');
+  },
 };
 
 /**
@@ -876,6 +1136,18 @@ function genListQns(numQuestions) {
     { func: QuestionGenerator.genListLargestPlusSmallestSingleLoopHard, difficulty: 'hard' },
     { func: QuestionGenerator.genListAvgSmallestLargestSingleLoopHard, difficulty: 'hard' },
     { func: QuestionGenerator.genListAvgSquaresSmallestLargestSingleLoopHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListSumProdLargestSmallestWithIndicesSingleForLoopHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListSumProdLargestSmallestWithIndicesSeparateForLoopsHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListSumProdLargestSmallestWithIndicesSingleWhileLoopHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListSumProdLargestSmallestWithIndicesSeparateWhileLoopsHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListEvenMinusOddSumSingleForLoopHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListEvenMinusOddSumSeparateForLoopsHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListEvenMinusOddSumSingleWhileLoopHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListEvenMinusOddSumSeparateWhileLoopsHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListOddMinusEvenSumSingleForLoopHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListOddMinusEvenSumSeparateForLoopsHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListOddMinusEvenSumSingleWhileLoopHard, difficulty: 'hard' },
+    { func: QuestionGenerator.genListOddMinusEvenSumSeparateWhileLoopsHard, difficulty: 'hard' },
   ];
 
   let generatorIndex = 0; // To cycle through generators for variety
