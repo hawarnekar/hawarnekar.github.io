@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Setup Screen -->
+        <div id="setup-screen" class="screen active">
+            <div class="container">
+                <h1>Python Programming Quiz</h1>
+                <form id="setup-form">
+                    <div class="form-group">
+                        <label for="user-name">Enter your name:</label>
+                        <input type="text" id="user-name" required>
+                        <div class="error-message" id="name-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="topic-select">Topic:</label>
+                        <select id="topic-select" required>
+                            <option value="">Select Topic</option>
+                            <option value="python">Python</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subtopic-select">Subtopic:</label>
+                        <select id="subtopic-select" required disabled>
+                            <option value="">Select Subtopic</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="difficulty-select">Difficulty Level:</label>
+                        <select id="difficulty-select" required disabled>
+                            <option value="">Select Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" id="start-quiz-btn" disabled>Start Quiz</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="container">
+                <div class="quiz-header">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-text" id="progress-text">Question 1 of 25</div>
+                    </div>
+                    <div class="user-info">
+                        <span id="quiz-user-name"></span> | 
+                        <span id="quiz-topic-info"></span>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question-number" id="question-number">Question 1</div>
+                    <div class="question-text" id="question-text"></div>
+                    <div class="code-block" id="code-block"></div>
+                    
+                    <div class="answer-section">
+                        <label for="answer-input">Your Answer:</label>
+                        <div class="answer-input-group">
+                            <input type="text" id="answer-input" placeholder="Enter your answer here..." autocomplete="off">
+                            <button id="submit-answer-btn" disabled>Submit Answer</button>
+                        </div>
+                        <div class="error-message" id="answer-error"></div>
+                        <div class="answer-feedback" id="answer-feedback" style="display: none;">
+                            <div class="feedback-content">
+                                <div class="feedback-status" id="feedback-status"></div>
+                                <div class="feedback-details" id="feedback-details"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-controls">
+                        <button id="prev-btn" disabled>Previous</button>
+                        <button id="next-btn" disabled>Next</button>
+                        <button id="submit-quiz-btn" style="display: none;">Submit Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="container">
+                <div class="results-header">
+                    <h1>Quiz Results</h1>
+                    <div class="score-summary">
+                        <div class="score-circle">
+                            <span id="score-percentage">0%</span>
+                        </div>
+                        <div class="score-details">
+                            <div id="score-text"></div>
+                            <div id="user-result-info"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="results-actions">
+                    <button id="review-answers-btn">Review Answers</button>
+                    <button id="restart-same-btn">Restart as Same User</button>
+                    <button id="restart-new-btn">Start as New User</button>
+                </div>
+                
+                <div id="answers-review" class="answers-review" style="display: none;">
+                    <h2>Answer Review</h2>
+                    <div id="answers-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    
+    <!-- Load individual question generators -->
+    <script src="generators/arithmetic.js"></script>
+    <script src="generators/conditionals.js"></script>
+    <script src="generators/loops.js"></script>
+    <script src="generators/lists.js"></script>
+    <script src="generators/conversion.js"></script>
+    <script src="generators/basic_algorithms.js"></script>
+    
+    <!-- Load main question generator and app -->
+    <script src="questionGenerator.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
